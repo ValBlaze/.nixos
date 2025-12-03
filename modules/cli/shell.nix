@@ -12,7 +12,7 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = {
-        nrs = "sudo nixos-rebuild switch --flake ~/.nixos";
+        nrs = "git add ~/.nixos && git commit -m 'gen' ~/.nixos && git push && sudo nixos-rebuild switch --flake ~/.nixos";
         ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
         cd = "z";
         ls = "eza";
