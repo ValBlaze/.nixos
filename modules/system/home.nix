@@ -5,16 +5,21 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "bak";
-    users.valblaze = {
-      home.username = "valblaze";
-      home.homeDirectory = "/home/valblaze";
+    users.valblaze =
+      { config, pkgs, ... }:
 
-      home.stateVersion = "25.05"; # Don't change!
-      programs.home-manager.enable = true; # Allow home-manager to manage itself
+      {
+        home.username = "valblaze";
+        home.homeDirectory = "/home/valblaze";
 
-      home.sessionVariables = {
-        NIXOS_OZONE_WL = "1";
+        home.stateVersion = "25.05"; # Don't change!
+        programs.home-manager.enable = true; # Allow home-manager to manage itself
+
+        home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ../cli/nvim;
+
+        home.sessionVariables = {
+          NIXOS_OZONE_WL = "1";
+        };
       };
-    };
   };
 }
