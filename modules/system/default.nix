@@ -4,7 +4,7 @@
     ./locale.nix
     ./network.nix
     ./nix.nix
-    ./pkgs.nix
+    ./packages.nix
     ./users.nix
     ./home.nix
   ];
