@@ -1,0 +1,23 @@
+{
+  config,
+  pkgs,
+  self',
+  ...
+}:
+{
+  environment.systemPackages = [
+    pkgs.wget
+    pkgs.gcc
+    pkgs.clang
+    pkgs.clang-tools
+    pkgs.dig
+    pkgs.wofi
+    pkgs.bat
+    self'.packages.nvim
+  ];
+
+  programs.hyprland.enable = true;
+  programs.firefox.enable = true;
+
+  hardware.graphics.enable = true;
+}
