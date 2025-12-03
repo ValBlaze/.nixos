@@ -27,8 +27,8 @@
 
         shared.modules = [
           inputs.home-manager.nixosModules.home-manager
-          ./modules/base
-          ./modules/extra
+          ./modules/system
+          ./modules/cli
         ];
       };
     };
