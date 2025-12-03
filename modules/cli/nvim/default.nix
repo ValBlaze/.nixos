@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  home.file."~/.config/nvim" = {
-    source = config.lib.file.mkOutOfStoreSymlink ./nvim;
+  home-manager.users.valblaze = {
+    home.file."~/.config/nvim" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./nvim;
+    };
   };
 }
