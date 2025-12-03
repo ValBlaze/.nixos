@@ -21,6 +21,4 @@
   programs.firefox.enable = true;
 
   hardware.graphics.enable = true;
-
-  system.stateVersion = "25.05"; # Do not change!
 }
