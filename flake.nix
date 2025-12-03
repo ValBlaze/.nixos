@@ -7,18 +7,17 @@
     easy-hosts.url = "github:tgirlcloud/easy-hosts";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nixCats.url = "github:BirdeeHub/nixCats-nvim";
   };
 
-  outputs = inputs @ { flake-parts, ... }:
-    flake-parts.lib.mkFlake {inherit inputs;} {
+  outputs =
+    inputs@{ flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         inputs.easy-hosts.flakeModule
         inputs.home-manager.flakeModules.home-manager
-        ./modules/nvim
       ];
 
-      systems = ["x86_64-linux"];
+      systems = [ "x86_64-linux" ];
 
       easy-hosts = {
         path = ./hosts;
