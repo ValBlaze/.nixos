@@ -13,7 +13,6 @@
     pkgs.dig
     pkgs.wofi
     pkgs.bat
-    self'.packages.nvim
   ];
 
   programs.hyprland.enable = true;
