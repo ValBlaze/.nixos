@@ -13,7 +13,6 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         inputs.easy-hosts.flakeModule
-	./modules/system/hjem.nix
       ];
 
       systems = [ "x86_64-linux" ];
@@ -25,6 +24,7 @@
         onlySystem = "x86_64-nixos";
 
         shared.modules = [
+    	  inputs.hjem.nixosModules.default
           ./modules/system
         ];
       };

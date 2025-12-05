@@ -4,8 +4,9 @@
     ./locale.nix
     ./network.nix
     ./nix.nix
+    ./fonts.nix
     ./packages.nix
     ./users.nix
-    ./home.nix
+    ./hjem.nix
   ];
 }

@@ -1,11 +1,12 @@
 { inputs, config, pkgs, ... }: {
   imports = [
-    inputs.hjem.nixosModules.default
   ];
 
-  config.hjem.users.valblaze = {
+  hjem.users.valblaze = {
     user = "valblaze";
     directory = "/home/valblaze";
   };
+  
+  hjem.linker = inputs.hjem.packages.${pkgs.stdenv.hostPlatform.system}.smfh;
 }
 
