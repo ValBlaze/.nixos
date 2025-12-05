@@ -3,7 +3,7 @@
     inputs.hjem.nixosModules.default
   ];
 
-  hjem.users.valblaze = {
+  config.hjem.users.valblaze = {
     user = "valblaze";
     directory = "/home/valblaze";
   };
