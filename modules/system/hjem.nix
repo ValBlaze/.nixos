@@ -1,9 +1,12 @@
 { inputs, config, pkgs, ... }: {
 
-  hjem.users.valblaze = {
-    user = "valblaze";
-    directory = "/home/valblaze";
+  hjem = {
     linker = inputs.hjem.packages.${pkgs.stdenv.hostPlatform.system}.smfh;
+
+    users.valblaze = {
+      user = "valblaze";
+      directory = "/home/valblaze";
+    };
   };
 }
 
