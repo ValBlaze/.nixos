@@ -5,8 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     easy-hosts.url = "github:tgirlcloud/easy-hosts";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    hjem.url = "github:feel-co/hjem";
   };
 
   outputs =
@@ -14,7 +13,7 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         inputs.easy-hosts.flakeModule
-        inputs.home-manager.flakeModules.home-manager
+	./modules/system/hjem.nix
       ];
 
       systems = [ "x86_64-linux" ];
@@ -26,9 +25,7 @@
         onlySystem = "x86_64-nixos";
 
         shared.modules = [
-          inputs.home-manager.nixosModules.home-manager
           ./modules/system
-          ./modules/cli
         ];
       };
     };
