@@ -26,9 +26,10 @@
 
         shared.modules = [
     	  inputs.hjem.nixosModules.default
-	  inputs.mnw.nixosModules.default
+	      inputs.mnw.nixosModules.default
+	      ./modules/cli
+          ./modules/gui
           ./modules/system
-	  ./modules/cli
         ];
       };
     };

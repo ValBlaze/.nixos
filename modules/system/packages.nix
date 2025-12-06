@@ -14,12 +14,11 @@
     pkgs.wofi
     pkgs.bat
     pkgs.neovim
-    pkgs.npins
-    self'.packages.default
   ];
 
   programs.hyprland.enable = true;
   programs.firefox.enable = true;
+  programs.git.enable = true;
 
   hardware.graphics.enable = true;
 }
