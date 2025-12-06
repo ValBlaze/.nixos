@@ -28,6 +28,6 @@
     };
   };
 
-  dev = self'.packages.default.devMode;
+  dev = packages.default.devMode;
 }
 
