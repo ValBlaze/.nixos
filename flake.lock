@@ -52,6 +52,21 @@
         "type": "github"
       }
     },
+    "mnw": {
+      "locked": {
+        "lastModified": 1764066817,
+        "narHash": "sha256-iQ45IBZXKgMpV9x6RxZfGm6hzRzfVpKo7gWV0VHLmlE=",
+        "owner": "Gerg-L",
+        "repo": "mnw",
+        "rev": "68a22f62ca7623fcb700d4ebf225bd91125c773e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Gerg-L",
+        "repo": "mnw",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1762111121,
@@ -104,6 +119,7 @@
         "easy-hosts": "easy-hosts",
         "flake-parts": "flake-parts",
         "hjem": "hjem",
+        "mnw": "mnw",
         "nixpkgs": "nixpkgs_2"
       }
     },
