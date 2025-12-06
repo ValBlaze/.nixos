@@ -1,9 +1,9 @@
-{ inputs, lib, pkgs, self, ... }: {
+{ inputs, lib, pkgs, self', ... }: {
   hjem.users.valblaze = {
     files.".config/nvim".source = "/home/valblaze/.nixos/modules/cli/nvim";
   };
 
-  packages.x86_64-linux.default = inputs.mnw.lib.wrap pkgs {
+  packages.default = inputs.mnw.lib.wrap pkgs {
     neovim = pkgs.neovim-unwrapped;
 
     initLua = ''
@@ -28,6 +28,6 @@
     };
   };
 
-  dev = self.packages.x86_64-linux.default.devMode;
+  packages.dev = self'.packages.default.devMode;
 }
 

@@ -6,6 +6,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     easy-hosts.url = "github:tgirlcloud/easy-hosts";
     hjem.url = "github:feel-co/hjem";
+    mnw.url = "github:Gerg-L/mnw";
   };
 
   outputs =
