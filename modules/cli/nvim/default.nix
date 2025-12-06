@@ -1,4 +1,4 @@
-{ inputs, lib, pkgs, self', ... }: {
+{ inputs, lib, pkgs, self, ... }: {
   hjem.users.valblaze = {
     files.".config/nvim".source = "/home/valblaze/.nixos/modules/cli/nvim";
   };
@@ -28,6 +28,6 @@
     };
   };
 
-  dev = packages.x86_64-linux.default.devMode;
+  dev = self.packages.x86_64-linux.default.devMode;
 }
 
