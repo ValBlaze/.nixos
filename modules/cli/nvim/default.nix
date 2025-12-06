@@ -3,7 +3,7 @@
     files.".config/nvim".source = "/home/valblaze/.nixos/modules/cli/nvim";
   };
 
-  packages.default = inputs.mnw.lib.wrap pkgs {
+  packages.x86_64-linux.default = inputs.mnw.lib.wrap pkgs {
     neovim = pkgs.neovim-unwrapped;
 
     initLua = ''
@@ -28,6 +28,6 @@
     };
   };
 
-  dev = packages.default.devMode;
+  dev = packages.x86_64-linux.default.devMode;
 }
 
