@@ -11,6 +11,7 @@
     pkgs.clang
     pkgs.clang-tools
     pkgs.dig
+    pkgs.kitty
     pkgs.wofi
     pkgs.bat
     pkgs.neovim
