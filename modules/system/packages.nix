@@ -19,6 +19,7 @@
 
   programs.hyprland.enable = true;
   programs.firefox.enable = true;
+  programs.mnw.enable = true;
 
   hardware.graphics.enable = true;
 }
