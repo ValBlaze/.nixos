@@ -18,6 +18,7 @@
     pkgs.gh
     pkgs.ly
     pkgs.hyprland
+    pkgs.discord
   ];
 
   programs.firefox.enable = true;
