@@ -7,6 +7,7 @@
       user = "valblaze";
       directory = "/home/valblaze";
     };
+    clobberByDefault = true;
   };
 }
 

@@ -1,4 +1,7 @@
 {
-  imports = [ ./nvim ];
+  imports = [ 
+    ./nvim
+    ./zsh.nix
+  ];
 }
 
