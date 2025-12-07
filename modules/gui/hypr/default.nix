@@ -3,7 +3,7 @@
 {
   hjem.users.valblaze = {
     files.".config/hypr".source = "/home/valblaze/.nixos/modules/gui/hypr";
-    rum.programs.hyprland.enable = true;
+    rum.desktops.hyprland.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
