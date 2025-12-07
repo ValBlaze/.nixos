@@ -5,7 +5,7 @@
     equibop
   ];
 
-  hjem.users.valblaze.file = {
+  hjem.users.valblaze.files = {
     ".config/equibop/settings/settings.json" = {
       generator = lib.generators.toJSON {};
       value = {
