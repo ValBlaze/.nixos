@@ -2,6 +2,6 @@
   imports = [
     ./kitty.nix
     ./hypr
-    ./equicord
+    ./equibop
   ];
 }
