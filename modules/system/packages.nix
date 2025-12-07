@@ -17,6 +17,7 @@
     pkgs.neovim
     pkgs.gh
     pkgs.ly
+    pkgs.hyprland
   ];
 
   programs.firefox.enable = true;
