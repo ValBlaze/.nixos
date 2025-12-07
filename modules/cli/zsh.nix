@@ -7,7 +7,7 @@
   ];
 
   environment.shellAliases = {
-    nrs = "./home/valblaze/.nixos/modules/scripts/rebuild.sh";
+    nrs = "/home/valblaze/.nixos/modules/scripts/rebuild.sh";
   };
 
   programs.zsh = {
