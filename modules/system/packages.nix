@@ -15,6 +15,7 @@
     pkgs.wofi
     pkgs.bat
     pkgs.neovim
+    pkgs.gh
   ];
 
   programs.hyprland.enable = true;
