@@ -7,7 +7,7 @@
   ];
 
   environment.shellAliases = {
-    nrs = "sudo nixos-rebuild switch --flake '/home/valblaze/.nixos'";
+    nrs = "./home/valblaze/.nixos/modules/scripts/rebuild.sh";
   };
 
   programs.zsh = {
