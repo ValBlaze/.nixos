@@ -4,10 +4,12 @@
     zsh-autosuggestions
     zsh-syntax-highlighting
     nix-zsh-completions
+    nix-search-tv
   ];
 
   environment.shellAliases = {
     nrs = "/home/valblaze/.nixos/modules/scripts/rebuild.sh";
+    ns="nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history"
   };
 
   programs.zsh = {
