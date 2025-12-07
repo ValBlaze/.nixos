@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -x
 set -e
 pushd ~/.nixos
 current_gen=$(sudo nix-env --list-generations --profile /nix/var/nix/profiles/system | grep current | awk '{print $1}')
