@@ -16,6 +16,7 @@
     pkgs.bat
     pkgs.neovim
     pkgs.gh
+    pkgs.ly
   ];
 
   programs.firefox.enable = true;

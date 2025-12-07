@@ -6,6 +6,7 @@
     rum.desktops.hyprland.enable = true;
   };
 
+
   environment.systemPackages = with pkgs; [
     hyprpaper
   ];
