@@ -12,6 +12,18 @@
         autoUpdate = true;
         autoUpdateNotification = true;
         useQuickCss = true;
+        themeLinks = [];
+        eagerPatches = false;
+        enabledThemes = [];
+        enabledThemeLinks = [];
+        themeNames = {};
+        enableReactDevtools = false;
+        frameless = false;
+        transparent = false;
+        winCtrQ = false;
+        disableMinSize = false;
+        winNativeTitleBar = false;
+        plugins = {};
       };
     };
   };
