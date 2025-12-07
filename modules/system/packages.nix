@@ -16,6 +16,7 @@
     pkgs.bat
     pkgs.neovim
     pkgs.gh
+    pkgs.wl-clipboard
   ];
 
   programs.firefox.enable = true;
