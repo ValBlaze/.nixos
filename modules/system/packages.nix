@@ -18,7 +18,6 @@
     pkgs.gh
   ];
 
-  programs.hyprland.enable = true;
   programs.firefox.enable = true;
   programs.git.enable = true;
 
