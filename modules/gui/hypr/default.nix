@@ -11,6 +11,8 @@
 
   environment.systemPackages = with pkgs; [
     swww
+    hyprpicker
+    hyprshot
   ];
 
   environment.sessionVariables = {
