@@ -22,6 +22,4 @@
 
   programs.firefox.enable = true;
   programs.git.enable = true;
-
-  hardware.graphics.enable = true;
 }
