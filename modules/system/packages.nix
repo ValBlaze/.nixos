@@ -16,8 +16,6 @@
     pkgs.bat
     pkgs.neovim
     pkgs.gh
-    pkgs.ly
-    pkgs.discord
   ];
 
   programs.firefox.enable = true;
