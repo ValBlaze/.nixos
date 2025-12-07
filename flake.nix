@@ -5,7 +5,14 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     easy-hosts.url = "github:tgirlcloud/easy-hosts";
-    hjem.url = "github:feel-co/hjem";
+    hjem = {
+      url = "github:feel-co/hjem";
+    };
+    hjem-rum = {
+        url = "github:snugnug/hjem-rum";
+        inputs.nixpkgs.follows = "nixpkgs";
+        inputs.hjem.follows = "hjem";
+    };
     mnw.url = "github:Gerg-L/mnw";
   };
 
