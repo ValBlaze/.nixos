@@ -6,6 +6,7 @@
     ./nix.nix
     ./fonts.nix
     ./packages.nix
+    ./services.nix
     ./users.nix
     ./hjem.nix
   ];
