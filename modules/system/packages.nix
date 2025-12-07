@@ -17,7 +17,6 @@
     pkgs.neovim
     pkgs.gh
     pkgs.ly
-    pkgs.hyprland
     pkgs.discord
   ];
 
