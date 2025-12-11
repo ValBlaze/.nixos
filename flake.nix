@@ -24,12 +24,9 @@
       ];
 
       systems = [ "x86_64-linux" ];
-
-      perSystem = { config, pkgs, ... }: {
-        packages = {
-          neovim = config.programs.mnw.finalPackage;
-          neovimDev = config.programs.mnw.finalPackage.devMode;
-        };
+      packages = {
+          neovim = self.nixosConfigurations.nixos-laptop.config.programs.mnw.finalPackage;
+          neovimDev = self.nixosConfigurations.nixos-laptop.config.programs.mnw.finalPackage.devMode;
       };
 
       easy-hosts = {
