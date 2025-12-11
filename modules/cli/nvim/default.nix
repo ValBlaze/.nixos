@@ -4,6 +4,7 @@
     enable = true;
     neovim = pkgs.neovim-unwrapped;
     extraBinPath = [];
+    devMode = true;
     # finalPackage = package
 
     initLua = ''
@@ -12,21 +13,19 @@
     '';
 
     plugins = {
-      dev = {
-        start = with pkgs.vimPlugins; [
-          lz-n
-          plenary-nvim # telescope dependency
-          oil-nvim
-        ];
+      start = with pkgs.vimPlugins; [
+        lz-n
+        plenary-nvim # dep of telescope
+        oil-nvim
+      ];
 
-        opt = with pkgs.vimPlugins; [
-          telescope-nvim
-        ];
+      opt = with pkgs.vimPlugins; [
+        telescope-nvim
+      ];
 
-        config = {
-          pure = ./.;
-          impure = "/home/valblaze/.nixos/modules/cli/nvim";
-        };
+      dev.config = {
+        pure = ./.;
+        impure = "/home/valblaze/.nixos/modules/cli/nvim";
       };
     };
   };
