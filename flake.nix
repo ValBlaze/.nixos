@@ -28,7 +28,7 @@
       perSystem = { pkgs, self', ... }: {
         packages = {
           neovim = inputs.mnw.lib.wrap { inherit pkgs inputs; } ./modules/cli/nvim;
-          dev = self'.packages.neovim.devMode;
+          neovimDev = self'.packages.neovim.devMode;
         };
       };
 
