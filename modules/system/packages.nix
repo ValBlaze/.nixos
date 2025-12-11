@@ -14,7 +14,6 @@
     pkgs.kitty
     pkgs.wofi
     pkgs.bat
-    pkgs.neovim
     pkgs.gh
     pkgs.wl-clipboard
   ];
