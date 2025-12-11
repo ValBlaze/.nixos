@@ -25,7 +25,7 @@
 
       systems = [ "x86_64-linux" ];
 
-      perSystem = { config, pkgs, self', ... }: {
+      perSystem = { config, pkgs, self', inherit easy-hosts, ... }: {
         packages.neovim = easy-hosts.shared.modules.programs.mnw.finalPackage.devMode;
       };
 
