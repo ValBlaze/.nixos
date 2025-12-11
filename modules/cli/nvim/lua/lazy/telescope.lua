@@ -4,18 +4,19 @@ return {
 
   after = function()
     require("telescope").setup()
+    local builtin = require("telescope.builtin")
   end,
   keys = {
     {
       "<leader>sf",
       function()
-        require("telescope.builtin").find_files()
+        builtin.find_files()
       end,
     },
     {
       "<leader>s/",
       function()
-        require("telescope.builtin").live_grep()
+        builtin.live_grep()
       end,
     },
   },
