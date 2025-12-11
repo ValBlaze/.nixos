@@ -16,6 +16,7 @@
     pkgs.bat
     pkgs.gh
     pkgs.wl-clipboard
+    self'.packages.dev
   ];
 
   programs.firefox.enable = true;
