@@ -25,7 +25,7 @@
 
       systems = [ "x86_64-linux" ];
 
-      packages.x86_64.neovim = inputs.self.easy-hosts.shared.modules.programs.mnw.finalPackage.devMode;
+      packages.x86_64.neovim = self.easy-hosts.shared.modules.programs.mnw.finalPackage.devMode;
 
       easy-hosts = {
         path = ./hosts;
