@@ -25,8 +25,11 @@
 
       systems = [ "x86_64-linux" ];
 
-      perSystem = { config, pkgs, self', ... }: {
-        packages.neovim = inputs.self.easy-hosts.shared.modules.programs.mnw.finalPackage.devMode;
+      perSystem = { pkgs, self', ... }: {
+        packages = {
+          neovim = inputs.mnw.lib.wrap { inherit pkgs inputs; } ./modules/cli/nvim;
+          dev = self'.packages.neovim.devMode;
+        };
       };
 
       easy-hosts = {
