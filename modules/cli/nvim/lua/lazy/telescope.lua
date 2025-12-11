@@ -7,7 +7,7 @@ return {
   end,
   keys = {
     {
-      "<leader>sff",
+      "<leader>sf",
       function()
         require("telescope.builtin").find_files()
       end,
