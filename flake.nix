@@ -25,6 +25,13 @@
 
       systems = [ "x86_64-linux" ];
 
+      perSystem = { config, pkgs, ... }: {
+        packages = {
+          neovim = config.programs.mnw.finalPackage;
+          neovimDev = config.programs.mnw.finalPackage.devMode;
+        };
+      };
+
       easy-hosts = {
         path = ./hosts;
         autoConstruct = true;

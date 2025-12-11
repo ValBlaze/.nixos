@@ -4,7 +4,6 @@
     enable = true;
     neovim = pkgs.neovim-unwrapped;
     extraBinPath = [];
-    # finalPackage = package
 
     initLua = ''
       require('config')
@@ -24,7 +23,7 @@
 
       dev.config = {
         pure = ./.;
-        impure = "/home/valblaze/.nixos/modules/cli/nvim/lua/config";
+        impure = "/home/valblaze/.nixos/modules/cli/nvim";
       };
     };
   };
