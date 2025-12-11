@@ -25,5 +25,5 @@
       impure = "/home/valblaze/.nixos/modules/cli/nvim";
     };
   };
-};
+}
 
