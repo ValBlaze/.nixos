@@ -12,17 +12,19 @@
     '';
 
     plugins = {
-      start = with pkgs.vimPlugins; [
-        lz-n
-        plenary-nvim # telescope dependency
-        oil-nvim
-      ];
+      dev = {
+        start = with pkgs.vimPlugins; [
+          lz-n
+          plenary-nvim # telescope dependency
+          oil-nvim
+        ];
 
-      dev = with pkgs.vimPlugins; [
-        telescope-nvim
-      ];
+        opt = with pkgs.vimPlugins; [
+          telescope-nvim
+        ];
+      }
 
-      dev.config = {
+      config = {
         pure = ./.;
         impure = "/home/valblaze/.nixos/modules/cli/nvim";
       };
