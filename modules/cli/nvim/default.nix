@@ -22,11 +22,11 @@
         opt = with pkgs.vimPlugins; [
           telescope-nvim
         ];
-      }
 
-      config = {
-        pure = ./.;
-        impure = "/home/valblaze/.nixos/modules/cli/nvim";
+        config = {
+          pure = ./.;
+          impure = "/home/valblaze/.nixos/modules/cli/nvim";
+        };
       };
     };
   };
