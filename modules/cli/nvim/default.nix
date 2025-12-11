@@ -27,10 +27,5 @@
       };
     };
   };
-
-  packages = {
-    neovim = config.programs.mnw.finalPackage;
-    neovimDev = config.programs.mnw.finalPackage.devMode;
-  };
 }
 
