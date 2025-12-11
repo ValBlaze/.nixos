@@ -25,7 +25,7 @@
 
       systems = [ "x86_64-linux" ];
 
-      perSystem = { config, pkgs, inputs, ... }: {
+      perSystem = { config, pkgs,... }: {
         packages.neovim = inputs.easy-hosts.shared.modules.programs.mnw.finalPackage.devMode;
       };
 
