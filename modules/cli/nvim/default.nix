@@ -18,6 +18,7 @@
 
     opt = with pkgs.vimPlugins; [
       telescope-nvim
+      blink-cmp
     ];
 
     dev.config = {

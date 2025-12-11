@@ -3,8 +3,8 @@ vim.g.maplocalleader = " "
 
 vim.g.have_nerd_font = true
 
-vim.o.shiftwidth = 4
-vim.o.tabstop = 4
+vim.o.shiftwidth = 2
+vim.o.tabstop = 2
 vim.o.softtabstop = -1 -- same as shiftwidth
 vim.o.expandtab = true -- use spaces instead of tabs
 
