@@ -23,7 +23,7 @@
     ];
 
     opt = with pkgs.vimPlugins; [
-      nvim-treesitter.withAllGrammars.dependencies;
+      nvim-treesitter.withAllGrammars.dependencies
       telescope-nvim
       blink-cmp
     ];
