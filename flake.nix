@@ -25,10 +25,10 @@
 
       systems = [ "x86_64-linux" ];
 
-      perSystem = { self', pkgs, ... }: {
+      perSystem = { pkgs, self, ... }: {
         packages = {
-          neovim = self'.config.programs.mnw.finalPackage;
-          neovimDev = self'.config.programs.mnw.finalPackage.devMode;
+          neovim = self.nixosConfigurations.nixos-laptop.config.programs.mnw.finalPackage;
+          neovimDev = self.nixosConfigurations.nixos-laptop.config.programs.mnw.finalPackage.devMode;
         };
       };
 
