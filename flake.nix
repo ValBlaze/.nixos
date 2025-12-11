@@ -27,8 +27,8 @@
 
       perSystem = { self', pkgs, ... }: {
         packages = {
-          neovim = self'.nixosConfigurations.config.programs.mnw.finalPackage;
-          neovimDev = self'.nixosConfigurations.config.programs.mnw.finalPackage.devMode;
+          neovim = self'.config.programs.mnw.finalPackage;
+          neovimDev = self'.config.programs.mnw.finalPackage.devMode;
         };
       };
 
