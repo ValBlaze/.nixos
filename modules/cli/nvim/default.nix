@@ -18,7 +18,7 @@
         oil-nvim
       ];
 
-      opt = with pkgs.vimPlugins; [
+      dev = with pkgs.vimPlugins; [
         telescope-nvim
       ];
 
