@@ -1,4 +1,4 @@
-{ inputs, lib, pkgs, self', ... }: {
+{ inputs, config, lib, pkgs, ... }: {
 
   programs.mnw = {
     enable = true;
@@ -26,6 +26,12 @@
         impure = "/home/valblaze/.nixos/modules/cli/nvim";
       };
     };
+  };
+
+
+  packages.x86_64-linux = {
+      neovim = config.programs.mnw.finalPackage;
+      neovimDev = config.programs.mnw.finalPackage.devMode;
   };
 }
 
