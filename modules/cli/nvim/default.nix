@@ -1,4 +1,4 @@
-{ inputs, config, lib, pkgs, ... }: {
+{ inputs, config, lib, pkgs, withSystem, ... }: {
 
   programs.mnw = {
     enable = true;
