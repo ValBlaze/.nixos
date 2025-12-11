@@ -1,5 +1,6 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
 
+{
   neovim = pkgs.neovim-unwrapped;
   extraBinPath = [];
 
