@@ -1,4 +1,4 @@
-{ inputs, config, lib, pkgs, ... }: {
+{ inputs, config, lib, pkgs, self, ... }: {
 
   programs.mnw = {
     enable = true;
@@ -29,7 +29,7 @@
   };
 
 
-  packages.x86_64-linux = {
+  self.packages.x86_64-linux = {
       neovim = config.programs.mnw.finalPackage;
       neovimDev = config.programs.mnw.finalPackage.devMode;
   };
