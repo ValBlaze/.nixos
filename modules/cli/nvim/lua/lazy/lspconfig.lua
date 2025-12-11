@@ -1,6 +1,4 @@
 return {
-    {
-        "nvim-lspconfig",
-        event = "DeferredUIEnter",
-    },
+  "nvim-lspconfig",
+  event = "DeferredUIEnter",
 }

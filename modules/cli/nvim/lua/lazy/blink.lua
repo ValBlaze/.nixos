@@ -3,6 +3,8 @@ return {
       "blink.cmp",
       event = "DeferredUIEnter",
       after = function()
+        ---@module 'blink.cmp'
+        ---@type blink.cmp.Config
         require("blink.cmp").setup({
           keymap = {
             -- :help ins-completion
@@ -18,7 +20,14 @@ return {
           },
 
           sources = {
-            default = { "lsp", "path", "snippets", "buffer" }
+            default = { "lsp", "path", "snippets", "buffer", "lazydev" },
+            providers = {
+              lazydev = {
+                name = "LazyDev",
+                module = "lazydev.integrations.blink",
+                score_offset = 100,
+              },
+            },
           },
 
           fuzzy = { implementation = "prefer_rust_with_warning" },

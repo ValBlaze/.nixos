@@ -26,6 +26,7 @@
       nvim-treesitter.withAllGrammars
       telescope-nvim
       blink-cmp
+      lazydev-nvim
     ];
 
     dev.config = {
