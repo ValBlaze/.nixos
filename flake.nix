@@ -24,7 +24,7 @@
       ];
 
       systems = [ "x86_64-linux" ];
-      packages = {
+      packages.x86_64-linux = {
           neovim = self.nixosConfigurations.nixos-laptop.config.programs.mnw.finalPackage;
           neovimDev = self.nixosConfigurations.nixos-laptop.config.programs.mnw.finalPackage.devMode;
       };
