@@ -9,5 +9,6 @@
     ./services.nix
     ./users.nix
     ./hjem.nix
+    ./variables.nix
   ];
 }
