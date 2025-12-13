@@ -1,9 +1,6 @@
 { config, lib, pkgs, ... }: {
 
   environment.systemPackages = with pkgs; [
-    # zsh-autosuggestions
-    # zsh-syntax-highlighting
-    # nix-zsh-completions
     nix-search-tv
     fzf
   ];
@@ -17,7 +14,6 @@
     enable = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
-    enableLsColors = true;
     interactiveShellInit = ''
       function y() {
         local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
