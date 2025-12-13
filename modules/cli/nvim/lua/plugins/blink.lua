@@ -2,9 +2,9 @@ return {
     {
       "blink.cmp",
       event = "DeferredUIEnter",
-      before = function()
-        LZN.trigger_load('lazydev.nvim')
-      end,
+      -- before = function()
+      --   LZN.trigger_load('lazydev.nvim')
+      -- end,
       after = function()
         ---@module 'blink.cmp'
         ---@type blink.cmp.Config
@@ -36,17 +36,6 @@ return {
           fuzzy = { implementation = "prefer_rust_with_warning" },
 
           signature = { enabled = true },
-        })
-
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
-        capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities({}, false))
-        capabilities = vim.tbl_deep_extend('force', capabilities, {
-          textDocument = {
-            foldingRange = {
-              dynamicRegistration = false,
-              lineFoldingOnly = true
-            }
-          }
         })
       end
     }

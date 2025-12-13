@@ -1,7 +1,7 @@
 return {
   "lazydev.nvim",
   ft = 'lua',
-  after = function()
+  after = function(_)
     require('lazydev').setup({
       library = {
         -- Load luvit types when the `vim.uv` word is found

@@ -5,14 +5,14 @@
   initLua = ''
     require('config')
     LZN = require('lz.n')
-    LZN.load('lazy')
+    LZN.load('plugins')
   '';
 
   extraBinPath = with pkgs; [
-    lua-language-server
-    stylua
     ripgrep # telescope dep
     fd # telescope dep
+    lua-language-server
+    stylua
   ];
 
   plugins = {
