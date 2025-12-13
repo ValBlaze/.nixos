@@ -17,6 +17,7 @@
     enable = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
+    enableLsColors = true;
     interactiveShellInit = ''
       function y() {
         local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
