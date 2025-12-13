@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs, }:
 
 {
-  environment.sessionVariables = {
+  environment.variables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
   };

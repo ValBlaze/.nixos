@@ -10,21 +10,6 @@
     ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
   };
 
-  programs.zsh = {
-    enable = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-    interactiveShellInit = ''
-      function y() {
-        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-        yazi "$@" --cwd-file="$tmp"
-        IFS= read -r -d "" cwd < "$tmp"
-        [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-        rm -f -- "$tmp"
-      }
-    '';
-  };
-
   programs.zoxide = {
     enable = true;
     flags = [
@@ -34,4 +19,19 @@
 
   programs.starship.enable = true;
   programs.yazi.enable = true;
+
+  programs.zsh = {
+    enable = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+    shellInit = ''
+      function y() {
+        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+        yazi "$@" --cwd-file="$tmp"
+        IFS= read -r -d "" cwd < "$tmp"
+        [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+        rm -f -- "$tmp"
+      }
+    '';
+  };
 }
