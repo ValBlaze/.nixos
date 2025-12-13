@@ -28,6 +28,7 @@
       blink-cmp
       lazydev-nvim
       telescope-nvim
+      nvim-autopairs
     ];
 
     dev.config = {
