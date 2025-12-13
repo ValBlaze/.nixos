@@ -2,9 +2,9 @@ return {
     {
       "blink.cmp",
       event = "DeferredUIEnter",
-      -- before = function()
-      --   LZN.trigger_load('lazydev.nvim')
-      -- end,
+      before = function()
+        LZN.trigger_load('lazydev.nvim')
+      end,
       after = function()
         ---@module 'blink.cmp'
         ---@type blink.cmp.Config
