@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }: {
 
   environment.systemPackages = with pkgs; [
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    nix-zsh-completions
+    # zsh-autosuggestions
+    # zsh-syntax-highlighting
+    # nix-zsh-completions
     nix-search-tv
     fzf
   ];
