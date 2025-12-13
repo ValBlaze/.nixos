@@ -24,9 +24,10 @@
 
     opt = with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
-      telescope-nvim
+      nvim-lspconfig
       blink-cmp
       lazydev-nvim
+      telescope-nvim
     ];
 
     dev.config = {
