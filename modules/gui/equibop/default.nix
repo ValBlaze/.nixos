@@ -7,6 +7,7 @@
 
   hjem.users.valblaze.files = {
     ".config/equibop/settings/settings.json" = {
+      enable = false;
       generator = lib.generators.toJSON {};
       value = {
         autoUpdate = true;
