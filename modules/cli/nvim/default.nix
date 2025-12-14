@@ -5,6 +5,7 @@
   initLua = ''
     require('config')
     LZN = require('lz.n')
+    LZN.register_handler(require("handlers.which-key"))
     LZN.load('plugins')
   '';
 
@@ -39,7 +40,7 @@
       telescope-nvim
       nvim-autopairs
       catppuccin-nvim
-      todo-comments-nvim
+      which-key-nvim
     ];
 
     dev.config = {
