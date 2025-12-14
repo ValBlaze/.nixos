@@ -31,9 +31,6 @@ return {
       return "%2l:%-2v"
     end
 
-    require("mini.misc").setup()
-    MiniMisc.setup_termbg_sync()
-
     -- ... and there is more!
     --  Check out: https://github.com/echasnovski/mini.nvim
   end

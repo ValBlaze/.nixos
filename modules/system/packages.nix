@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   self',
   ...
@@ -8,12 +7,10 @@
   environment.systemPackages = [
     pkgs.wget
     pkgs.gcc
-    pkgs.clang
-    pkgs.clang-tools
     pkgs.dig
-    pkgs.kitty
     pkgs.wofi
     pkgs.bat
+    pkgs.bat-extras
     pkgs.gh
     pkgs.wl-clipboard
     self'.packages.neovimDev
