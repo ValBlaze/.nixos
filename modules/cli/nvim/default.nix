@@ -30,6 +30,7 @@
       lz-n
       plenary-nvim # telescope/todo-comments
       oil-nvim
+      mini-nvim
     ];
 
     opt = with pkgs.vimPlugins; [
