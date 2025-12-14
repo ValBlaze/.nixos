@@ -9,10 +9,18 @@
   '';
 
   extraBinPath = with pkgs; [
-    ripgrep # telescope dep
-    fd # telescope dep
+    # dependencies
+    ripgrep # telescope
+    fd # telescope
+    universal-ctags # nix-doc
+
+    # lua
     lua-language-server
     stylua
+
+    # nix
+    nixd
+    nix-doc
   ];
 
   plugins = {
