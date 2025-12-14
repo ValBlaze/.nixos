@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   neovim = pkgs.neovim-unwrapped;
@@ -38,6 +38,7 @@
       lazydev-nvim
       telescope-nvim
       nvim-autopairs
+      catppuccin-nvim
     ];
 
     dev.config = {
