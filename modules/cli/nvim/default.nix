@@ -27,7 +27,7 @@
   plugins = {
     start = with pkgs.vimPlugins; [
       lz-n
-      plenary-nvim # telescope dep
+      plenary-nvim # telescope/todo-comments
       oil-nvim
     ];
 
