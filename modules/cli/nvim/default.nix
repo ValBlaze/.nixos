@@ -21,6 +21,7 @@
     # nix
     nixd
     nix-doc
+    nixfmt
   ];
 
   plugins = {
