@@ -29,7 +29,6 @@
     start = with pkgs.vimPlugins; [
       lz-n
       plenary-nvim # telescope/todo-comments
-      which-key-nvim
       oil-nvim
     ];
 
@@ -41,6 +40,8 @@
       telescope-nvim
       nvim-autopairs
       catppuccin-nvim
+      which-key-nvim
+      todo-comments-nvim
     ];
 
     dev.config = {
