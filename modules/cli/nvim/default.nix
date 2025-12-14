@@ -1,9 +1,14 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   neovim = pkgs.neovim-unwrapped;
   initLua = ''
     require('config')
+
+    vim.g.startuptime_event_width = 0
+    vim.g.startuptime_tries = 10
+    vim.g.startuptime_exe_path = "${lib.getBin config.programs.mnw.finalPackage}";
+
     LZN = require('lz.n')
     LZN.register_handler(require("handlers.which-key"))
     LZN.load('plugins')
