@@ -39,6 +39,8 @@
     ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     l = "eza -al";
     ls = "eza";
+    lt = "eza -laT";
+    tree = "eza -T";
     cat = "bat";
     diff = "batdiff";
     grep = "batgrep";
