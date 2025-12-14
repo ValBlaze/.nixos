@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }: {
+{ config, lib, ... }: {
   hjem.users.valblaze.rum = {
     programs.kitty = {
       enable = true;
@@ -14,6 +14,7 @@
         disable_ligatures = "never";
         copy_on_select = true;
         confirm_os_window_close = 0;
+        include = "current-theme.conf";
       };
     };
   };
