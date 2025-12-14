@@ -10,7 +10,7 @@
     pkgs.dig
     pkgs.wofi
     pkgs.bat
-    pkgs.bat-extras
+    pkgs.bat-extras.full
     pkgs.gh
     pkgs.wl-clipboard
     self'.packages.neovimDev
