@@ -27,6 +27,7 @@
 
       perSystem = { pkgs, self', ... }: {
         packages = {
+          default = self.nixosConfigurations.iso-nixos.config.system.build.isoImage;
           neovim = inputs.mnw.lib.wrap { inherit pkgs inputs; } ./modules/cli/nvim;
           neovimDev = self'.packages.neovim.devMode;
         };
@@ -36,15 +37,15 @@
         path = ./hosts;
         autoConstruct = true;
 
-        onlySystem = "x86_64-nixos";
-
-        shared.modules = [
-    	  inputs.hjem.nixosModules.default
-	      inputs.mnw.nixosModules.default
-	      ./modules/cli
-          ./modules/gui
-          ./modules/system
-        ];
+        perClass = class: {
+          modules = inputs.nixpkgs.lib.optionals (class == "nixos") [
+            inputs.hjem.nixosModules.default
+            inputs.mnw.nixosModules.default
+            ./modules/cli
+            ./modules/gui
+            ./modules/system
+          ];
+        };
       };
     };
 }
