@@ -27,7 +27,7 @@
 
       perSystem = { pkgs, self', ... }: {
         packages = {
-          default = self.nixosConfigurations.iso-nixos.config.system.build.isoImage;
+          default = inputs.self.nixosConfigurations.iso-nixos.config.system.build.isoImage;
           neovim = inputs.mnw.lib.wrap { inherit pkgs inputs; } ./modules/cli/nvim;
           neovimDev = self'.packages.neovim.devMode;
         };
