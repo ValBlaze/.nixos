@@ -39,6 +39,7 @@
       telescope-nvim
       nvim-autopairs
       catppuccin-nvim
+      todo-comments-nvim
     ];
 
     dev.config = {

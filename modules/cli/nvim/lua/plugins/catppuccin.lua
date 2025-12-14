@@ -1,10 +1,12 @@
 return {
-  "catpuccin-nvim",
-  colorscheme = "catppuccin",
+  "catppuccin-nvim",
+  lazy = false,
   after = function ()
     require("catppuccin").setup({
       flavour = "macchiato",
       transparent_background = true,
     })
+
+    vim.cmd.colorscheme("catppuccin")
   end
 }
