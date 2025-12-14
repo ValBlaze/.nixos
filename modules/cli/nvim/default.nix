@@ -43,6 +43,8 @@
       catppuccin-nvim
       which-key-nvim
       todo-comments-nvim
+      fidget-nvim
+      vim-startuptime
     ];
 
     dev.config = {
