@@ -4,9 +4,13 @@
   neovim = pkgs.neovim-unwrapped;
   initLua = ''
     require('config')
+
     LZN = require('lz.n')
     LZN.register_handler(require("handlers.which-key"))
     LZN.load('plugins')
+
+    vim.lsp.enable('lua_ls')
+    vim.lsp.enable('nixd')
   '';
 
   extraBinPath = with pkgs; [
@@ -44,7 +48,6 @@
       which-key-nvim
       todo-comments-nvim
       fidget-nvim
-      vim-startuptime
     ];
 
     dev.config = {
