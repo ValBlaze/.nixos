@@ -35,6 +35,7 @@
       plenary-nvim # telescope/todo-comments
       oil-nvim
       mini-nvim
+      nui-nvim
     ];
 
     opt = with pkgs.vimPlugins; [
