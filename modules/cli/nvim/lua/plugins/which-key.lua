@@ -3,6 +3,7 @@ return {
   event = "DeferredUIEnter",
   after = function (plugin)
     require("which-key").setup({
+      preset = "helix",
       delay = 0,
       icons = {
         -- set icon mappings to true if you have a Nerd Font

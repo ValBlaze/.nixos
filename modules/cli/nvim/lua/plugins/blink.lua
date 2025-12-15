@@ -22,6 +22,22 @@ return {
             documentation = { auto_show = true, auto_show_delay_ms = 500 },
           },
 
+          cmdline = {
+            keymap = {
+              -- recommended, as the default keymap will only show and select the next item
+              ['<Tab>'] = { 'show', 'accept' },
+            },
+            completion = {
+              menu = {
+                auto_show = function(ctx)
+                  return vim.fn.getcmdtype() == ':'
+                  -- enable for inputs as well, with:
+                  or vim.fn.getcmdtype() == '@'
+                end,
+              },
+            }
+          };
+
           sources = {
             default = { "lsp", "path", "snippets", "buffer", "lazydev" },
             providers = {

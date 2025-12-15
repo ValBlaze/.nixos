@@ -43,11 +43,15 @@
       blink-cmp
       lazydev-nvim
       telescope-nvim
-      nvim-autopairs
+      telescope-fzf-native-nvim
+      telescope-ui-select-nvim
+      # TODO: look at telescope-manix
       catppuccin-nvim
       which-key-nvim
       todo-comments-nvim
       fidget-nvim
+      leap-nvim
+      noice-nvim
     ];
 
     dev.config = {
