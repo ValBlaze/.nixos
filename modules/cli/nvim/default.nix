@@ -52,8 +52,6 @@
       todo-comments-nvim
       leap-nvim
       noice-nvim
-      colorful-menu-nvim
-      lspkind-nvim
     ];
 
     dev.config = {
