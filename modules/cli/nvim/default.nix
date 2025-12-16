@@ -45,6 +45,7 @@
       blink-cmp
       lazydev-nvim
       luasnip
+      colorful-menu-nvim
       telescope-nvim
       telescope-fzf-native-nvim
       telescope-ui-select-nvim
