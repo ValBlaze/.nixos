@@ -1,7 +1,19 @@
 return {
     {
+      "colorful-menu.nvim",
+      after = function()
+        require("colorful-menu").setup({})
+      end
+    },
+    { 
+      "lspkind.nvim",
+      after = function ()
+        require("lspkind").setup({})
+      end
+    },
+    {
       "blink.cmp",
-      event = { "InsertEnter", "CmdlineEnter" },
+      event = "DeferredUIEnter",
       before = function()
         LZN.trigger_load('luasnip')
         LZN.trigger_load('lazydev.nvim')

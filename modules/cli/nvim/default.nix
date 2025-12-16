@@ -39,8 +39,6 @@
       lspkind-nvim
       friendly-snippets
       colorful-menu-nvim
-      telescope-fzf-native-nvim
-      telescope-ui-select-nvim
     ];
 
     opt = with pkgs.vimPlugins; [
