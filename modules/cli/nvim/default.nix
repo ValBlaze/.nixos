@@ -37,6 +37,7 @@
       mini-nvim
       nui-nvim
       friendly-snippets
+      colorful-menu-nvim
     ];
 
     opt = with pkgs.vimPlugins; [
@@ -45,7 +46,6 @@
       blink-cmp
       lazydev-nvim
       luasnip
-      colorful-menu-nvim
       telescope-nvim
       telescope-fzf-native-nvim
       telescope-ui-select-nvim
