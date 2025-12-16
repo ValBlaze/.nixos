@@ -38,6 +38,8 @@
       nui-nvim
       friendly-snippets
       colorful-menu-nvim
+      telescope-fzf-native-nvim
+      telescope-ui-select-nvim
     ];
 
     opt = with pkgs.vimPlugins; [
@@ -47,8 +49,6 @@
       lazydev-nvim
       luasnip
       telescope-nvim
-      telescope-fzf-native-nvim
-      telescope-ui-select-nvim
       # TODO: look at telescope-manix
       catppuccin-nvim
       which-key-nvim
