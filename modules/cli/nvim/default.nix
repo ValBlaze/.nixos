@@ -36,9 +36,7 @@
       oil-nvim
       mini-nvim
       nui-nvim
-      lspkind-nvim
       friendly-snippets
-      colorful-menu-nvim
     ];
 
     opt = with pkgs.vimPlugins; [
@@ -54,6 +52,8 @@
       todo-comments-nvim
       leap-nvim
       noice-nvim
+      colorful-menu-nvim
+      lspkind-nvim
     ];
 
     dev.config = {
