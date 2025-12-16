@@ -36,6 +36,7 @@
       oil-nvim
       mini-nvim
       nui-nvim
+      friendly-snippets
     ];
 
     opt = with pkgs.vimPlugins; [
@@ -43,6 +44,7 @@
       nvim-lspconfig
       blink-cmp
       lazydev-nvim
+      luasnip
       telescope-nvim
       telescope-fzf-native-nvim
       telescope-ui-select-nvim

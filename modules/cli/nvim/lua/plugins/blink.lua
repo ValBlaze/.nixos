@@ -1,9 +1,10 @@
 return {
     {
       "blink.cmp",
-      event = "DeferredUIEnter",
+      event = { "InsertEnter", "CmdlineEnter" },
       before = function()
         LZN.trigger_load('lazydev.nvim')
+        LZN.trigger_load('luasnip')
       end,
       after = function()
         ---@module 'blink.cmp'
@@ -21,6 +22,8 @@ return {
           completion = {
             documentation = { auto_show = true, auto_show_delay_ms = 500 },
           },
+
+          snippets = { preset = 'luasnip' },
 
           cmdline = {
             keymap = {
