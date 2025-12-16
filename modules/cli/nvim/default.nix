@@ -13,6 +13,13 @@
     vim.lsp.enable('nixd')
   '';
 
+  providers = {
+    python3.enable = true;
+    nodeJs.enable = true;
+  };
+
+  extraLuaPackages = p: [ p.jsregexp ];
+
   extraBinPath = with pkgs; [
     # dependencies
     ripgrep # telescope
