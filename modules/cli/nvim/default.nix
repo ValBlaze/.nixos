@@ -36,6 +36,7 @@
       oil-nvim
       mini-nvim
       nui-nvim
+      lspkind-nvim
       friendly-snippets
       colorful-menu-nvim
       telescope-fzf-native-nvim
