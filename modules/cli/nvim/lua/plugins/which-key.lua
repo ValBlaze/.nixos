@@ -1,5 +1,6 @@
 return {
   "which-key.nvim",
+  lazy = false,
   after = function (plugin)
     require("which-key").setup({
       preset = "helix",
