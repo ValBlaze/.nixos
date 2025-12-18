@@ -32,8 +32,20 @@ return {
     end
 
     require("mini.icons").setup()
-
     require("mini.pairs").setup()
+    require("mini.indentscope").setup()
+    require("mini.splitjoin").setup()
+    require("mini.operators").setup()
+    require("mini.move").setup()
+    require("mini.keymap").setup()
+
+    -- idk what this does tbh
+    local map_multistep = require('mini.keymap').map_multistep
+
+    map_multistep('i', '<Tab>',   { 'pmenu_next' })
+    map_multistep('i', '<S-Tab>', { 'pmenu_prev' })
+    map_multistep('i', '<CR>',    { 'pmenu_accept', 'minipairs_cr' })
+    map_multistep('i', '<BS>',    { 'minipairs_bs' })
 
     -- ... and there is more!
     --  Check out: https://github.com/echasnovski/mini.nvim

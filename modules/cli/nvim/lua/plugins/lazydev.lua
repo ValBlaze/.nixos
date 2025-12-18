@@ -1,6 +1,6 @@
+-- NOTE: This must be initiallized globally on startup because it's a blink source
 return {
   "lazydev.nvim",
-  ft = 'lua',
   after = function(_)
     require('lazydev').setup({
       library = {

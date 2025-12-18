@@ -1,11 +1,7 @@
 return {
     {
       "blink.cmp",
-      event = "DeferredUIEnter",
-      before = function()
-        LZN.trigger_load('lazydev.nvim')
-        LZN.trigger_load('luasnip')
-      end,
+      event = { "DeferredUIEnter" },
       after = function()
         ---@module 'blink.cmp'
         ---@type blink.cmp.Config
@@ -21,30 +17,6 @@ return {
 
           completion = {
             documentation = { auto_show = true, auto_show_delay_ms = 500 },
-            menu = {
-              draw = {
-                components = {
-                  kind_icon = {
-                    text = function(ctx)
-                      local kind_icon, _, _ = require('mini.icons').get('lsp', ctx.kind)
-                      return kind_icon
-                    end,
-                    -- (optional) use highlights from mini.icons
-                    highlight = function(ctx)
-                      local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
-                      return hl
-                    end,
-                  },
-                  kind = {
-                    -- (optional) use highlights from mini.icons
-                    highlight = function(ctx)
-                      local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
-                      return hl
-                    end,
-                  },
-                },
-              },
-            },
           },
 
           snippets = { preset = 'luasnip' },
