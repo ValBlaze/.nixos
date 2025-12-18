@@ -33,6 +33,7 @@
       plenary-nvim # telescope/todo-comments
       oil-nvim
       mini-nvim
+      which-key-nvim
       nui-nvim
       friendly-snippets
       repeat # used by leap
@@ -47,7 +48,6 @@
       telescope-nvim
       # TODO: look at telescope-manix
       catppuccin-nvim
-      which-key-nvim
       todo-comments-nvim
       leap-nvim
       flash-nvim

@@ -24,6 +24,9 @@ return {
       },
     })
   end,
+  wk = {
+    { "<leader>n", group = '[N]oice'},
+  },
 
   vim.keymap.set("n", "<leader>nl", function()
     require("noice").cmd("last")
