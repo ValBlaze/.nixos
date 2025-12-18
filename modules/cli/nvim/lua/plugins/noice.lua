@@ -23,30 +23,30 @@ return {
         lsp_doc_border = true, -- add a border to hover docs and signature help
       },
     })
+
+    require("which-key").add {
+      { "<leader>n", group = '[N]oice' },
+    }
+
+    vim.keymap.set("n", "<leader>nl", function()
+      require("noice").cmd("last")
+    end, { desc = "[N]oice [L]ast" })
+
+    vim.keymap.set("n", "<leader>nh", function()
+      require("noice").cmd("history")
+    end, { desc = "[N]oice [H]istory"})
+
+    -- LSP Hover Doc Scrolling
+    vim.keymap.set({ "n", "i", "s" }, "<c-f>", function()
+      if not require("noice.lsp").scroll(4) then
+        return "<c-f>"
+      end
+    end, { silent = true, expr = true })
+
+    vim.keymap.set({ "n", "i", "s" }, "<c-b>", function()
+      if not require("noice.lsp").scroll(-4) then
+        return "<c-b>"
+      end
+    end, { silent = true, expr = true })
   end,
-  wk = {
-    { "<leader>n", group = '[N]oice' },
-  },
-
-  vim.keymap.set("n", "<leader>nl", function()
-    require("noice").cmd("last")
-  end, { desc = "[N]oice [L]ast" }),
-
-  vim.keymap.set("n", "<leader>nh", function()
-    require("noice").cmd("history")
-  end, { desc = "[N]oice [H]istory"}),
-
-  -- LSP Hover Doc Scrolling
-  vim.keymap.set({ "n", "i", "s" }, "<c-f>", function()
-    if not require("noice.lsp").scroll(4) then
-      return "<c-f>"
-    end
-  end, { silent = true, expr = true }),
-
-  vim.keymap.set({ "n", "i", "s" }, "<c-b>", function()
-    if not require("noice.lsp").scroll(-4) then
-      return "<c-b>"
-    end
-  end, { silent = true, expr = true })
 }
-
