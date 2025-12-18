@@ -35,7 +35,7 @@
       mini-nvim
       nui-nvim
       friendly-snippets
-      repeat-nvim # used by leap
+      repeat # used by leap
     ];
 
     opt = with pkgs.vimPlugins; [
