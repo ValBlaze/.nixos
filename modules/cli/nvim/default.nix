@@ -50,6 +50,7 @@
       which-key-nvim
       todo-comments-nvim
       leap-nvim
+      flash-nvim
       noice-nvim
     ];
 
