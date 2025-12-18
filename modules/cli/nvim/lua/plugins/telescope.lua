@@ -4,6 +4,9 @@ return {
   after = function()
     require("telescope").setup()
   end,
+  require("which-key").add {
+    { "<leader>s", group = '[S]earch' },
+  },
   keys = {
     {
       "<leader>sf",

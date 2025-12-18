@@ -43,6 +43,7 @@
       nvim-treesitter.withAllGrammars
       nvim-lspconfig
       blink-cmp
+      conform-nvim
       lazydev-nvim
       luasnip
       telescope-nvim
