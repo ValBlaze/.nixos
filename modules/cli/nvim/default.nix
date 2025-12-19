@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }:
 
 {
-  inherit (inputs.neovim-nightly.packages.${pkgs.stdenv.system}) neovim;
+  neovim = inputs.neovim-nightly.packages.${pkgs.system}.default;
   initLua = ''
     require('config')
     vim.lsp.enable('lua_ls')

@@ -13,12 +13,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.hjem.follows = "hjem";
     };
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     mnw.url = "github:Gerg-L/mnw";
-    neovim-nightly = {
-      type = "github";
-      owner = "nix-community";
-      repo = "neovim-nightly-overlay";
-    };
   };
 
   outputs =
