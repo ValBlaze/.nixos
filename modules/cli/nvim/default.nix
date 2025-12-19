@@ -37,9 +37,6 @@
       nui-nvim
       friendly-snippets
       repeat # used by leap
-    ];
-
-    opt = with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
       nvim-lspconfig
       blink-cmp
@@ -55,10 +52,12 @@
       noice-nvim
     ];
 
+    opt = with pkgs.vimPlugins; [
+    ];
+
     dev.config = {
       pure = ./.;
       impure = "/home/valblaze/.nixos/modules/cli/nvim";
     };
   };
 }
-
