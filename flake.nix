@@ -16,9 +16,8 @@
     mnw.url = "github:Gerg-L/mnw";
     neovim-nightly = {
       type = "github";
-      owner = "edolstra";
-      repo = "flake-compat";
-      flake = false;
+      owner = "nix-community";
+      repo = "neovim-nightly-overlay";
     };
   };
 
