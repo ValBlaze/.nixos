@@ -47,11 +47,6 @@
             ./modules/cli
             ./modules/gui
             ./modules/system
-            {
-              nixpkgs.overlays = [
-                inputs.neovim-nightly-overlay.overlays.default
-              ];
-            }
           ];
         };
       };
