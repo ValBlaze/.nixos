@@ -40,7 +40,7 @@
       nui-nvim
       friendly-snippets
       repeat # used by leap
-      nvim-treesitter.withAllGrammars.dependencies
+      nvim-treesitter.withAllGrammars
       nvim-lspconfig
       blink-cmp
       conform-nvim
