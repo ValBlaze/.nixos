@@ -4,7 +4,6 @@
   neovim = pkgs.neovim-unwrapped;
   initLua = ''
     require("config")
-    require("plugins")
 
     vim.lsp.enable('lua_ls')
     vim.lsp.enable('nixd')
