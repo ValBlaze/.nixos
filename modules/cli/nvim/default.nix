@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }:
 
 {
-  nixpkgs.overlays = [
+  inputs.nixpkgs.overlays = [
     inputs.neovim-nightly-overlay.overlays.default
   ];
 
