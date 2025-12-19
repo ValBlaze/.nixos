@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   self',
   ...
@@ -12,6 +13,10 @@
     pkgs.gh
     pkgs.wl-clipboard
     self'.packages.neovimDev
+  ];
+
+  nixpkgs.overlays = [
+    inputs.neovim-nightly-overlay.overlays.default
   ];
 
   programs.firefox.enable = true;

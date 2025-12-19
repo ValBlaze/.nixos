@@ -1,10 +1,6 @@
 { inputs, pkgs, ... }:
 
 {
-  inputs.nixpkgs.overlays = [
-    inputs.neovim-nightly-overlay.overlays.default
-  ];
-
   neovim = pkgs.neovim-nightly;
   initLua = ''
     require('config')
