@@ -29,16 +29,14 @@
       perSystem =
         { pkgs, self', ... }:
         let
-          pkgsWithOverlay = pkgs // {
-            overlays = pkgs.overlays ++ [ inputs.neovim-nightly-overlay.overlays.default ];
-          };
+          neovimPkg = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
         in
         {
           packages = {
             default = inputs.self.nixosConfigurations.live-iso.config.system.build.isoImage;
             neovim = inputs.mnw.lib.wrap {
               inherit inputs;
-              neovim = pkgsWithOverlay.neovim-nightly;
+              neovim = neovimPkg;
             } ./modules/cli/nvim;
             neovimDev = self'.packages.neovim.devMode;
           };
