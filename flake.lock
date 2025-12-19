@@ -69,7 +69,7 @@
     "flake-parts_3": {
       "inputs": {
         "nixpkgs-lib": [
-          "neovim-nightly",
+          "neovim-nightly-overlay",
           "nixpkgs"
         ]
       },
@@ -169,7 +169,7 @@
         "type": "github"
       }
     },
-    "neovim-nightly": {
+    "neovim-nightly-overlay": {
       "inputs": {
         "flake-parts": "flake-parts_3",
         "neovim-src": "neovim-src",
@@ -290,7 +290,7 @@
         "hjem": "hjem",
         "hjem-rum": "hjem-rum",
         "mnw": "mnw",
-        "neovim-nightly": "neovim-nightly",
+        "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixpkgs": "nixpkgs_3"
       }
     },
