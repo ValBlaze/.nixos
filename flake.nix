@@ -14,7 +14,12 @@
       inputs.hjem.follows = "hjem";
     };
     mnw.url = "github:Gerg-L/mnw";
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    neovim-nightly = {
+      type = "github";
+      owner = "edolstra";
+      repo = "flake-compat";
+      flake = false;
+    };
   };
 
   outputs =
