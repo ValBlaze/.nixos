@@ -37,9 +37,6 @@
       nui-nvim
       friendly-snippets
       repeat # used by leap
-    ];
-
-    opt = with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
       nvim-lspconfig
       blink-cmp
@@ -53,6 +50,9 @@
       leap-nvim
       flash-nvim
       noice-nvim
+    ];
+
+    opt = with pkgs.vimPlugins; [
     ];
 
     dev.config = {
