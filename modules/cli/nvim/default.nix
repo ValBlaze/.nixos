@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }:
 
 {
-  neovim = pkgs.neovim-nightly;
+  neovim = pkgs.neovim-unwrapped;
   initLua = ''
     require('config')
     vim.lsp.enable('lua_ls')
