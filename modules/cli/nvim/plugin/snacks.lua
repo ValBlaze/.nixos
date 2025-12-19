@@ -1,22 +1,22 @@
-require("snacks").setup({
-  matcher = {
-    sort_empty = true,
-  },
-})
-
-local function map(mode, lhs, rhs, desc)
-  vim.keymap.set(mode, lhs, rhs, { desc = desc })
-end
-
-map("n", "<leader><space>", Snacks.picker.smart, "[ ] Smart Find Files")
-map("n", "<leader>sf", Snacks.picker.files, "[S]earch [F]iles")
-map("n", "<leader>,", Snacks.picker.buffers, "[,] Find Buffers")
-map("n", "<leader>n", Snacks.picker.notifications, "View [N]otifications")
-map("n", "<leader>sg", Snacks.picker.grep, "[S]earch by Grep")
-map("n", "<leader>sh", Snacks.picker.help, "[S]earch [H]elp")
-map("n", "<leader>sd", Snacks.picker.diagnostics, "[S]earch [D]iagnostics")
-map("n", "<leader>sp", Snacks.picker.projects, "[S]earch [P]rojects")
-map("n", "<leader>sr", Snacks.picker.resume, "[S]earch [R]esume")
-map("n", "<leader>ss", Snacks.picker.pickers, "[S]earch [S]elect Picker")
-map("n", "<leader>s:", Snacks.picker.command_history, "[S]earch Command History")
-map("n", "<leader>s.", Snacks.picker.recent, "[S]earch Recent Files")
+-- require("snacks").setup({
+--   matcher = {
+--     sort_empty = true,
+--   },
+-- })
+--
+-- local function map(mode, lhs, rhs, desc)
+--   vim.keymap.set(mode, lhs, rhs, { desc = desc })
+-- end
+--
+-- map("n", "<leader><space>", Snacks.picker.smart, "[ ] Smart Find Files")
+-- map("n", "<leader>sf", Snacks.picker.files, "[S]earch [F]iles")
+-- map("n", "<leader>,", Snacks.picker.buffers, "[,] Find Buffers")
+-- map("n", "<leader>n", Snacks.picker.notifications, "View [N]otifications")
+-- map("n", "<leader>sg", Snacks.picker.grep, "[S]earch by Grep")
+-- map("n", "<leader>sh", Snacks.picker.help, "[S]earch [H]elp")
+-- map("n", "<leader>sd", Snacks.picker.diagnostics, "[S]earch [D]iagnostics")
+-- map("n", "<leader>sp", Snacks.picker.projects, "[S]earch [P]rojects")
+-- map("n", "<leader>sr", Snacks.picker.resume, "[S]earch [R]esume")
+-- map("n", "<leader>ss", Snacks.picker.pickers, "[S]earch [S]elect Picker")
+-- map("n", "<leader>s:", Snacks.picker.command_history, "[S]earch Command History")
+-- map("n", "<leader>s.", Snacks.picker.recent, "[S]earch Recent Files")

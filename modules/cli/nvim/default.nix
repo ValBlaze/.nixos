@@ -50,7 +50,7 @@
       todo-comments-nvim
       noice-nvim
       snacks-nvim
-      telescope-nvim
+      fzf-lua
     ];
 
     dev.config = {
