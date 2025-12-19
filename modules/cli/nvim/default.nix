@@ -1,7 +1,7 @@
-{ neovim, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  inherit neovim;
+  neovim = pkgs.neovim-unwrapped;
   initLua = ''
     require('config')
     vim.lsp.enable('lua_ls')
