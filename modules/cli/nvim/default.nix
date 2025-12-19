@@ -50,6 +50,7 @@
       catppuccin-nvim
       todo-comments-nvim
       noice-nvim
+      snacks-nvim
     ];
 
     dev.config = {
