@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     discord
+    equicord
   ];
 
   # hjem.users.valblaze.files = {
