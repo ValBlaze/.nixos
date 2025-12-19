@@ -26,6 +26,19 @@
 
       systems = [ "x86_64-linux" ];
 
+      perSystem =
+        { pkgs, self', ... }:
+        {
+          packages = {
+            default = inputs.self.nixosConfigurations.live-iso.config.system.build.isoImage;
+            neovim = inputs.mnw.lib.wrap {
+              inherit inputs;
+              neovim = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
+            } ./modules/cli/nvim;
+            neovimDev = self'.packages.neovim.devMode;
+          };
+        };
+
       easy-hosts = {
         path = ./hosts;
         autoConstruct = true;
@@ -40,18 +53,5 @@
           ];
         };
       };
-
-      perSystem =
-        { pkgs, self', ... }:
-        {
-          packages = {
-            default = inputs.self.nixosConfigurations.live-iso.config.system.build.isoImage;
-            neovim = inputs.mnw.lib.wrap {
-              inherit inputs;
-              neovim = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
-            } ./modules/cli/nvim;
-            neovimDev = self'.packages.neovim.devMode;
-          };
-        };
     };
 }
