@@ -2,8 +2,9 @@
 
 {
   environment.systemPackages = with pkgs; [
-    discord
-    equicord
+    (discord.override {
+      withEquicord = true;
+    })
   ];
 
   # hjem.users.valblaze.files = {
