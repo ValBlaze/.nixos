@@ -29,9 +29,8 @@
       perSystem =
         { pkgs, self', ... }:
         let
-          pkgsWithOverlay = import inputs.nixpkgs {
-            system = pkgs.stdenv.hostPlatform.system;
-            overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
+          pkgsWithOverlay = pkgs // {
+            overlays = pkgs.overlays ++ [ inputs.neovim-nightly-overlay.overlays.default ];
           };
         in
         {
