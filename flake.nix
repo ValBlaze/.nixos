@@ -24,6 +24,10 @@
         inputs.easy-hosts.flakeModule
       ];
 
+      inputs.nixpkgs.overlays = [
+        inputs.neovim-nightly-overlay.overlay
+      ];
+
       systems = [ "x86_64-linux" ];
 
       perSystem =
