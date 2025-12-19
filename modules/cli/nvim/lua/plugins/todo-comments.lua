@@ -1,7 +1,1 @@
-return {
-  "todo-comments.nvim",
-  event = "DeferredUIEnter",
-  after = function (plugin)
-    require("todo-comments").setup()
-  end
-}
+require('todo-comments').setup()

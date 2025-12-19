@@ -2,7 +2,13 @@
 
 {
   neovim = pkgs.neovim-unwrapped;
-  luaFiles = [ ./init.lua ];
+  initLua = ''
+    require("config")
+    require("plugins")
+
+    vim.lsp.enable('lua_ls')
+    vim.lsp.enable('nixd')
+  '';
 
   providers = {
     python3.enable = true;
@@ -29,7 +35,6 @@
 
   plugins = {
     start = with pkgs.vimPlugins; [
-      lz-n
       plenary-nvim # telescope/todo-comments
       oil-nvim
       mini-nvim
@@ -50,9 +55,6 @@
       leap-nvim
       flash-nvim
       noice-nvim
-    ];
-
-    opt = with pkgs.vimPlugins; [
     ];
 
     dev.config = {
