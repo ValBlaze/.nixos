@@ -3,6 +3,7 @@
 {
   neovim = pkgs.neovim-unwrapped;
   initLua = ''
+    require('config')
     vim.lsp.enable('lua_ls')
     vim.lsp.enable('nixd')
   '';
@@ -50,7 +51,6 @@
       catppuccin-nvim
       todo-comments-nvim
       leap-nvim
-      flash-nvim
       noice-nvim
     ];
 

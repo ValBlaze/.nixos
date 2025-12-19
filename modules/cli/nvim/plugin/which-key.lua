@@ -1,4 +1,5 @@
-require('which-key').setup({
+WK = require('which-key')
+WK.setup({
   preset = 'helix',
   delay = 0,
   icons = {
