@@ -1,7 +1,7 @@
-{ inputs, pkgs, ... }:
+{ neovim-nightly, pkgs, ... }:
 
 {
-  neovim = pkgs.neovim-nightly;
+  neovim = neovim-nightly;
 
   initLua = ''
     require('config')
