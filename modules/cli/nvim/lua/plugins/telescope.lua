@@ -10,6 +10,7 @@ return {
       function()
         require('telescope.builtin').find_files()
       end,
+      desc = 'Search [F]iles',
     },
     {
       '<leader>s/',
@@ -17,8 +18,5 @@ return {
         require('telescope.builtin').live_grep()
       end,
     },
-  },
-  wk = {
-    { '<leader>s', desc = '[S]earch' },
   },
 }
