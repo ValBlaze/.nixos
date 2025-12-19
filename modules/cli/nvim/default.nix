@@ -1,7 +1,8 @@
 { inputs, pkgs, ... }:
 
 {
-  neovim = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  neovim = pkgs.neovim-nightly;
+
   initLua = ''
     require('config')
     vim.lsp.enable('lua_ls')
