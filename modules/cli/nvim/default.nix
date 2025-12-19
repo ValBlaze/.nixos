@@ -50,7 +50,6 @@
       # TODO: look at telescope-manix
       catppuccin-nvim
       todo-comments-nvim
-      leap-nvim
       noice-nvim
     ];
 
