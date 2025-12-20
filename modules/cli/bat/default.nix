@@ -6,7 +6,7 @@
       pkgs.bat-extras.core
     ];
     settings = {
-      theme = "Catppuccin Macchiato";
+      theme = "'Catppuccin Macchiato'";
     };
   };
 
