@@ -61,6 +61,10 @@
     watch = "batwatch";
   };
 
+  environment.variables = {
+    BAT_THEME = "Catppuccin Macchiatto";
+  };
+
   programs.zoxide = {
     enable = true;
     flags = [
