@@ -10,8 +10,6 @@
     nix-search-tv
     fzf
     ripgrep
-    bat
-    bat-extras.core
     eza
   ];
 
@@ -57,11 +55,6 @@
     ls = "eza";
     lt = "eza -laT";
     tree = "eza -T";
-    cat = "bat";
-    diff = "batdiff";
-    grep = "batgrep";
-    man = "batman";
-    watch = "batwatch";
   };
 
   programs.zoxide = {
