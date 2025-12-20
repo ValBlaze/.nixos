@@ -13,6 +13,10 @@
     watch = "batwatch";
   };
 
+  environment.variables = {
+    BAT_THEME = "Catppuccin Macchiatto";
+  };
+
   hjem.users.valblaze = {
     files.".config/bat".source = "/home/valblaze/.nixos/modules/cli/bat";
   };
