@@ -28,6 +28,8 @@
         rm -f -- "$tmp"
       }
 
+      BAT_THEME = "Catppuccin Macchiatto";
+
       # To use batpipe, eval the output of this command in your shell init script.
       LESSOPEN="|/nix/store/4ygcpcvlzwrxpykp4171zaf07rdj5q33-batpipe-2024.08.24-unstable-2025-02-22/bin/.batpipe-wrapped %s";
       export LESSOPEN;
@@ -60,10 +62,6 @@
     grep = "batgrep";
     man = "batman";
     watch = "batwatch";
-  };
-
-  environment.variables = {
-    BAT_THEME = "Catppuccin Macchiatto";
   };
 
   programs.zoxide = {
