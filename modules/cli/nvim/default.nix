@@ -17,9 +17,10 @@
 
   extraBinPath = with pkgs; [
     # dependencies
-    ripgrep # telescope
-    fd # telescope
-    universal-ctags # nix-doc
+    ripgrep
+    fd
+    bat
+    universal-ctags
 
     # lua
     lua-language-server

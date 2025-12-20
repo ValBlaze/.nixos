@@ -9,8 +9,9 @@
   environment.systemPackages = with pkgs; [
     nix-search-tv
     fzf
-    pkgs.bat
-    pkgs.bat-extras.core
+    ripgrep
+    bat
+    bat-extras.core
     eza
   ];
 
