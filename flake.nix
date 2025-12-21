@@ -19,10 +19,6 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell/stable";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -54,7 +50,6 @@
           modules = inputs.nixpkgs.lib.optionals (class == "nixos") [
             inputs.hjem.nixosModules.default
             inputs.mnw.nixosModules.default
-            inputs.dms.nixosModules.default
             ./modules/cli
             ./modules/gui
             ./modules/system
