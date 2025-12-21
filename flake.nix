@@ -15,6 +15,10 @@
     };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     mnw.url = "github:Gerg-L/mnw";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

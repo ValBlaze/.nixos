@@ -63,5 +63,4 @@
   };
 
   programs.starship.enable = true;
-  programs.yazi.enable = true;
 }
