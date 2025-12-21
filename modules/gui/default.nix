@@ -4,6 +4,5 @@
     ./hypr
     ./discord
     ./noctalia.nix
-    ./dms.nix
   ];
 }
