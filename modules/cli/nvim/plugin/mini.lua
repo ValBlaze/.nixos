@@ -24,6 +24,3 @@ end
 require("mini.icons").setup()
 require("mini.pairs").setup()
 require("mini.indentscope").setup()
-require("mini.splitjoin").setup()
-require("mini.operators").setup()
-require("mini.move").setup()
