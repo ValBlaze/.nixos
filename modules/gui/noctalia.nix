@@ -1,9 +1,5 @@
 { pkgs, inputs, ... }:
 {
-  imports = [
-    inputs.noctalia.nixosModules.default
-  ];
-
   # configure options
   programs.noctalia-shell = {
     enable = true;

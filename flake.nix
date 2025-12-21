@@ -50,6 +50,7 @@
           modules = inputs.nixpkgs.lib.optionals (class == "nixos") [
             inputs.hjem.nixosModules.default
             inputs.mnw.nixosModules.default
+            inputs.noctalia.nixosModules.default
             ./modules/cli
             ./modules/gui
             ./modules/system
