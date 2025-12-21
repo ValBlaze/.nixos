@@ -1,6 +1,8 @@
 {
   imports = [
-    ./zsh.nix
     ./bat
+    ./zsh.nix
+    ./fastfetch.nix
+    ./cava.nix
   ];
 }
