@@ -12,6 +12,7 @@
     pkgs.wofi
     pkgs.gh
     pkgs.wl-clipboard
+    pkgs.libnotify
     self'.packages.neovimDev
   ];
 

@@ -9,7 +9,7 @@
         font_size = 12;
         enable_audio_bell = false;
         window_padding_width = 15;
-        background_opacity = 0.6;
+        # background_opacity = 0.6;
         hide_window_decorations = true;
         cursor_trail = 1;
         disable_ligatures = "never";
