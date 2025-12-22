@@ -47,7 +47,6 @@
   };
 
   environment.shellAliases = {
-    nrs = "/home/valblaze/.nixos/modules/scripts/rebuild.sh";
     ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     l = "eza -al";
     ls = "eza";
