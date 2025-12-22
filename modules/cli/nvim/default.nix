@@ -3,9 +3,10 @@
 {
   neovim = pkgs.neovim-unwrapped;
   initLua = ''
-    require('config')
-    vim.lsp.enable('lua_ls')
-    vim.lsp.enable('nixd')
+    require("config")
+    vim.lsp.enable("lua_ls")
+    vim.lsp.enable("nixd")
+    vim.lsp.enable("rust-analyzer")
   '';
 
   providers = {
@@ -25,6 +26,9 @@
     # lua
     lua-language-server
     stylua
+
+    # rust
+    rust-analyzer
 
     # nix
     nixd
