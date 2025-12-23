@@ -15,8 +15,12 @@
         disable_ligatures = "never";
         copy_on_select = true;
         confirm_os_window_close = 0;
-        include = "current-theme.conf";
+        include = "/home/valblaze/.config/kitty/themes/noctalia.conf";
       };
     };
+  };
+
+  environment.shellAliases = {
+    ssh = "kitty +kitten ssh";
   };
 }
