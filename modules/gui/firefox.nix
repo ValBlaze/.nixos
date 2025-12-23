@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    pywalfox-native
+  ];
+
   programs.firefox = {
     enable = true;
     languagePacks = [ "en-US" ];
@@ -16,9 +20,9 @@
       DisablePocket = true;
       DisableFirefoxScreenshots = true;
       DontCheckDefaultBrowser = true;
-      DisplayBookmarksToolbar= "newtab"; # alternatives: "always" or "never"
+      DisplayBookmarksToolbar = "never";
       DisplayMenuBar = "default-off";
-      SearchBar = "unified"; # alternative: seperate
+      SearchBar = "seperate";
     };
   };
 }
