@@ -10,5 +10,6 @@
     ./users.nix
     ./hjem.nix
     ./variables.nix
+    ./gaming.nix
   ];
 }

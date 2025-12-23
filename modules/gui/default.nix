@@ -4,5 +4,6 @@
     ./hypr
     ./discord
     ./noctalia.nix
+    ./prismlauncher.nix
   ];
 }
