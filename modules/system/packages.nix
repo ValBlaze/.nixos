@@ -5,15 +5,16 @@
   ...
 }:
 {
-  environment.systemPackages = [
-    pkgs.wget
-    pkgs.gcc
-    pkgs.dig
-    pkgs.wofi
-    pkgs.gh
-    pkgs.wl-clipboard
-    pkgs.libnotify
-    self'.packages.neovimDev
+  environment.systemPackages = with pkgs; [
+    wget
+    gcc
+    dig
+    wofi
+    gh
+    wl-clipboard
+    libnotify
+    chromium
+    (self'.packages.neovimDev)
   ];
 
   programs.git.enable = true;
