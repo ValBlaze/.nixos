@@ -18,7 +18,9 @@
     protontricks.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    wootility
-  ];
+  hardware.wooting.enable = true;
+
+  # environment.systemPackages = with pkgs; [
+  #   wootility
+  # ];
 }
