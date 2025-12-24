@@ -14,6 +14,7 @@
     wl-clipboard
     libnotify
     chromium
+    bibata-cursors
     (self'.packages.neovimDev)
   ];
 
