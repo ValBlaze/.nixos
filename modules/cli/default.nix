@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   imports = [
     ./bat
@@ -8,4 +10,8 @@
   ];
 
   programs.ydotool.enable = true;
+  environment.systemPackages = with pkgs; [
+    zip
+    unzip
+  ];
 }
