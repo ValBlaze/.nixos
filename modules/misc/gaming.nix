@@ -21,7 +21,7 @@
 
   hardware.wooting.enable = true;
 
-  # environment.systemPackages = with pkgs; [
-  #   wootility
-  # ];
+  environment.systemPackages = with pkgs; [
+    wine
+  ];
 }

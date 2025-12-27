@@ -2,6 +2,13 @@
 
 {
   services.getty.autologinUser = "valblaze";
+  services.greetd = {
+    enable = true;
+    useTextGreeter = true;
+  };
+  environment.systemPackages = with pkgs; [
+    tuigreet
+  ];
 
   services.xserver.xkb = {
     layout = "us";
