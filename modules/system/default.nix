@@ -8,8 +8,6 @@
     ./packages.nix
     ./services.nix
     ./users.nix
-    ./hjem.nix
     ./variables.nix
-    ./gaming.nix
   ];
 }

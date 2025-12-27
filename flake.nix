@@ -52,6 +52,7 @@
             inputs.mnw.nixosModules.default
             ./modules/cli
             ./modules/gui
+            ./modules/misc
             ./modules/system
           ];
         };
