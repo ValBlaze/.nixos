@@ -20,6 +20,4 @@
     :/home/valblaze/.local/share/flatpak/exports/share
     :$XDG_DATA_DIRS"
   '';
-
-  services.ydotool.enable = true;
 }

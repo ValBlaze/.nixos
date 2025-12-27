@@ -6,4 +6,6 @@
     ./cava.nix
     ./nh.nix
   ];
+
+  programs.ydotool.enable = true;
 }
