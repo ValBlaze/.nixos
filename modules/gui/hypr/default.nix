@@ -1,6 +1,12 @@
 { config, pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    swww
+    hyprpicker
+    hyprshot
+  ];
+
   hjem.users.valblaze = {
     files.".config/hypr".source = "/home/valblaze/.nixos/modules/gui/hypr";
   };
@@ -9,14 +15,15 @@
     enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    swww
-    hyprpicker
-    hyprshot
-  ];
-
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+    ];
   };
 
   hardware.graphics.enable = true;
