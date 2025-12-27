@@ -5,10 +5,13 @@
   services.greetd = {
     enable = true;
     useTextGreeter = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+        user = "greeter";
+      };
+    };
   };
-  environment.systemPackages = with pkgs; [
-    tuigreet
-  ];
 
   services.xserver.xkb = {
     layout = "us";
