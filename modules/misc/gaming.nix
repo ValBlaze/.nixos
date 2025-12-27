@@ -22,6 +22,6 @@
   hardware.wooting.enable = true;
 
   environment.systemPackages = with pkgs; [
-    wine
+    bottles
   ];
 }
