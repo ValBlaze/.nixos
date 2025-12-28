@@ -3,16 +3,16 @@
 {
   nix = {
     settings = {
-			auto-optimize-store = true;
+      auto-optimise-store = true;
       experimental-features = [
         "nix-command"
         "flakes"
       ];
       download-buffer-size = 524288000;
-			substituters = [
-				"https://neovim-nightly.cachix.org"
-			];
-			trusted-public-keys = [
+      substituters = [
+        "https://neovim-nightly.cachix.org"
+      ];
+      trusted-public-keys = [
         "neovim-nightly.cachix.org-1:feIoInHRevVEplgdZvQDjhp11kYASYCE2NGY9hNrwxY="
       ];
     };
