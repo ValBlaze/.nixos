@@ -6,5 +6,6 @@
     ./noctalia.nix
     ./prismlauncher.nix
     ./firefox.nix
+    ./kde.nix
   ];
 }
