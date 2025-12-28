@@ -23,8 +23,4 @@ end
 
 require("mini.icons").setup()
 require("mini.pairs").setup()
-require("mini.indentscope").setup({
-  options = {
-    symbol = "e",
-  },
-})
+require("mini.indentscope").setup()
