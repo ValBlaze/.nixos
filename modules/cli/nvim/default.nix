@@ -59,8 +59,8 @@
       catppuccin-nvim
       todo-comments-nvim
       noice-nvim
-      snacks-nvim
       fzf-lua
+      zoxide-vim
     ];
 
     dev.config = {
