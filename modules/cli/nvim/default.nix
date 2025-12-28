@@ -7,6 +7,7 @@
     vim.lsp.enable("lua_ls")
     vim.lsp.enable("nixd")
     vim.lsp.enable("rust-analyzer")
+    vim.lsp.enable("basedpyright")
   '';
 
   providers = {
@@ -34,6 +35,10 @@
     nixd
     nix-doc
     nixfmt
+
+    # python
+    basedpyright
+    ruff
   ];
 
   plugins = {

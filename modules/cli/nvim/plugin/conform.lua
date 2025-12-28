@@ -1,10 +1,11 @@
-require('conform').setup({
+require("conform").setup({
   format_on_save = {
     timeout_ms = 500,
-    lsp_format = 'fallback',
+    lsp_format = "fallback",
   },
 
   formatters_by_ft = {
-    lua = { 'stylua' },
+    lua = { "stylua" },
+    python = { "ruff" },
   },
 })
