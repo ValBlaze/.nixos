@@ -20,6 +20,7 @@
   extraBinPath = with pkgs; [
     # dependencies
     ripgrep
+    fzf
     fd
     bat
     universal-ctags
@@ -47,7 +48,6 @@
       oil-nvim
       mini-nvim
       which-key-nvim
-      nui-nvim
       friendly-snippets
       repeat # used by leap
       nvim-lspconfig
@@ -58,9 +58,7 @@
       # TODO: look at telescope-manix
       catppuccin-nvim
       todo-comments-nvim
-      noice-nvim
       fzf-lua
-      zoxide-vim
     ];
 
     dev.config = {

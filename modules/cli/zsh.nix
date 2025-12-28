@@ -18,14 +18,6 @@
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
     shellInit = ''
-      function y() {
-        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-        yazi "$@" --cwd-file="$tmp"
-        IFS= read -r -d "" cwd < "$tmp"
-        [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-        rm -f -- "$tmp"
-      }
-
       # To use batpipe, eval the output of this command in your shell init script.
       LESSOPEN="|/nix/store/4ygcpcvlzwrxpykp4171zaf07rdj5q33-batpipe-2024.08.24-unstable-2025-02-22/bin/.batpipe-wrapped %s";
       export LESSOPEN;
