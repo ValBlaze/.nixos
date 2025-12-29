@@ -61,7 +61,7 @@
       fzf-lua
       snacks-nvim
       lualine-nvim
-      lualine-lsp-progress
+      fidget-nvim
     ];
 
     dev.config = {
