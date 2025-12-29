@@ -60,6 +60,7 @@
       todo-comments-nvim
       fzf-lua
       snacks-nvim
+      lualine-nvim
     ];
 
     dev.config = {
