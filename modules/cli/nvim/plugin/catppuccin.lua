@@ -5,8 +5,9 @@ require("catppuccin").setup({
     transparent = true,
     solid = true,
   },
+  default_integrations = true,
   integrations = {
-    fzf = true,
+    snacks = true,
   },
 })
 

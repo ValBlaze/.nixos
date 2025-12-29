@@ -3,6 +3,9 @@
 -- NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = " "
 
+-- Set to true if you have a Nerd Font installed
+vim.g.have_nerd_font = true
+
 -- [[ Setting options ]] See `:h vim.o`
 -- NOTE: For more options, you can see `:help option-list`
 
@@ -40,6 +43,7 @@ vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 
 vim.o.splitright = true
+vim.o.splitbelow = false
 
 -- Use <Esc> to exit terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")

@@ -2,9 +2,9 @@
 
 {
   environment.systemPackages = with pkgs; [
-    equicord
+    vencord
     (discord.override {
-      withEquicord = true;
+      withVencord = true;
     })
   ];
 

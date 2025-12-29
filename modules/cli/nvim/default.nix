@@ -59,7 +59,7 @@
       catppuccin-nvim
       todo-comments-nvim
       fzf-lua
-      lualine-nvim
+      snacks-nvim
     ];
 
     dev.config = {
