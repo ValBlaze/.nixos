@@ -13,13 +13,28 @@ require("mini.ai").setup({ n_lines = 500 })
 -- - sr)'  - [S]urround [R]eplace [)] [']
 require("mini.surround").setup()
 
--- local statusline = require("mini.statusline")
--- statusline.setup({ use_icons = vim.g.have_nerd_font })
---
--- ---@diagnostic disable-next-line: duplicate-set-field
--- statusline.section_location = function()
---   return "%2l:%-2v"
--- end
+require("mini.git").setup()
+require("mini.diff").setup()
+
+local statusline = require("mini.statusline")
+statusline.setup({
+  -- Content of statusline as functions which return statusline string. See
+  -- `:h statusline` and code of default contents (used instead of `nil`).
+  content = {
+    -- Content for active window
+    active = nil,
+    -- Content for inactive window(s)
+    inactive = nil,
+  },
+
+  -- Whether to use icons by default
+  use_icons = true,
+})
+
+---@diagnostic disable-next-line: duplicate-set-field
+statusline.section_location = function()
+  return "%2l:%-2v"
+end
 
 require("mini.icons").setup()
 MiniIcons.mock_nvim_web_devicons()
