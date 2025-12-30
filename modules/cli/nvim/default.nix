@@ -3,11 +3,11 @@
 {
   neovim = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
   initLua = ''
-    require("config")
-    vim.lsp.enable("lua_ls")
-    vim.lsp.enable("nixd")
-    vim.lsp.enable("rust-analyzer")
-    vim.lsp.enable("basedpyright")
+    	  require("config")
+        vim.lsp.enable("lua_ls")
+        vim.lsp.enable("nixd")
+        vim.lsp.enable("rust-analyzer")
+        vim.lsp.enable("basedpyright")
   '';
 
   providers = {
@@ -55,13 +55,13 @@
       conform-nvim
       lazydev-nvim
       luasnip
-      # TODO: look at telescope-manix
       catppuccin-nvim
       todo-comments-nvim
       fzf-lua
       snacks-nvim
       lualine-nvim
-      fidget-nvim
+      nui-nvim # used by noice
+      noice-nvim
     ];
 
     dev.config = {

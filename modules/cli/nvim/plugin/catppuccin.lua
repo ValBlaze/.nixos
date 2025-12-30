@@ -6,6 +6,9 @@ require("catppuccin").setup({
     solid = true,
   },
   default_integrations = true,
+  integrations = {
+    noice = true,
+  },
 })
 
 vim.cmd.colorscheme("catppuccin")

@@ -1,49 +1,50 @@
 ---@module 'blink.cmp'
 ---@type blink.cmp.Config
-require('blink.cmp').setup({
+require("blink.cmp").setup({
   keymap = {
     -- :help ins-completion
-    preset = 'default',
+    preset = "default",
   },
 
   appearance = {
-    nerd_font_variant = 'mono',
+    nerd_font_variant = "mono",
   },
 
   completion = {
     documentation = { auto_show = true, auto_show_delay_ms = 500 },
   },
 
-  snippets = { preset = 'luasnip' },
+  snippets = { preset = "luasnip" },
 
   cmdline = {
     keymap = {
       -- recommended, as the default keymap will only show and select the next item
-      ['<Tab>'] = { 'show', 'accept' },
+      ["<Tab>"] = { "show", "accept" },
     },
     completion = {
       menu = {
+        ---@diagnostic disable-next-line: unused-local
         auto_show = function(ctx)
-          return vim.fn.getcmdtype() == ':'
+          return vim.fn.getcmdtype() == ":"
             -- enable for inputs as well, with:
-            or vim.fn.getcmdtype() == '@'
+            or vim.fn.getcmdtype() == "@"
         end,
       },
     },
   },
 
   sources = {
-    default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev' },
+    default = { "lsp", "path", "snippets", "buffer", "lazydev" },
     providers = {
       lazydev = {
-        name = 'LazyDev',
-        module = 'lazydev.integrations.blink',
+        name = "LazyDev",
+        module = "lazydev.integrations.blink",
         score_offset = 100,
       },
     },
   },
 
-  fuzzy = { implementation = 'prefer_rust_with_warning' },
+  fuzzy = { implementation = "prefer_rust_with_warning" },
 
   signature = { enabled = true },
 })

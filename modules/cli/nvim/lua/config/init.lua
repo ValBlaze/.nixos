@@ -43,7 +43,7 @@ vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 
 vim.o.splitright = true
-vim.o.splitbelow = false
+vim.o.splitbelow = true
 
 -- Use <Esc> to exit terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")

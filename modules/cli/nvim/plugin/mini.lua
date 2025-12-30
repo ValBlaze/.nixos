@@ -22,4 +22,7 @@ require("mini.surround").setup()
 -- end
 
 require("mini.icons").setup()
-require("mini.pairs").setup()
+MiniIcons.mock_nvim_web_devicons()
+require("mini.pairs").setup({
+  modes = { insert = true, command = true, terminal = false },
+})
