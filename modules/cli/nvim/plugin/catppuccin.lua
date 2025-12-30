@@ -6,9 +6,6 @@ require("catppuccin").setup({
     solid = true,
   },
   default_integrations = true,
-  integrations = {
-    snacks = true,
-  },
 })
 
 vim.cmd.colorscheme("catppuccin")
