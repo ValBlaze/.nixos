@@ -28,8 +28,9 @@
         inputs.easy-hosts.flakeModule
       ];
 
-      systems = [ "x86_64-linux" ];
+      debug = true;
 
+      systems = [ "x86_64-linux" ];
       perSystem =
         { pkgs, self', ... }:
         {

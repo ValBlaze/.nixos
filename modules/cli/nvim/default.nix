@@ -36,7 +36,6 @@
 
     # nix
     nixd
-    nix-doc
     nixfmt
 
     # python

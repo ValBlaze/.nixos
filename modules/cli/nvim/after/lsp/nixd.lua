@@ -4,22 +4,24 @@ return {
   settings = {
     nixd = {
       nixpkgs = {
-        expr = "import <nixpkgs> { }",
+        expr = 'import (builtins.getFlake "/home/valblaze/.nixos").inputs.nixpkgs { }',
       },
       formatting = {
         command = { "nixfmt" },
       },
-      diagnostic = {
-        suppress = {
-          "sema-escaping-with"
-        }
-      },
       options = {
         nixos = {
-          expr = '(builtins.getFlake ("git+file://" + toString ./.)).nixosConfigurations.k-on.options',
+          expr = '(builtins.getFlake "/home/valblaze/.nixos").nixosConfigurations."nixos-laptop".options',
         },
-        home_manager = {
-          expr = '(builtins.getFlake ("git+file://" + toString ./.)).homeConfigurations."ruixi@k-on".options',
+        -- For flake-parts options.
+        -- Firstly read the docs here to enable "debugging", exposing declarations for nixd.
+        -- https://flake.parts/debug
+        flake_parts = {
+          expr = '(builtins.getFlake "/home/valblaze/.nixos").debug.options',
+        },
+        -- For a `perSystem` flake-parts option:
+        flake_parts2 = {
+          expr = '(builtins.getFlake "/home/valblaze/.nixos").currentSystem.options',
         },
       },
     },
