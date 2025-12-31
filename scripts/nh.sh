@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
-pushd ~/.nixos || exit
+set -e
+whoami
+echo "$HOME"
+git remote -v
+pushd "$HOME/.nixos"
 git add .
 git commit -am "gen"
 git push
 nh os switch .
-popd || exit
+popd
