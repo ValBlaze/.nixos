@@ -6,6 +6,6 @@ git remote -v
 pushd "$HOME/.nixos"
 git add .
 git commit -am "gen"
-git push
+git push --quiet
 nh os switch .
 popd
