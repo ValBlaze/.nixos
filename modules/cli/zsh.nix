@@ -15,6 +15,7 @@
 
   programs.zsh = {
     enable = true;
+    enableCompletion = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
     shellInit = ''
@@ -36,9 +37,19 @@
       --color=selected-bg:#494D64 \
       --color=border:#6E738D,label:#CAD3F5"
     '';
+
+    interactiveShellInit = ''
+      source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+      source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
+    '';
+
+    setOptions = [
+      "AUTO_CD"
+    ];
   };
 
   environment.shellAliases = {
+    nh = "nh os switch ~/.nixos";
     ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     l = "eza -al";
     ls = "eza";
