@@ -9,5 +9,6 @@
     ./services.nix
     ./users.nix
     ./variables.nix
+    ./display-manager.nix
   ];
 }
