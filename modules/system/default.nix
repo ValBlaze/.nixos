@@ -5,8 +5,7 @@
     ./network.nix
     ./nix.nix
     ./fonts.nix
-    ./packages.nix
-    ./services.nix
+    ./extra.nix
     ./users.nix
     ./variables.nix
     ./display-manager.nix

@@ -1,3 +1,4 @@
+---@diagnostic disable: param-type-mismatch
 require("gitsigns").setup({
   on_attach = function(bufnr)
     local gitsigns = require("gitsigns")
