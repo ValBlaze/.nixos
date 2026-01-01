@@ -49,7 +49,7 @@
   };
 
   environment.shellAliases = {
-    nh = "nh os switch ~/.nixos";
+    nh = "$HOME/.nixos/scripts/nh.sh";
     ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     l = "eza -al";
     ls = "eza";
