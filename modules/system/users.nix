@@ -1,7 +1,5 @@
 { config, pkgs, ... }:
 {
-  programs.zsh.enable = true;
-
   users.users.valblaze = {
     isNormalUser = true;
     description = "valblaze";
@@ -12,6 +10,4 @@
     ];
     shell = pkgs.zsh;
   };
-
-  services.getty.autologinUser = "valblaze";
 }

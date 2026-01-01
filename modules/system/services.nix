@@ -1,22 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  services.getty.autologinUser = "valblaze";
-  services.greetd = {
-    enable = true;
-    useTextGreeter = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd hyprland";
-        user = "greeter";
-      };
-    };
-  };
-
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 
   services.openssh.enable = true;
   services.power-profiles-daemon.enable = true;

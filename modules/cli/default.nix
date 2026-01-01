@@ -7,6 +7,7 @@
     ./fastfetch.nix
     ./cava.nix
     ./nh.nix
+    ./git.nix
   ];
 
   programs.ydotool.enable = true;

@@ -13,9 +13,6 @@ require("mini.ai").setup({ n_lines = 500 })
 -- - sr)'  - [S]urround [R]eplace [)] [']
 require("mini.surround").setup()
 
-require("mini.git").setup()
-require("mini.diff").setup()
-
 local statusline = require("mini.statusline")
 statusline.setup({
   -- Content of statusline as functions which return statusline string. See

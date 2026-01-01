@@ -68,6 +68,7 @@
       lualine-nvim
       nui-nvim # used by noice
       noice-nvim
+      gitsigns-nvim
     ];
 
     dev.config = {

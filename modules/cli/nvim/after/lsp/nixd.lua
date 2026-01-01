@@ -20,7 +20,7 @@ return {
           expr = '(builtins.getFlake "/home/valblaze/.nixos").debug.options',
         },
         -- For a `perSystem` flake-parts option:
-        flake_parts2 = {
+        perSystem = {
           expr = '(builtins.getFlake "/home/valblaze/.nixos").currentSystem.options',
         },
       },

@@ -17,6 +17,4 @@
     bibata-cursors
     (self'.packages.neovimDev)
   ];
-
-  programs.git.enable = true;
 }
