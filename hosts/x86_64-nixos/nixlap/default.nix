@@ -5,7 +5,7 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "nixos-laptop";
+  networking.hostName = "nixlap";
 
   # Necessary to make Noctalia's power-profile and battery feature available
   services.power-profiles-daemon.enable = true;
