@@ -33,6 +33,7 @@
     # rust
     rust-analyzer
     rustfmt
+    clippy
 
     # nix
     nixd
@@ -59,6 +60,7 @@
       nvim-lspconfig
       blink-cmp
       conform-nvim
+      nvim-lint
       lazydev-nvim
       luasnip
       catppuccin-nvim
