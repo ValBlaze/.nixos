@@ -68,8 +68,7 @@
       lualine-nvim
       nui-nvim # used by noice
       noice-nvim
-      gitsigns-nvim
-      nvim-autopairs
+      nvim-treesitter.withAllGrammars
     ];
 
     dev.config = {
