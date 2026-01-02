@@ -23,7 +23,6 @@
     ripgrep
     fzf
     fd
-    bat
     universal-ctags
 
     # lua
