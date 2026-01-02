@@ -47,6 +47,9 @@
     shfmt
     shellcheck
     bash-language-server
+
+    # js/ts
+    eslint_d
   ];
 
   plugins = {
