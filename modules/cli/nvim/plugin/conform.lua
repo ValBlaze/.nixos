@@ -9,5 +9,6 @@ require("conform").setup({
     python = { "ruff" },
     rust = { "rustfmt" },
     sh = { "shfmt" },
+    nix = { "nixfmt" },
   },
 })
