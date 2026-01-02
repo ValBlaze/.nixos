@@ -69,6 +69,7 @@
       nui-nvim # used by noice
       noice-nvim
       gitsigns-nvim
+      nvim-autopairs
     ];
 
     dev.config = {
