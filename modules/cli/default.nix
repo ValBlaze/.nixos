@@ -9,6 +9,7 @@
     ./nh.nix
     ./git.nix
     ./devenv.nix
+    ./direnv.nix
   ];
 
   programs.ydotool.enable = true;
