@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    swww
+    xdg-desktop-portal-hyprland
     hyprpicker
     hyprshot
   ];
