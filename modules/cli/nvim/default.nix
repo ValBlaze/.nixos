@@ -4,11 +4,6 @@
   neovim = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
   initLua = ''
     require("config")
-    vim.lsp.enable("lua_ls")
-    vim.lsp.enable("nixd")
-    vim.lsp.enable("rust-analyzer")
-    vim.lsp.enable("basedpyright")
-    vim.lsp.enable("bashls")
   '';
 
   providers = {
@@ -33,6 +28,7 @@
     rust-analyzer
     rustfmt
     clippy
+    cargo
 
     # nix
     nixd
