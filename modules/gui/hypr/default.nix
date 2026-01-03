@@ -30,5 +30,18 @@
     };
   };
 
+  systemd.user.services."xdg-desktop-portal-hyprland" = {
+    description = "Hyprland Portal Backend";
+    after = [ "xdg-desktop-portal.service" ];
+
+    serviceConfig = {
+      ExecStart = "${pkgs.xdg-desktop-portal-hyprland}/bin/hyprland-share-picker";
+      Environment = "XDG_CURRENT_DESKTOP=Hyprland";
+      Restart = "on-failure";
+    };
+
+    wantedBy = [ "default.target" ];
+  };
+
   hardware.graphics.enable = true;
 }
