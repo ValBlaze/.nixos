@@ -21,10 +21,10 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-wlr
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
     ];
+    config.common.default = "*";
   };
 
   hardware.graphics.enable = true;
