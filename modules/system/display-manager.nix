@@ -1,14 +1,19 @@
 { pkgs, ... }:
 
 {
-  services.greetd = {
+  # services.greetd = {
+  #   enable = true;
+  #   useTextGreeter = true;
+  #   settings = {
+  #     default_session = {
+  #       command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd hyprland";
+  #       user = "greeter";
+  #     };
+  #   };
+  # };
+
+  services.displayManager.sddm = {
     enable = true;
-    useTextGreeter = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd hyprland";
-        user = "greeter";
-      };
-    };
+    wayland.enable = true;
   };
 }
