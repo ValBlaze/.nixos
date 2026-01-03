@@ -8,6 +8,7 @@
     ./cava.nix
     ./nh.nix
     ./git.nix
+    ./devenv.nix
   ];
 
   programs.ydotool.enable = true;
