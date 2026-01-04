@@ -7,6 +7,7 @@ vim.lsp.enable("lua_ls")
 vim.lsp.enable("nixd")
 vim.lsp.enable("basedpyright")
 vim.lsp.enable("bashls")
+vim.lsp.enable("clangd")
 
 vim.diagnostic.config({
   severity_sort = true,

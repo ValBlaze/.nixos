@@ -45,6 +45,9 @@
 
     # js/ts
     eslint_d
+
+    # c/c++
+    clang-tools
   ];
 
   plugins = {

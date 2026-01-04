@@ -10,5 +10,7 @@ require("conform").setup({
     rust = { "rustfmt" },
     sh = { "shfmt" },
     nix = { "nixfmt" },
+    c = { "clang-format" },
+    cpp = { "clang-format" },
   },
 })
