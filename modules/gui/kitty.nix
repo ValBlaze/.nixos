@@ -7,7 +7,7 @@
       integrations.zsh.enable = true;
       settings = {
         font_family = "JetBrainsMono Nerd Font Mono";
-        font_size = 12;
+        font_size = 11;
         enable_audio_bell = false;
         window_padding_width = 4;
         # background_opacity = 0.6;
