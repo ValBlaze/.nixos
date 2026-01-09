@@ -51,6 +51,7 @@
     cmake-language-server
     cmake-format
     cmake-lint
+    mesonlsp
   ];
 
   plugins = {
@@ -69,7 +70,6 @@
       luasnip
       catppuccin-nvim
       todo-comments-nvim
-      fzf-lua
       snacks-nvim
       lualine-nvim
       nui-nvim # used by noice
