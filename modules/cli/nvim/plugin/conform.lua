@@ -12,5 +12,6 @@ require("conform").setup({
     nix = { "nixfmt" },
     c = { "clang-format" },
     cpp = { "clang-format" },
+    cmake = { "cmake-format" },
   },
 })

@@ -48,6 +48,9 @@
 
     # c/c++
     clang-tools
+    cmake-language-server
+    cmake-format
+    cmake-lint
   ];
 
   plugins = {
@@ -72,6 +75,7 @@
       nui-nvim # used by noice
       noice-nvim
       nvim-treesitter.withAllGrammars
+      cmake-tools-nvim
     ];
 
     dev.config = {

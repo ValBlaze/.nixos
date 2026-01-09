@@ -8,6 +8,7 @@ vim.lsp.enable("nixd")
 vim.lsp.enable("basedpyright")
 vim.lsp.enable("bashls")
 vim.lsp.enable("clangd")
+vim.lsp.enable("cmakelang")
 
 vim.diagnostic.config({
   severity_sort = true,
