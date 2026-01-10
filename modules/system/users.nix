@@ -7,6 +7,7 @@
       "networkmanager"
       "wheel"
       "ydotool"
+      "input"
     ];
     shell = pkgs.zsh;
   };

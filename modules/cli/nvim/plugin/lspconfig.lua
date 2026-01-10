@@ -9,6 +9,7 @@ vim.lsp.enable("basedpyright")
 vim.lsp.enable("bashls")
 vim.lsp.enable("clangd")
 vim.lsp.enable("cmake")
+vim.lsp.enable("mesonlsp")
 
 vim.diagnostic.config({
   severity_sort = true,
