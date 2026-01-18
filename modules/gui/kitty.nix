@@ -8,7 +8,7 @@
         integrations.zsh.enable = true;
       };
     };
-    files.".config/kitty.conf".source = "/home/valblaze/.nixos/modules/gui/kitty.conf";
+    files.".config/kitty/kitty.conf".source = "/home/valblaze/.nixos/modules/gui/kitty.conf";
   };
 
   environment.shellAliases = {
