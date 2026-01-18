@@ -1,24 +1,14 @@
 { config, ... }:
 
 {
-  hjem.users.valblaze.rum = {
-    programs.kitty = {
-      enable = true;
-      integrations.zsh.enable = true;
-      settings = {
-        font_family = "JetBrainsMono Nerd Font Mono";
-        font_size = 11;
-        enable_audio_bell = false;
-        window_padding_width = 4;
-        # background_opacity = 0.6;
-        hide_window_decorations = true;
-        cursor_trail = 1;
-        disable_ligatures = "never";
-        copy_on_select = true;
-        confirm_os_window_close = 0;
-        include = "/home/valblaze/.config/kitty/themes/noctalia.conf";
+  hjem.users.valblaze = {
+    rum = {
+      programs.kitty = {
+        enable = true;
+        integrations.zsh.enable = true;
       };
     };
+    files.".config/kitty.conf".source = "/home/valblaze/.nixos/modules/gui/kitty.conf";
   };
 
   environment.shellAliases = {
