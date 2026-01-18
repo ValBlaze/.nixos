@@ -1,4 +1,6 @@
-require("todo-comments").setup()
+require("todo-comments").setup({
+  signs = false,
+})
 
 vim.keymap.set("n", "]t", function()
   require("todo-comments").jump_next()

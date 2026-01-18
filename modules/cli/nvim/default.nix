@@ -78,7 +78,6 @@
       nvim-treesitter.withAllGrammars
       cmake-tools-nvim
       fidget-nvim
-      gitsigns-nvim
       trouble-nvim
       tiny-inline-diagnostic-nvim
     ];
