@@ -6,7 +6,6 @@ require("snacks").setup({
   scope = {},
   scroll = {},
   terminal = {},
-  rename = {},
   notifier = { timeout = 5000 },
 })
 

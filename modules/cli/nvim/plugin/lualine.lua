@@ -1,9 +1,9 @@
 require("lualine").setup({
   options = {
-    icons_enabled = false,
-    theme = "catppuccin",
-    component_separators = { left = "|", right = "|" },
-    section_separators = { left = "", right = "" },
+    icons_enabled = true,
+    theme = "auto",
+    component_separators = "|",
+    section_separators = "",
     disabled_filetypes = {
       statusline = { "oil" },
       winbar = {},
@@ -33,9 +33,9 @@ require("lualine").setup({
   },
   sections = {
     lualine_a = { "mode" },
-    lualine_b = { { "branch", icons_enabled = false }, "diff", "diagnostics" },
+    lualine_b = { { "branch", icon = { "", align = "right" } }, "diff", "diagnostics" },
     lualine_c = { "filename" },
-    lualine_x = { "encoding", "fileformat", "filetype" },
+    lualine_x = { "encoding", "fileformat", { "filetype", icon_only = true } },
     lualine_y = { "progress" },
     lualine_z = { "location" },
   },

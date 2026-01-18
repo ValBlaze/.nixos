@@ -80,6 +80,7 @@
       fidget-nvim
       trouble-nvim
       tiny-inline-diagnostic-nvim
+      colorful-menu-nvim
     ];
 
     dev.config = {

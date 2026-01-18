@@ -9,6 +9,7 @@ require("catppuccin").setup({
   integrations = {
     noice = true,
     snacks = true,
+    fidget = true,
   },
 })
 
