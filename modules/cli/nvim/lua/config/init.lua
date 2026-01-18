@@ -17,7 +17,7 @@ vim.o.relativenumber = true
 -- See `:help 'clipboard'`
 vim.api.nvim_create_autocmd("UIEnter", {
   callback = function()
-    vim.o.clipboard = "unnamedplus"
+    vim.g.clipboard = "wl-copy"
   end,
 })
 
@@ -61,6 +61,8 @@ vim.keymap.set({ "n" }, "<A-l>", "<C-w>l")
 -- Map <C-e>, <C-y> to scroll in insert mode but lose the ability to copy text from the line above/below the cursor
 vim.keymap.set("i", "<C-e>", "<C-x><C-e>")
 vim.keymap.set("i", "<C-y>", "<C-x><C-y>")
+
+vim.keymap.set("n", "<leader>r", "<Cmd>restart<CR>")
 
 -- [[ Basic Autocommands ]].
 -- See `:h lua-guide-autocommands`, `:h autocmd`, `:h nvim_create_autocmd()`

@@ -23,3 +23,7 @@ MiniIcons.mock_nvim_web_devicons()
 require("mini.pairs").setup({
   modes = { insert = true, command = true, terminal = false },
 })
+require("mini.misc").setup()
+MiniMisc.setup_termbg_sync()
+
+require("mini.sessions").setup({ autoread = true })

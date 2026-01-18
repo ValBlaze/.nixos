@@ -2,10 +2,10 @@ require("lualine").setup({
   options = {
     icons_enabled = true,
     theme = "auto",
-    component_separators = "|",
-    section_separators = "",
+    component_separators = { left = "", right = "" },
+    section_separators = { left = "", right = "" },
     disabled_filetypes = {
-      statusline = { "oil" },
+      statusline = {},
       winbar = {},
     },
     ignore_focus = {},
@@ -33,9 +33,28 @@ require("lualine").setup({
   },
   sections = {
     lualine_a = { "mode" },
-    lualine_b = { { "branch", icon = { "", align = "right" } }, "diff", "diagnostics" },
-    lualine_c = { "filename" },
-    lualine_x = { "encoding", "fileformat", { "filetype", icon_only = true } },
+    lualine_b = { "branch" },
+    lualine_c = { "vim.fn.getcwd()", "diagnostics" },
+    lualine_x = {
+      "encoding",
+      "fileformat",
+      {
+        "lsp_status",
+        icon = "", -- f013
+        symbols = {
+          -- Standard unicode symbols to cycle through for LSP progress:
+          spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" },
+          -- Standard unicode symbol for when LSP is done:
+          done = "✓",
+          -- Delimiter inserted between LSP names:
+          separator = " ",
+        },
+        -- List of LSP names to ignore (e.g., `null-ls`):
+        ignore_lsp = {},
+        -- Display the LSP name
+        show_name = true,
+      },
+    },
     lualine_y = { "progress" },
     lualine_z = { "location" },
   },
@@ -50,5 +69,5 @@ require("lualine").setup({
   tabline = {},
   winbar = {},
   inactive_winbar = {},
-  extensions = {},
+  extensions = { "quickfix", "oil", "trouble", "man" },
 })

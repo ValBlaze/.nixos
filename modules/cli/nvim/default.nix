@@ -19,6 +19,7 @@
     fzf
     fd
     universal-ctags
+    wl-clipboard
 
     # lua
     lua-language-server
@@ -70,6 +71,7 @@
       luasnip
       catppuccin-nvim
       onedarkpro-nvim
+      palenight-vim
       todo-comments-nvim
       snacks-nvim
       lualine-nvim
