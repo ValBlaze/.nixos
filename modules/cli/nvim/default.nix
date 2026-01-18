@@ -80,6 +80,7 @@
       fidget-nvim
       gitsigns-nvim
       trouble-nvim
+      tiny-inline-diagnostic-nvim
     ];
 
     dev.config = {
