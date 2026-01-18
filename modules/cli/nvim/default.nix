@@ -79,6 +79,7 @@
       cmake-tools-nvim
       fidget-nvim
       gitsigns-nvim
+      trouble-nvim
     ];
 
     dev.config = {
