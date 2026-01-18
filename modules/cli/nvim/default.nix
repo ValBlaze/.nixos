@@ -69,6 +69,7 @@
       lazydev-nvim
       luasnip
       catppuccin-nvim
+      onedarkpro-nvim
       todo-comments-nvim
       snacks-nvim
       lualine-nvim
