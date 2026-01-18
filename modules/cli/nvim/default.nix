@@ -77,7 +77,8 @@
       noice-nvim
       nvim-treesitter.withAllGrammars
       cmake-tools-nvim
-      vim-kitty-navigator
+      fidget-nvim
+      gitsigns-nvim
     ];
 
     dev.config = {

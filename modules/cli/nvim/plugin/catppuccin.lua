@@ -8,6 +8,7 @@ require("catppuccin").setup({
   default_integrations = true,
   integrations = {
     noice = true,
+    snacks = true,
   },
 })
 
