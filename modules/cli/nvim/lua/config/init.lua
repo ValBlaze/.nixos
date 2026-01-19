@@ -12,15 +12,6 @@ vim.g.have_nerd_font = true
 vim.o.number = true
 vim.o.relativenumber = true
 
--- Sync clipboard between OS and Neovim. Schedule the setting after `UiEnter` because it can
--- increase startup-time. Remove this option if you want your OS clipboard to remain independent.
--- See `:help 'clipboard'`
-vim.api.nvim_create_autocmd("UIEnter", {
-  callback = function()
-    vim.g.clipboard = "wl-copy"
-  end,
-})
-
 vim.o.undofile = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
@@ -63,6 +54,10 @@ vim.keymap.set("i", "<C-e>", "<C-x><C-e>")
 vim.keymap.set("i", "<C-y>", "<C-x><C-y>")
 
 vim.keymap.set("n", "<leader>r", "<Cmd>restart<CR>")
+
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Copy to system clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste from system clipboard" })
+vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Copy line to system clipboard" })
 
 -- [[ Basic Autocommands ]].
 -- See `:h lua-guide-autocommands`, `:h autocmd`, `:h nvim_create_autocmd()`

@@ -58,7 +58,6 @@
   plugins = {
     start = with pkgs.vimPlugins; [
       plenary-nvim # telescope/todo-comments
-      oil-nvim
       mini-nvim
       which-key-nvim
       friendly-snippets

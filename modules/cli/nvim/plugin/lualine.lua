@@ -1,72 +1,77 @@
+---@diagnostic disable: undefined-field
+require("snacks")
 require("lualine").setup({
   options = {
     icons_enabled = true,
     theme = "auto",
-    component_separators = { left = "", right = "" },
-    section_separators = { left = "", right = "" },
+    component_separators = { left = "|", right = "|" },
+    section_separators = { left = "", right = "" },
     disabled_filetypes = {
-      statusline = {},
+      statusline = { "snacks_picker_list", "snacks_picker_input" },
       winbar = {},
     },
     ignore_focus = {},
     always_divide_middle = true,
     always_show_tabline = true,
     globalstatus = false,
-    refresh = {
-      statusline = 1000,
-      tabline = 1000,
-      winbar = 1000,
-      refresh_time = 16, -- ~60fps
-      events = {
-        "WinEnter",
-        "BufEnter",
-        "BufWritePost",
-        "SessionLoadPost",
-        "FileChangedShellPost",
-        "VimResized",
-        "Filetype",
-        "CursorMoved",
-        "CursorMovedI",
-        "ModeChanged",
-      },
+    symbols = {
+      unnamed = "[Scratch Buffer]",
+      alternate_file = "#",
     },
   },
   sections = {
     lualine_a = { "mode" },
-    lualine_b = { "branch" },
-    lualine_c = { "vim.fn.getcwd()", "diagnostics" },
-    lualine_x = {
-      "encoding",
-      "fileformat",
+    lualine_b = { { "branch", icon = "" } },
+    lualine_c = {
       {
-        "lsp_status",
-        icon = "", -- f013
-        symbols = {
-          -- Standard unicode symbols to cycle through for LSP progress:
-          spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" },
-          -- Standard unicode symbol for when LSP is done:
-          done = "✓",
-          -- Delimiter inserted between LSP names:
-          separator = " ",
-        },
-        -- List of LSP names to ignore (e.g., `null-ls`):
-        ignore_lsp = {},
-        -- Display the LSP name
-        show_name = true,
+        "filename",
+        path = 1,
+        status = true,
       },
+      "diagnostics",
     },
-    lualine_y = { "progress" },
+    lualine_x = {
+      Snacks.profiler.status(),
+			-- stylua: ignore
+			{
+				require("noice").api.status.message.get_hl,
+        cond = require("noice").api.status.message.has,
+			},
+			-- stylua: ignore
+			{
+				require("noice").api.status.mode.get,
+        cond = require("noice").api.status.mode.has,
+        color = { fg = Snacks.util.color("Constant") },
+			},
+      "lsp_status",
+    },
+    lualine_y = { "diff", "progress" },
     lualine_z = { "location" },
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = { "filename" },
+    lualine_c = {
+      "filename",
+    },
     lualine_x = { "location" },
     lualine_y = {},
     lualine_z = {},
   },
-  tabline = {},
+  tabline = {
+    lualine_a = {
+      {
+        "buffers",
+        filetype_names = {
+          oil = "Oil",
+          snacks_picker_input = "Snacks Picker",
+          snacks_picker_list = "Snacks Picker",
+          fzf = "FZF",
+        }, -- Shows specific buffer name for that filetype ( { `filetype` = `buffer_name`, ... } )
+      },
+    },
+    lualine_z = { { "tabs", symbols = { modified = "" } } },
+  },
   winbar = {},
   inactive_winbar = {},
   extensions = { "quickfix", "oil", "trouble", "man" },
