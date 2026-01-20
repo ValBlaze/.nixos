@@ -89,3 +89,22 @@ end, { desc = "Print the git blame for the current line" })
 -- 'updatetime' and when going to insert mode
 vim.cmd("packadd! nohlsearch")
 vim.cmd("packadd! nvim.undotree")
+
+local plugin_dir = mnw.configDir .. "/lua/plugins"
+local plugin_files = vim.fn.glob(plugin_dir .. "/*.lua", true, true)
+
+print("Plugin folder:", plugin_dir)
+print("Number of files found:", #plugin_files)
+
+for _, file in ipairs(plugin_files) do
+  local name = vim.fn.fnamemodify(file, ":t:r")
+  if name ~= "init" then
+    local ok, err = pcall(require, "plugins." .. name)
+    if ok then
+      print("Loaded plugin:", name)
+    else
+      print("Failed to load plugin:", name, err)
+    end
+  end
+end
+

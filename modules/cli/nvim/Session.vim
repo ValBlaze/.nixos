@@ -13,15 +13,24 @@ badd +1 ~/.nixos/modules/cli/nvim/plugin/lualine.lua
 badd +1 ~/.nixos/modules/cli/nvim/plugin/mini.lua
 badd +3 ~/.nixos/modules/cli/nvim/plugin/blink.lua
 badd +1 ~/.nixos/modules/cli/nvim/plugin/oil.lua
-badd +64 ~/.nixos/modules/cli/nvim/default.nix
+badd +10 ~/.nixos/modules/cli/nvim/default.nix
+badd +1 oil:///home/valblaze/.nixos/modules/cli/nvim/
+badd +1 ~/.nixos/modules/cli/nvim/lua/config/init.lua
 argglobal
 %argdel
 $argadd oil:///home/valblaze/.nixos/modules/cli/nvim/
-edit ~/.nixos/modules/cli/nvim/default.nix
+edit ~/.nixos/modules/cli/nvim/lua/config/init.lua
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
 argglobal
-balt ~/.nixos/modules/cli/nvim/plugin/oil.lua
+balt ~/.nixos/modules/cli/nvim/default.nix
 setlocal foldmethod=manual
-setlocal foldexpr=0
+setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 setlocal foldmarker={{{,}}}
 setlocal foldignore=#
 setlocal foldlevel=0
@@ -30,12 +39,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 64 - ((10 * winheight(0) + 15) / 31)
+let s:l = 1 - ((0 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 64
-normal! 015|
+keepjumps 1
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -43,6 +52,8 @@ endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20
 let &shortmess = s:shortmess_save
+let &winminheight = s:save_winminheight
+let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
