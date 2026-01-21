@@ -29,6 +29,7 @@ map("n", "<leader>sh", Snacks.picker.help, "Search Help")
 map("n", "<leader>sk", Snacks.picker.keymaps, "Search Keymaps")
 map("n", "<leader>sn", Snacks.picker.notifications, "Search Notifications")
 map("n", "<leader>ss", Snacks.picker.pickers, "Search Select Picker")
+map("n", "<leader>sl", Snacks.picker.highlights, "Search Highlights")
 map("n", "<leader>sc", Snacks.picker.colorschemes, "Search Colorschemes")
 map("n", "<leader>sz", Snacks.picker.zoxide, "Search by Zoxide")
 map("n", "<leader>sd", Snacks.picker.diagnostics, "Search Diagnostics")
@@ -47,5 +48,10 @@ map("n", "gri", Snacks.picker.lsp_implementations, "LSP: Goto Implementation")
 map("n", "grd", Snacks.picker.lsp_definitions, "LSP: Goto Definition")
 map("n", "grD", vim.lsp.buf.declaration, "LSP: Goto Declaration")
 map("n", "gO", Snacks.picker.lsp_symbols, "LSP: Open Document Symbols")
-map("n", "grW", Snacks.picker.lsp_workspace_symbols, "LSP: Open Workspace Symbols")
+map(
+  "n",
+  "grW",
+  Snacks.picker.lsp_workspace_symbols,
+  "LSP: Open Workspace Symbols"
+)
 map("n", "grt", Snacks.picker.lsp_type_definitions, "LSP: Goto Type Definition")
