@@ -34,53 +34,47 @@ MiniMisc.setup_restore_cursor()
 -- - `<Leader>sn` - start new session
 -- - `<Leader>sr` - read previously started session
 -- - `<Leader>sd` - delete previously started session
-require("mini.sessions").setup()
-
--- Start screen. This is what is shown when you open Neovim like `nvim`.
--- Example usage:
--- - Type prefix keys to limit available candidates
--- - Navigate down/up with `<C-n>` and `<C-p>`
--- - Press `<CR>` to select an entry
+-- require("mini.sessions").setup()
 --
--- See also:
--- - `:h MiniStarter-example-config` - non-default config examples
--- - `:h MiniStarter-lifecycle` - how to work with Starter buffer
-require("mini.starter").setup()
-
--- Statusline. Sets `:h 'statusline'` to show more info in a line below window.
--- Example usage:
--- - Left most section indicates current mode (text + highlighting).
--- - Second from left section shows "developer info": Git, diff, diagnostics, LSP.
--- - Center section shows the name of displayed buffer.
--- - Second to right section shows more buffer info.
--- - Right most section shows current cursor coordinates and search results.
+-- local miniclue = require("mini.clue")
+-- miniclue.setup({
+--   triggers = {
+--     -- Leader triggers
+--     { mode = { "n", "x" }, keys = "<Leader>" },
 --
--- See also:
--- - `:h MiniStatusline-example-content` - example of default content. Use it to
---   configure a custom statusline by setting `config.content.active` function.
--- require("mini.statusline").setup()
--- local active_statusline = function()
---   local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 120 })
---   local git = MiniStatusline.section_git({ trunc_width = 40 })
---   local diff = MiniStatusline.section_diff({ trunc_width = 75 })
---   local diagnostics = MiniStatusline.section_diagnostics({ trunc_width = 75 })
---   local lsp = MiniStatusline.section_lsp({ trunc_width = 75 })
---   local filename = MiniStatusline.section_filename({ trunc_width = 140 })
---   local fileinfo = MiniStatusline.section_fileinfo({ trunc_width = 120 })
---   local location = MiniStatusline.section_location({ trunc_width = 75 })
---   local search = MiniStatusline.section_searchcount({ trunc_width = 75 })
+--     -- `[` and `]` keys
+--     { mode = "n", keys = "[" },
+--     { mode = "n", keys = "]" },
 --
---   return MiniStatusline.combine_groups({
---     { hl = mode_hl, strings = { mode } },
---     {
---       hl = "MiniStatuslineDevinfo",
---       strings = { git, diff, diagnostics },
---     },
---     "%<", -- Mark general truncate point
---     { hl = "MiniStatuslineFilename", strings = { filename } },
---     "%=", -- End left alignment
---     { hl = "MiniStatuslineFileinfo", strings = { fileinfo } },
---     { hl = mode_hl, strings = { search, location } },
---   })
--- end
--- MiniStatusline.config.content.active = active_statusline
+--     -- Built-in completion
+--     { mode = "i", keys = "<C-x>" },
+--
+--     -- `g` key
+--     { mode = { "n", "x" }, keys = "g" },
+--
+--     -- Marks
+--     { mode = { "n", "x" }, keys = "'" },
+--     { mode = { "n", "x" }, keys = "`" },
+--
+--     -- Registers
+--     { mode = { "n", "x" }, keys = '"' },
+--     { mode = { "i", "c" }, keys = "<C-r>" },
+--
+--     -- Window commands
+--     { mode = "n", keys = "<C-w>" },
+--
+--     -- `z` key
+--     { mode = { "n", "x" }, keys = "z" },
+--   },
+--
+--   clues = {
+--     -- Enhance this by adding descriptions for <Leader> mapping groups
+--     miniclue.gen_clues.square_brackets(),
+--     miniclue.gen_clues.builtin_completion(),
+--     miniclue.gen_clues.g(),
+--     miniclue.gen_clues.marks(),
+--     miniclue.gen_clues.registers(),
+--     miniclue.gen_clues.windows(),
+--     miniclue.gen_clues.z(),
+--   },
+-- })

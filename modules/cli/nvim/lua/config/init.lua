@@ -7,13 +7,16 @@ require("config.options")
 require("config.keymaps")
 require("config.autocmds")
 require("config.usercmds")
+require("config.lsp")
 
 local plugin_dir
 -- If the mnw wrapper path exists, use it (pure build)
 if mnw and vim.loop.fs_stat(mnw.configDir .. "/lua/plugins") then
   plugin_dir = mnw.configDir .. "/lua/plugins"
 -- Otherwise fallback to absolute path
-elseif vim.loop.fs_stat(vim.env.HOME .. "/.nixos/modules/cli/nvim/lua/plugins") then
+elseif
+  vim.loop.fs_stat(vim.env.HOME .. "/.nixos/modules/cli/nvim/lua/plugins")
+then
   plugin_dir = vim.env.HOME .. "/.nixos/modules/cli/nvim/lua/plugins"
 else
   plugin_dir = nil

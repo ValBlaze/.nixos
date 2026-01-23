@@ -1,6 +1,7 @@
 -- For all options see `:help option-list`
 
 -- General ==================
+vim.o.confirm = true
 vim.o.mouse = "a"
 vim.o.switchbuf = "usetab"
 vim.o.undofile = true
@@ -8,7 +9,7 @@ vim.o.undofile = true
 -- UI =======================
 vim.o.breakindent = true
 vim.o.breakindentopt = "shift:1"
-vim.o.colorcolumn = "+1"
+-- vim.o.colorcolumn = "+1"
 vim.o.linebreak = true
 vim.o.list = true
 vim.o.number = true
@@ -39,11 +40,3 @@ vim.o.iskeyword = "@,48-57,_,192-255,-" -- Treat dash as `word` textobject part
 -- "Start of list item is: at least one special character (digit, -, +, *)
 -- possibly followed by punctuation (. or `)`) followed by at least one space".
 vim.o.formatlistpat = [[^\s*[0-9\-\+\*]\+[\.\)]*\s\+]]
-
--- Built-in completion
-vim.o.complete = ".,w,b,kspell" -- Use less sources
-vim.o.completeopt = "menuone,noselect,fuzzy,nosort" -- Use custom behavior
-
-vim.o.confirm = true
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300

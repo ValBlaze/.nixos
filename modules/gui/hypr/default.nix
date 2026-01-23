@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     xdg-desktop-portal-hyprland
     hyprpicker
-    hyprshot
+    grimblast
   ];
 
   hjem.users.valblaze = {

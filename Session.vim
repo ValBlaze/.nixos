@@ -10,13 +10,19 @@ endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
 badd +68 lua/plugins/mini.lua
-badd +36 lua/plugins/snacks.lua
-badd +46 lua/plugins/lualine.lua
+badd +50 lua/plugins/snacks.lua
+badd +75 lua/plugins/lualine.lua
+badd +1 .stylua.toml_hidden_message
+badd +1 lua/plugins/blink.lua
+badd +1 lua/plugins/lazydev.lua
+badd +13 lua/config/init.lua
+badd +1 lua/plugins/colorful-menu.lua
+badd +1 lua/plugins/lint.lua
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
 tabrewind
-edit lua/plugins/lualine.lua
+edit lua/config/init.lua
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -33,10 +39,22 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 72 + 73) / 146)
-exe 'vert 2resize ' . ((&columns * 73 + 73) / 146)
+exe 'vert 1resize ' . ((&columns * 40 + 73) / 146)
+exe 'vert 2resize ' . ((&columns * 105 + 73) / 146)
 argglobal
-balt lua/plugins/mini.lua
+enew
+balt lua/plugins/snacks.lua
+setlocal foldmethod=manual
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldenable
+wincmd w
+argglobal
+balt lua/plugins/snacks.lua
 setlocal foldmethod=manual
 setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 setlocal foldmarker={{{,}}}
@@ -47,38 +65,16 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 46 - ((26 * winheight(0) + 16) / 32)
+let s:l = 13 - ((12 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 46
-normal! 047|
+keepjumps 13
+normal! 04|
 wincmd w
-argglobal
-if bufexists(fnamemodify("lua/plugins/snacks.lua", ":p")) | buffer lua/plugins/snacks.lua | else | edit lua/plugins/snacks.lua | endif
-if &buftype ==# 'terminal'
-  silent file lua/plugins/snacks.lua
-endif
-balt lua/plugins/lualine.lua
-setlocal foldmethod=manual
-setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
-setlocal foldmarker={{{,}}}
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldenable
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 40 - ((4 * winheight(0) + 16) / 32)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 40
-normal! 0
-wincmd w
-exe 'vert 1resize ' . ((&columns * 72 + 73) / 146)
-exe 'vert 2resize ' . ((&columns * 73 + 73) / 146)
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 40 + 73) / 146)
+exe 'vert 2resize ' . ((&columns * 105 + 73) / 146)
 tabnext
 argglobal
 enew | setl bt=help
