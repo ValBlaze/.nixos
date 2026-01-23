@@ -5,6 +5,7 @@
     xdg-desktop-portal-hyprland
     hyprpicker
     grimblast
+    slurp
   ];
 
   hjem.users.valblaze = {
