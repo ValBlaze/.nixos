@@ -22,7 +22,6 @@ end
 
 map("n", "<leader><space>", Snacks.picker.buffers, "Find Buffers")
 map("n", "<leader>/", Snacks.picker.grep, "Grep")
-map("n", "<leader>e", Snacks.picker.explorer, "File Explorer")
 map("n", "<leader>z", Snacks.picker.zoxide, "Zoxide")
 map("n", "<leader>sf", Snacks.picker.files, "Search Files")
 map("n", "<leader>sh", Snacks.picker.help, "Search Help")

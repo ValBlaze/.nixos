@@ -5,6 +5,7 @@
     ],
     "diagnostics.globals": [
         "vim",
-        "mnw"
+        "mnw",
+        "Snacks"
     ]
 }

@@ -83,6 +83,7 @@
       tiny-inline-diagnostic-nvim
       colorful-menu-nvim
       neo-tree-nvim
+      oil-nvim
     ];
 
     dev.config = {
