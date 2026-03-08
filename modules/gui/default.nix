@@ -7,5 +7,6 @@
     ./prismlauncher.nix
     ./firefox.nix
     ./kde.nix
+    ./cosmic.nix
   ];
 }
