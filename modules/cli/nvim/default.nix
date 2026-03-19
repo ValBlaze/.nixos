@@ -61,7 +61,7 @@
       mini-nvim
       which-key-nvim
       friendly-snippets
-      repeat # used by leap
+      vim-repeat # used by leap
       nvim-lspconfig
       blink-cmp
       conform-nvim

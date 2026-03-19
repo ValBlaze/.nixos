@@ -27,7 +27,7 @@ require("mini.pairs").setup({
 require("mini.misc").setup()
 MiniMisc.setup_auto_root()
 MiniMisc.setup_restore_cursor()
--- MiniMisc.setup_termbg_sync()
+MiniMisc.setup_termbg_sync()
 
 -- Session management. A thin wrapper around `:h mksession` that consistently
 -- manages session files. Example usage:

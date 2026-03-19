@@ -1,6 +1,6 @@
 require("catppuccin").setup({
   flavour = "macchiato",
-  transparent_background = true,
+  transparent_background = false,
   float = {
     transparent = true,
     solid = true,
