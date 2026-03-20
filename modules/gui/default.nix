@@ -7,6 +7,6 @@
     ./prismlauncher.nix
     ./firefox.nix
     ./kde.nix
-    ./niri.nix
+    ./niri
   ];
 }
