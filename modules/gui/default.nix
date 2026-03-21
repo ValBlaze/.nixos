@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   imports = [
     ./kitty.nix
@@ -8,5 +10,9 @@
     ./firefox.nix
     ./kde.nix
     ./niri
+  ];
+
+  environment.systemPackages = with pkgs; [
+    adwaita-icon-theme
   ];
 }
