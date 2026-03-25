@@ -18,7 +18,7 @@
     watch = "batwatch";
   };
 
-  hjem.users.valblaze = {
-    files.".config/bat".source = "/home/valblaze/.nixos/modules/cli/bat";
-  };
+  # hjem.users.valblaze = {
+  #   files.".config/bat".source = "/home/valblaze/.nixos/modules/cli/bat";
+  # };
 }

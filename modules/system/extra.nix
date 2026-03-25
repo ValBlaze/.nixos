@@ -17,4 +17,6 @@
     bibata-cursors
     (self'.packages.neovimDev)
   ];
+
+  services.flatpak.enable = true;
 }

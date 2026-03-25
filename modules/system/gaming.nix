@@ -20,8 +20,4 @@
   };
 
   hardware.wooting.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    bottles
-  ];
 }

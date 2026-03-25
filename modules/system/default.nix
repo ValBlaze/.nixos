@@ -1,13 +1,33 @@
 {
+  pkgs,
+  self',
+  ...
+}:
+
+{
   imports = [
     ./boot.nix
     ./locale.nix
     ./network.nix
     ./nix.nix
     ./fonts.nix
-    ./extra.nix
     ./users.nix
     ./variables.nix
-    ./display-manager.nix
+    ./gaming.nix
   ];
+
+  environment.systemPackages = with pkgs; [
+    wget
+    gcc
+    dig
+    wofi
+    gh
+    wl-clipboard
+    libnotify
+    chromium
+    bibata-cursors
+    (self'.packages.neovimDev)
+  ];
+
+  services.flatpak.enable = true;
 }

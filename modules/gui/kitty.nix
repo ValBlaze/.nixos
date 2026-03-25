@@ -1,15 +1,18 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
-  hjem.users.valblaze = {
-    rum = {
-      programs.kitty = {
-        enable = true;
-        integrations.zsh.enable = true;
-      };
-    };
-    files.".config/kitty/kitty.conf".source = "/home/valblaze/.nixos/modules/gui/kitty.conf";
-  };
+  # hjem.users.valblaze = {
+  #   rum = {
+  #     programs.kitty = {
+  #       enable = true;
+  #       integrations.zsh.enable = true;
+  #     };
+  #   };
+  #   files.".config/kitty/kitty.conf".source = "/home/valblaze/.nixos/modules/gui/kitty.conf";
+  # };
+  environment.systemPackages = with pkgs; [
+    kitty
+  ];
 
   environment.shellAliases = {
     ssh = "kitty +kitten ssh";
