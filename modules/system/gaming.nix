@@ -18,6 +18,4 @@
     gamescopeSession.enable = true;
     protontricks.enable = true;
   };
-
-  hardware.wooting.enable = true;
 }

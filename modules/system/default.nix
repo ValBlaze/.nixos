@@ -14,6 +14,7 @@
     ./users.nix
     ./variables.nix
     ./gaming.nix
+    ./hardware.nix
   ];
 
   environment.systemPackages = with pkgs; [

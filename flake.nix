@@ -5,10 +5,25 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     easy-hosts.url = "github:tgirlcloud/easy-hosts";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    hjem.follows = "hjem-rum/hjem";
+    hjem-rum = {
+      url = "github:snugnug/hjem-rum";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     mnw.url = "github:Gerg-L/mnw";
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -16,7 +31,6 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         inputs.easy-hosts.flakeModule
-        inputs.home-manager.flakeModules.home-manager
       ];
 
       debug = true;
@@ -40,23 +54,14 @@
 
         perClass = class: {
           modules = inputs.nixpkgs.lib.optionals (class == "nixos") [
+            inputs.hjem.nixosModules.default
             inputs.mnw.nixosModules.default
+            inputs.niri.nixosModules.niri
+            inputs.dms.nixosModules.dank-material-shell
             ./modules/cli
             ./modules/gui
             ./modules/system
 
-          ];
-        };
-      };
-
-      flake = {
-        homeConfigurations.valblaze = home-manager.lib.homeManagerConfiguration {
-          modules = [
-            {
-              home.username = "valblaze";
-              home.homeDirectory = "/home/valblaze";
-              home.stateVersion = "25.11";
-            }
           ];
         };
       };

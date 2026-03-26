@@ -7,6 +7,7 @@
     ./firefox.nix
     ./kde.nix
     ./niri
+    ./gnome.nix
   ];
 
   environment.systemPackages = with pkgs; [

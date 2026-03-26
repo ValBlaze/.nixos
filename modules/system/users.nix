@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   users.users.valblaze = {
     isNormalUser = true;
@@ -10,5 +10,16 @@
       "input"
     ];
     shell = pkgs.zsh;
+  };
+
+  hjem = {
+    extraModules = [
+      inputs.hjem-rum.hjemModules.default
+    ];
+    users.valblaze = {
+      user = "valblaze";
+      directory = "/home/valblaze";
+    };
+    clobberByDefault = false;
   };
 }
