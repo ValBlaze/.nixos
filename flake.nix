@@ -12,18 +12,6 @@
     };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     mnw.url = "github:Gerg-L/mnw";
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell/stable";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    dgop = {
-      url = "github:AvengeMedia/dgop";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -56,8 +44,6 @@
           modules = inputs.nixpkgs.lib.optionals (class == "nixos") [
             inputs.hjem.nixosModules.default
             inputs.mnw.nixosModules.default
-            inputs.niri.nixosModules.niri
-            inputs.dms.nixosModules.dank-material-shell
             ./modules/cli
             ./modules/gui
             ./modules/system
