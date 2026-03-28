@@ -18,7 +18,7 @@
     inputs@{ flake-parts, nixpkgs, ... }:
     let
       ignoreModules = [
-        # ./modules/dev/nvim
+        ./modules/dev/nvim
       ];
       files = nixpkgs.lib.filesystem.listFilesRecursive ./modules;
       isIgnored = n:
@@ -54,7 +54,6 @@
         perClass = class: {
           modules = inputs.nixpkgs.lib.optionals (class == "nixos") [
             inputs.hjem.nixosModules.default
-            inputs.mnw.nixosModules.default
           ] ++ importModules;
         };
       };
