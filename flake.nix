@@ -42,7 +42,7 @@
             default = inputs.self.nixosConfigurations.live-iso.config.system.build.isoImage;
             neovim = inputs.mnw.lib.wrap {
               inherit inputs pkgs;
-            } ./nvim;
+            } ./modules/dev/nvim;
             neovimDev = self'.packages.neovim.devMode;
           };
         };
