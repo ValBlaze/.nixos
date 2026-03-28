@@ -1,10 +1,13 @@
-{ pkgs, ... }:
-
+{ 
+  pkgs,
+  ...
+}:
 {
-  programs.gamemode = {
-    enable = true;
-    enableRenice = true;
-  };
+  environment.systemPackages = with pkgs; [
+    prismlauncher
+  ];
+  
+  programs.gamemode.enable = true;
   programs.gamescope.enable = true;
 
   programs.steam = {
@@ -15,7 +18,6 @@
     extraCompatPackages = with pkgs; [
       proton-ge-bin
     ];
-    gamescopeSession.enable = true;
     protontricks.enable = true;
   };
 }

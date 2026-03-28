@@ -5,8 +5,6 @@
   ...
 }:
 {
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.limine.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  boot.kernelParams = [ "video=DP-1:1920x1080@240" ];
 }

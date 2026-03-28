@@ -5,9 +5,9 @@
     extraPackages = [
       pkgs.bat-extras.core
     ];
-    settings = {
-      theme = "'Catppuccin Macchiato'";
-    };
+    # settings = {
+    #   theme = "'Catppuccin Macchiato'";
+    # };
   };
 
   environment.shellAliases = {
@@ -18,7 +18,7 @@
     watch = "batwatch";
   };
 
-  # hjem.users.valblaze = {
-  #   files.".config/bat".source = "/home/valblaze/.nixos/modules/cli/bat";
-  # };
+  hjem.users.valblaze = {
+    files.".config/bat".source = "/home/valblaze/.nixos/modules/shell/bat";
+  };
 }

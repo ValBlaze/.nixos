@@ -15,7 +15,18 @@
   };
 
   outputs =
-    inputs@{ flake-parts, home-manager, ... }:
+    inputs@{ flake-parts, nixpkgs, ... }:
+    let
+      ignoreModules = [
+        # ./modules/dev/nvim
+      ];
+      files = nixpkgs.lib.filesystem.listFilesRecursive ./modules;
+      isIgnored = n:
+        nixpkgs.lib.any (p: nixpkgs.lib.strings.hasPrefix (toString p) (toString n)) ignoreModules;
+    in
+    let
+      importModules = nixpkgs.lib.filter (n: nixpkgs.lib.strings.hasSuffix ".nix" n && !isIgnored n) files;
+    in
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         inputs.easy-hosts.flakeModule
@@ -31,7 +42,7 @@
             default = inputs.self.nixosConfigurations.live-iso.config.system.build.isoImage;
             neovim = inputs.mnw.lib.wrap {
               inherit inputs pkgs;
-            } ./modules/cli/nvim;
+            } ./nvim;
             neovimDev = self'.packages.neovim.devMode;
           };
         };
@@ -44,11 +55,7 @@
           modules = inputs.nixpkgs.lib.optionals (class == "nixos") [
             inputs.hjem.nixosModules.default
             inputs.mnw.nixosModules.default
-            ./modules/cli
-            ./modules/gui
-            ./modules/system
-
-          ];
+          ] ++ importModules;
         };
       };
     };
