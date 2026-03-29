@@ -5,9 +5,9 @@
     extraPackages = [
       pkgs.bat-extras.core
     ];
-    # settings = {
-    #   theme = "'Catppuccin Macchiato'";
-    # };
+    settings = {
+      theme = "'Catppuccin Macchiato'";
+    };
   };
 
   environment.shellAliases = {

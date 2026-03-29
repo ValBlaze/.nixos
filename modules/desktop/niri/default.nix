@@ -1,4 +1,7 @@
-{ inputs, pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
   programs.niri.enable = true;
@@ -8,6 +11,15 @@
   services.displayManager.dms-greeter = {
     enable = true;
     compositor.name = "niri";
+    compositor.customConfig = ''
+      cursor {
+          xcursor-theme "Bibata-Modern-Classic"
+          xcursor-size 24
+      }
+      hotkey-overlay {
+          skip-at-startup
+      }
+    '';
     configHome = "/home/valblaze";
   };
 
@@ -18,6 +30,6 @@
   ];
 
   hjem.users.valblaze = {
-    files.".config/niri".source = "/home/valblaze/.nixos/modules/desktop/niri/";
+    files.".config/niri".source = "/home/valblaze/.nixos/modules/desktop/niri";
   };
 }

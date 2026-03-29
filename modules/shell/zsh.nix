@@ -4,15 +4,8 @@
   pkgs,
   ...
 }:
+
 {
-
-  environment.systemPackages = with pkgs; [
-    nix-search-tv
-    fzf
-    ripgrep
-    eza
-  ];
-
   programs.zsh = {
     enable = true;
     enableCompletion = true;

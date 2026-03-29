@@ -3,10 +3,9 @@
 // Check the wiki for a full description of the configuration:
 // https://yalter.github.io/niri/Configuration:-Introduction
 
-environment {
-  QT_QPA_PLATFORM "wayland"
-  QT_QPA_PLATFORMTHEME "qt6ct"
-  ELECTRON_OZONE_PLATFORM_HINT "auto"
+cursor {
+    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-size 24
 }
 
 // Input device configuration.
@@ -144,9 +143,9 @@ layout {
     // preset-window-heights { }
 
     // You can change the default width of the new windows.
-    default-column-width { proportion 0.5; }
+    // default-column-width { proportion 0.5; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
-    // default-column-width {}
+    default-column-width {}
 
     // By default focus ring and border are rendered as a solid background rectangle
     // behind windows. That is, they will show up through semitransparent windows.
@@ -607,6 +606,4 @@ binds {
 }
 
 include "dms/colors.kdl"
-include "dms/cursor.kdl"
 include "dms/layout.kdl"
-include "dms/outputs.kdl"

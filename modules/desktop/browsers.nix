@@ -1,7 +1,11 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
   environment.systemPackages = with pkgs; [
+    chromium
     pywalfox-native
   ];
 
