@@ -3,6 +3,13 @@
 }:
 
 {
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 8 * 1024;
+    }
+  ];
+
   hardware = {
     graphics.enable = true;
     bluetooth.enable = true;

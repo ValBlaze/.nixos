@@ -11,6 +11,7 @@
     zip
     unzip
     nix-search-tv
+    fzf
     fd
     ripgrep
     eza
