@@ -27,19 +27,19 @@ vim.keymap.set(
   { "n", "v" },
   "<leader>y",
   '"+y',
-  { desc = "Copy to system clipboard" }
+  { desc = "Copy to System Clipboard" }
 )
 vim.keymap.set(
   { "n", "v" },
   "<leader>p",
   '"+p',
-  { desc = "Paste from system clipboard" }
+  { desc = "Paste from System Clipboard" }
 )
 vim.keymap.set(
   "n",
   "<leader>Y",
   '"+Y',
-  { desc = "Copy line to system clipboard" }
+  { desc = "Copy Line to System Clipboard" }
 )
 
 nmap_leader("ga", "<Cmd>Git diff --cached<CR>", "Added diff")
