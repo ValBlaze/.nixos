@@ -10,6 +10,7 @@
     gnome-calculator
     gnome-clocks
     gnome-tweaks
+    gnomeExtensions.paperwm
   ];
 
   services.displayManager.gdm.enable = true;

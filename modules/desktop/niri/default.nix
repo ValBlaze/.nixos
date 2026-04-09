@@ -5,8 +5,8 @@
 
 {
   programs.niri.enable = true;
-  programs.dms-shell.enable = true;
-  programs.dsearch.enable = true;
+  # programs.dms-shell.enable = true;
+  # programs.dsearch.enable = true;
 
   # services.displayManager.dms-greeter = {
   #   enable = true;
@@ -26,7 +26,8 @@
   environment.systemPackages = with pkgs; [
     xwayland-satellite
     qt6Packages.qt6ct
-    dgop
+    noctalia-shell
+    # dgop
   ];
 
   hjem.users.valblaze = {

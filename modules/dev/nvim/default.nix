@@ -34,6 +34,7 @@
     rustfmt
     clippy
     cargo
+    rustc
 
     # nix
     nixd
@@ -86,7 +87,6 @@
       trouble-nvim
       tiny-inline-diagnostic-nvim
       colorful-menu-nvim
-      neo-tree-nvim
       oil-nvim
     ];
 

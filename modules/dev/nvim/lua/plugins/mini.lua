@@ -30,6 +30,11 @@ MiniMisc.setup_restore_cursor()
 MiniMisc.setup_termbg_sync()
 
 require("mini.starter").setup()
+-- require("mini.files").setup()
+--
+-- vim.keymap.set("n", "<leader>e", function()
+--   MiniFiles.open()
+-- end, { desc = "Open Mini Files" })
 
 -- Session management. A thin wrapper around `:h mksession` that consistently
 -- manages session files. Example usage:

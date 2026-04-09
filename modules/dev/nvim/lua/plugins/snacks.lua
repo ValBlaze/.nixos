@@ -1,7 +1,7 @@
 require("snacks").setup({
   bigfile = { enabled = false },
   dashboard = { enabled = false },
-  explorer = { enabled = true },
+  explorer = { enabled = false },
   indent = { enabled = true },
   input = { enabled = true },
   picker = { enabled = true },
@@ -21,22 +21,31 @@ local function map(mode, lhs, rhs, desc)
 end
 
 map("n", "<leader><space>", Snacks.picker.buffers, "Find Buffers")
-map("n", "<leader>z", Snacks.picker.zoxide, "Zoxide")
-map("n", "<leader>sf", Snacks.picker.files, "Search Files")
-map("n", "<leader>sg", Snacks.picker.grep, "Search by Grep")
-map("n", "<leader>sh", Snacks.picker.help, "Search Help")
-map("n", "<leader>sk", Snacks.picker.keymaps, "Search Keymaps")
-map("n", "<leader>sn", Snacks.picker.notifications, "Search Notifications")
-map("n", "<leader>ss", Snacks.picker.pickers, "Search Selection Pickers")
-map("n", "<leader>sl", Snacks.picker.highlights, "Search Highlights")
-map("n", "<leader>sc", Snacks.picker.colorschemes, "Search Colorschemes")
-map("n", "<leader>sd", Snacks.picker.diagnostics, "Search Diagnostics")
-map("n", "<leader>sr", Snacks.picker.resume, "Search Resume")
-map("n", "<leader>sp", Snacks.picker.projects, "Search Projects")
-map("n", "<leader>s.", Snacks.picker.recent, "Search Recent Files")
-map("n", "<leader>s:", Snacks.picker.command_history, "Search Cmd History")
+map("n", "<leader>sf", Snacks.picker.files, "[S]earch [F]iles")
+map("n", "<leader>sg", Snacks.picker.grep, "[S]earch by [G]rep")
+map("n", "<leader>sh", Snacks.picker.help, "[S]earch [H]elp")
+map("n", "<leader>sk", Snacks.picker.keymaps, "[S]earch [K]eymaps")
+map("n", "<leader>sn", Snacks.picker.notifications, "[S]earch [N]otifications")
+map("n", "<leader>ss", Snacks.picker.pickers, "[S]earch [S]election Pickers")
+map("n", "<leader>sl", Snacks.picker.highlights, "[S]earch [H]ighlights")
+map("n", "<leader>sc", Snacks.picker.colorschemes, "[S]earch [C]olorschemes")
+map("n", "<leader>sd", Snacks.picker.diagnostics, "[S]earch [D]iagnostics")
+map("n", "<leader>sr", Snacks.picker.resume, "[S]earch [R]esume")
+map("n", "<leader>sp", Snacks.picker.projects, "[S]earch [P]rojects")
+map("n", "<leader>s.", Snacks.picker.recent, "[S]earch Recent Files (.)")
+map(
+  "n",
+  "<leader>s:",
+  Snacks.picker.command_history,
+  "[S]earch Cmd History (:)"
+)
 
-map("n", "<leader>n", Snacks.notifier.show_history, "Show Notification History")
+map(
+  "n",
+  "<leader>n",
+  Snacks.notifier.show_history,
+  "Show [N]otification History"
+)
 map({ "n", "t" }, "<C-\\>", Snacks.terminal.toggle, "Toggle Terminal")
 
 map("n", "grn", vim.lsp.buf.rename, "LSP: Rename")

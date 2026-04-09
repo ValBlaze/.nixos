@@ -126,7 +126,7 @@ output "DP-2" {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 16
+    gaps 10
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -270,10 +270,10 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     struts {
-        // left 64
-        // right 64
-        // top 64
-        // bottom 64
+        left 10
+        right 10
+        top 0
+        bottom 0
     }
 }
 
@@ -375,6 +375,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open Kitty" { spawn "kitty"; }
+    Mod+E hotkey-overlay-title="Open Explorer" { spawn "nautilus"; }
     Mod+Space hotkey-overlay-title="Spotlight" { spawn-sh "dms ipc call spotlight open"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn-sh "dms ipc call lock lock"; }
 
@@ -615,5 +616,5 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 
-include "dms/colors.kdl"
-include "dms/layout.kdl"
+// include "dms/colors.kdl"
+// include "dms/layout.kdl"

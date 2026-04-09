@@ -5,10 +5,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # vencord
-    # (discord.override {
-    #   withVencord = true;
-    # })
     vesktop
+    element-desktop
   ];
 }
