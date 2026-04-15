@@ -5,8 +5,8 @@
 
 {
   programs.niri.enable = true;
-  # programs.dms-shell.enable = true;
-  # programs.dsearch.enable = true;
+  programs.dms-shell.enable = true;
+  programs.dsearch.enable = true;
 
   # services.displayManager.dms-greeter = {
   #   enable = true;

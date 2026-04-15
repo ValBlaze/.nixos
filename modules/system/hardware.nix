@@ -15,6 +15,6 @@
     bluetooth.enable = true;
     wooting.enable = true;
   };
-  # virtualisation.libvirtd.enable = true;
-  # programs.virt-manager.enable = true;
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 }
