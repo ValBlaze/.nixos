@@ -5,7 +5,7 @@
 }:
 
 {
-  neovim = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  neovim = pkgs.neovim-unwrapped;
   initLua = ''
     require("config")
   '';

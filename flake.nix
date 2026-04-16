@@ -10,7 +10,7 @@
       url = "github:snugnug/hjem-rum";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     mnw.url = "github:Gerg-L/mnw";
   };
 
@@ -21,11 +21,13 @@
         ./modules/dev/nvim
       ];
       files = nixpkgs.lib.filesystem.listFilesRecursive ./modules;
-      isIgnored = n:
-        nixpkgs.lib.any (p: nixpkgs.lib.strings.hasPrefix (toString p) (toString n)) ignoreModules;
+      isIgnored =
+        n: nixpkgs.lib.any (p: nixpkgs.lib.strings.hasPrefix (toString p) (toString n)) ignoreModules;
     in
     let
-      importModules = nixpkgs.lib.filter (n: nixpkgs.lib.strings.hasSuffix ".nix" n && !isIgnored n) files;
+      importModules = nixpkgs.lib.filter (
+        n: nixpkgs.lib.strings.hasSuffix ".nix" n && !isIgnored n
+      ) files;
     in
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
@@ -52,9 +54,11 @@
         autoConstruct = true;
 
         perClass = class: {
-          modules = inputs.nixpkgs.lib.optionals (class == "nixos") [
-            inputs.hjem.nixosModules.default
-          ] ++ importModules;
+          modules =
+            inputs.nixpkgs.lib.optionals (class == "nixos") [
+              inputs.hjem.nixosModules.default
+            ]
+            ++ importModules;
         };
       };
     };
