@@ -11,4 +11,6 @@
     enable = true;
     enableNotifications = true;
   };
+
+  services.displayManager.ly.enable = true;
 }
