@@ -88,6 +88,7 @@
       tiny-inline-diagnostic-nvim
       colorful-menu-nvim
       oil-nvim
+      colorizer
     ];
 
     dev.config = {
