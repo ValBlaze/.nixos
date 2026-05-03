@@ -15,9 +15,9 @@ if mnw and vim.loop.fs_stat(mnw.configDir .. "/lua/plugins") then
   plugin_dir = mnw.configDir .. "/lua/plugins"
 -- Otherwise fallback to absolute path
 elseif
-  vim.loop.fs_stat(vim.env.HOME .. "/.nixos/modules/dev/nvim/lua/plugins")
+  vim.loop.fs_stat(vim.env.HOME .. "/.nixos/nvim/lua/plugins")
 then
-  plugin_dir = vim.env.HOME .. "/.nixos/modules/dev/nvim/lua/plugins"
+  plugin_dir = vim.env.HOME .. "/.nixos/nvim/lua/plugins"
 else
   plugin_dir = nil
 end

@@ -93,7 +93,7 @@
 
     dev.config = {
       pure = ./.;
-      impure = "/home/valblaze/.nixos/modules/dev/nvim";
+      impure = "/home/valblaze/.nixos/nvim";
     };
   };
 }
