@@ -4,11 +4,15 @@
 // https://yalter.github.io/niri/Configuration:-Introduction
 
 spawn-sh-at-startup "gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'"
-spawn-sh-at-startup "gsettings set org.gnome.desktop.interface cursor-size '24'"
+spawn-sh-at-startup "gsettings set org.gnome.desktop.interface cursor-size '22'"
 
 cursor {
     xcursor-theme "Bibata-Modern-Classic"
-    xcursor-size 24
+    xcursor-size 22
+}
+
+clipboard {
+    disable-primary
 }
 
 // Input device configuration.
@@ -131,7 +135,7 @@ output "DP-2" {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 4
+    gaps 8
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -366,7 +370,7 @@ window-rule {
     // cut out any client-side window shadows, and also round window corners according to geometry-corner-radius
     clip-to-geometry true
 
-    geometry-corner-radius 16
+    geometry-corner-radius 8
     draw-border-with-background false
 }
 

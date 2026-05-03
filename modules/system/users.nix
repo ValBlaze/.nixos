@@ -24,6 +24,6 @@
       user = "valblaze";
       directory = "/home/valblaze";
     };
-    clobberByDefault = false;
+    clobberByDefault = true;
   };
 }

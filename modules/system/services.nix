@@ -12,5 +12,11 @@
     enableNotifications = true;
   };
 
-  services.displayManager.ly.enable = false;
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+  };
+
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
 }

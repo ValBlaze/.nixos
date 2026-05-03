@@ -5,29 +5,26 @@
 
 {
   programs.niri.enable = true;
-  programs.dms-shell.enable = true;
-  programs.dsearch.enable = true;
+  programs.dms-shell = {
+    enable = true;
 
-  # services.displayManager.dms-greeter = {
-  #   enable = true;
-  #   compositor.name = "niri";
-  #   compositor.customConfig = ''
-  #     cursor {
-  #         xcursor-theme "Bibata-Modern-Classic"
-  #         xcursor-size 24
-  #     }
-  #     hotkey-overlay {
-  #         skip-at-startup
-  #     }
-  #   '';
-  #   configHome = "/home/valblaze";
-  # };
+    # Core features
+    enableSystemMonitoring = true; # System monitoring widgets (dgop)
+    enableVPN = false; # VPN management widget
+    enableDynamicTheming = true; # Wallpaper-based theming (matugen)
+    enableAudioWavelength = true; # Audio visualizer (cava)
+    enableCalendarEvents = false; # Calendar integration (khal)
+    enableClipboardPaste = false; # Pasting from the clipboard history (wtype)
+  };
+
+  services.displayManager.dms-greeter = {
+    enable = false;
+    compositor.name = "niri";
+  };
 
   environment.systemPackages = with pkgs; [
     xwayland-satellite
     qt6Packages.qt6ct
-    noctalia-shell
-    # dgop
   ];
 
   hjem.users.valblaze = {

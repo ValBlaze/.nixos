@@ -13,6 +13,6 @@
     # gnomeExtensions.paperwm
   ];
 
-  services.displayManager.gdm.enable = false;
-  services.desktopManager.gnome.enable = false;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 }
