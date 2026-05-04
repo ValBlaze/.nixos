@@ -1,5 +1,8 @@
 {
+  self,
+  inputs,
   pkgs,
+  lib,
   ...
 }:
 
@@ -30,4 +33,5 @@
   hjem.users.valblaze = {
     files.".config/niri".source = "/home/valblaze/.nixos/modules/desktop/niri";
   };
+
 }

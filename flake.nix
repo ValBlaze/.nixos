@@ -1,5 +1,5 @@
 {
-  description = "ValBlaze's NixOS environment featuring flake-parts, easy-hosts, and home-manager.";
+  description = "ValBlaze's NixOS environment featuring flake-parts, easy-hosts, and hjem.";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -12,27 +12,31 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mnw.url = "github:Gerg-L/mnw";
+    wrappers.url = "github:BirdeeHub/nix-wrapper-modules";
+    wrappers.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
-    inputs@{ flake-parts, ... }:
+    inputs@{ flake-parts, wrappers, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         inputs.easy-hosts.flakeModule
+        wrappers.flakeModules.wrappers
+        ./nvim
       ];
 
-      debug = true;
-      systems = [ "x86_64-linux" ];
+      systems = inputs.nixpkgs.lib.platforms.all;
 
       perSystem =
-        { pkgs, self', ... }:
+        {
+          pkgs,
+          lib,
+          self',
+          ...
+        }:
         {
           packages = {
             default = inputs.self.nixosConfigurations.live-iso.config.system.build.isoImage;
-            neovim = inputs.mnw.lib.wrap {
-              inherit inputs pkgs;
-            } ./nvim;
-            neovimDev = self'.packages.neovim.devMode;
           };
         };
 
@@ -41,11 +45,10 @@
         autoConstruct = true;
 
         perClass = class: {
-          modules =
-            inputs.nixpkgs.lib.optionals (class == "nixos") [
-              inputs.hjem.nixosModules.default
-	      (inputs.import-tree ./modules)
-            ];
+          modules = inputs.nixpkgs.lib.optionals (class == "nixos") [
+            inputs.hjem.nixosModules.default
+            (inputs.import-tree ./modules)
+          ];
         };
       };
     };
