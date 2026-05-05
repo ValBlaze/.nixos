@@ -76,7 +76,6 @@
       };
 
       specs.rust = {
-        enable = false;
         data = null;
         extraPackages = with pkgs; [
           rust-analyzer # language-server
