@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   self',
   ...
@@ -7,12 +8,8 @@
 {
   environment.systemPackages = with pkgs; [
     (self'.packages.neovim)
-    zed-editor-fhs
-    rustup
-    rust-analyzer
+    rustc
+    cargo
     clang
-    clang-tools
-    nixd
-    nil
   ];
 }
