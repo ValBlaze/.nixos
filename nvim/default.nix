@@ -18,15 +18,19 @@
           blink-cmp
           conform-nvim
           nvim-lint
+
           plenary-nvim
           which-key-nvim
           lualine-nvim
           fidget-nvim
+
           mini-nvim
           snacks-nvim
+
           nvim-treesitter.withAllGrammars
           colorful-menu-nvim
-          colorizer
+          neo-tree-nvim
+
           oil-nvim
           cord-nvim
         ];

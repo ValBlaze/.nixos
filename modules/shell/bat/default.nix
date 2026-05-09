@@ -1,22 +1,22 @@
 { pkgs, ... }:
 {
-  programs.bat = {
-    enable = true;
-    extraPackages = [
-      pkgs.bat-extras.core
-    ];
-    settings = {
-      theme = "'Catppuccin Macchiato'";
-    };
-  };
+  # programs.bat = {
+  #   enable = true;
+  #   extraPackages = [
+  #     pkgs.bat-extras.core
+  #   ];
+  #   settings = {
+  #     theme = "'Catppuccin Macchiato'";
+  #   };
+  # };
 
-  environment.shellAliases = {
-    cat = "bat";
-    diff = "batdiff";
-    grep = "batgrep";
-    man = "batman";
-    watch = "batwatch";
-  };
+  # environment.shellAliases = {
+  #   cat = "bat";
+  #   diff = "batdiff";
+  #   grep = "batgrep";
+  #   man = "batman";
+  #   watch = "batwatch";
+  # };
 
   hjem.users.valblaze = {
     files.".config/bat".source = "/home/valblaze/.nixos/modules/shell/bat";
