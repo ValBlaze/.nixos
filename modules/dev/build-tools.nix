@@ -10,6 +10,8 @@
     (self'.packages.neovim)
     rustc
     cargo
+    rustfmt
+    clippy
     clang
   ];
 }

@@ -29,7 +29,6 @@
 
           nvim-treesitter.withAllGrammars
           colorful-menu-nvim
-          neo-tree-nvim
 
           oil-nvim
           cord-nvim
