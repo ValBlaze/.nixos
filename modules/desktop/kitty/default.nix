@@ -15,6 +15,6 @@
   };
 
   environment.shellAliases = {
-    ssh = "kitty +kitten ssh";
+    ssh = "kitten ssh";
   };
 }

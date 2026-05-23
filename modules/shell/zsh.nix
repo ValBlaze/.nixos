@@ -13,17 +13,6 @@
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
     loginShellInit = ''
-      # To use batpipe, eval the output of this command in your shell init script.
-      LESSOPEN="|/nix/store/4ygcpcvlzwrxpykp4171zaf07rdj5q33-batpipe-2024.08.24-unstable-2025-02-22/bin/.batpipe-wrapped %s";
-      export LESSOPEN;
-      unset LESSCLOSE;
-
-      # The following will enable colors when using batpipe with less:
-      LESS="$LESS -R";
-      BATPIPE="color";
-      export LESS;
-      export BATPIPE;
-
       export FZF_DEFAULT_OPTS=" \
       --color=bg+:#363A4F,bg:#24273A,spinner:#F4DBD6,hl:#ED8796 \
       --color=fg:#CAD3F5,header:#ED8796,info:#C6A0F6,pointer:#F4DBD6 \
