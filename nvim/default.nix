@@ -19,10 +19,11 @@
           conform-nvim
           nvim-lint
 
-          plenary-nvim
+          # plenary-nvim
           which-key-nvim
           lualine-nvim
           fidget-nvim
+          noice-nvim
 
           mini-nvim
           snacks-nvim

@@ -10,8 +10,9 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-      "ydotool"
       "input"
+      "ydotool"
+      "docker"
     ];
     shell = pkgs.zsh;
   };

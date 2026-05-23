@@ -13,5 +13,6 @@
     rustfmt
     clippy
     clang
+    docker
   ];
 }

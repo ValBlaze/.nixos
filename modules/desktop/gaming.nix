@@ -21,4 +21,6 @@
     ];
     protontricks.enable = true;
   };
+
+  programs.obs-studio.enable = true;
 }

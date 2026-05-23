@@ -16,6 +16,10 @@
     wooting.enable = true;
   };
 
-  virtualisation.libvirtd.enable = false;
   programs.virt-manager.enable = false;
+
+  virtualisation = {
+    libvirtd.enable = false;
+    docker.enable = true;
+  };
 }
