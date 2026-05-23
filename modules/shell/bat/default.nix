@@ -1,24 +1,29 @@
 { pkgs, ... }:
 {
-  # programs.bat = {
-  #   enable = true;
-  #   extraPackages = [
-  #     pkgs.bat-extras.core
-  #   ];
-  #   settings = {
-  #     theme = "'Catppuccin Macchiato'";
-  #   };
-  # };
-  #
-  # environment.shellAliases = {
-  #   cat = "bat";
-  #   diff = "batdiff";
-  #   grep = "batgrep";
-  #   man = "batman";
-  #   watch = "batwatch";
-  # };
-  #
-  # hjem.users.valblaze = {
-  #   files.".config/bat".source = "/home/valblaze/.nixos/modules/shell/bat";
-  # };
+  programs.bat = {
+    enable = true;
+    extraPackages = with pkgs.bat-extras; [
+      batdiff
+      batgrep
+      batman
+      batpipe
+      batwatch
+      prettybat
+    ];
+    settings = {
+      theme = "'Catppuccin Macchiato'";
+    };
+  };
+
+  environment.shellAliases = {
+    cat = "bat";
+    diff = "batdiff";
+    grep = "batgrep";
+    man = "batman";
+    watch = "batwatch";
+  };
+
+  hjem.users.valblaze = {
+    files.".config/bat".source = "/home/valblaze/.nixos/modules/shell/bat";
+  };
 }
