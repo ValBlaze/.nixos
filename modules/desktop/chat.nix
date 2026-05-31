@@ -5,7 +5,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    vesktop
+    discord
     element-desktop
   ];
 }
