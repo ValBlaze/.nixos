@@ -18,7 +18,7 @@
   environment.shellAliases = {
     cat = "bat";
     diff = "batdiff";
-    grep = "batgrep";
+    # grep = "batgrep";
     man = "batman";
     watch = "batwatch";
   };

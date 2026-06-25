@@ -5,6 +5,9 @@
 
 {
   environment.systemPackages = with pkgs; [
+    wineWow64Packages.stable
+    winetricks
+    bottles
     heroic
     prismlauncher
   ];
@@ -23,5 +26,11 @@
     protontricks.enable = true;
   };
 
-  programs.obs-studio.enable = true;
+  programs.obs-studio = {
+    enable = true;
+
+    # plugins = with pkgs.obs-studio-plugins; [
+    #   obs-vaapi
+    # ];
+  };
 }

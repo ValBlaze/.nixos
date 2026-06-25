@@ -12,7 +12,6 @@
       "wheel"
       "input"
       "ydotool"
-      "docker"
     ];
     shell = pkgs.zsh;
   };

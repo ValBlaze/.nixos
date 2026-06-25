@@ -1,4 +1,5 @@
 {
+  pkgs,
   ...
 }:
 
@@ -12,14 +13,24 @@
 
   hardware = {
     graphics.enable = true;
+    amdgpu.opencl.enable = true;
     bluetooth.enable = true;
     wooting.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    clinfo
+    lshw
+    distrobox
+  ];
 
   programs.virt-manager.enable = false;
 
   virtualisation = {
     libvirtd.enable = false;
-    docker.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+    };
   };
 }

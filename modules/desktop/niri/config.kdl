@@ -12,7 +12,7 @@ cursor {
 }
 
 clipboard {
-    disable-primary
+    // disable-primary
 }
 
 // Input device configuration.

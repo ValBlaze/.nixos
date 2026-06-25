@@ -8,7 +8,6 @@
     libnotify
     wl-clipboard
     xclip
-    wineWow64Packages.full
   ];
 
   programs.ydotool.enable = true;

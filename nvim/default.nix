@@ -19,7 +19,6 @@
           conform-nvim
           nvim-lint
 
-          # plenary-nvim
           which-key-nvim
           lualine-nvim
           fidget-nvim
@@ -133,6 +132,6 @@
         };
       };
 
-      extraPackages = config.specCollect (acc: v: acc ++ (v.extraPackages or [ ])) [ ];
+      runtimePkgs = config.specCollect (acc: v: acc ++ (v.extraPackages or [ ])) [ ];
     };
 }

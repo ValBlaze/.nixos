@@ -28,7 +28,10 @@
         ./nvim
       ];
 
-      systems = inputs.nixpkgs.lib.platforms.all;
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
 
       perSystem =
         {
@@ -40,6 +43,7 @@
         {
           packages = {
             default = inputs.self.nixosConfigurations.live-iso.config.system.build.isoImage;
+            davinci-resolve-studio = pkgs.callPackage ./packages/davinci-resolve-studio.nix { };
           };
         };
 
