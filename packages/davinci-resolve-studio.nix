@@ -46,8 +46,7 @@
   copyDesktopItems,
   jq,
 
-  common-updater-scripts,
-  writeShellApplication,
+  perl,
 }:
 
 # Davinci Resolve Studio Cracked.
@@ -191,6 +190,15 @@ let
         '';
 
       dontStrip = true;
+
+      # Bypass license key
+      postInstall = ''
+        ${lib.getExe perl} -pi -e 's/\x03\x00\x89\x45\xFC\x83\x7D\xFC\x00\x74\x11\x48\x8B\x45\xC8\x8B/\x03\x00\x89\x45\xFC\x83\x7D\xFC\x00\xEB\x11\x48\x8B\x45\xC8\x8B/g' $out/bin/resolve
+        ${lib.getExe perl} -pi -e 's/\x74\x11\x48\x8B\x45\xC8\x8B\x55\xFC\x89\x50\x58\xB8\x00\x00\x00/\xEB\x11\x48\x8B\x45\xC8\x8B\x55\xFC\x89\x50\x58\xB8\x00\x00\x00/g' $out/bin/resolve
+        ${lib.getExe perl} -pi -e 's/\x74(.\xBF\x16\x00\x00\x00\xBE.\x01\x00\x00\xE8..\x05)/\x75$1/g' $out/bin/resolve
+        touch $out/.license/blackmagic.lic
+        echo -e "LICENSE blackmagic davinciresolvestudio 999999 permanent uncounted\n  hostid=ANY issuer=CGP customer=CGP issued=28-dec-2023\n  akey=0000-0000-0000-0000 _ck=00 sig=\"00\"" > $out/.license/blackmagic.lic
+      '';
 
       postFixup = ''
         for program in $out/bin/*; do
@@ -340,18 +348,21 @@ buildFHSEnv {
       zlib
     ];
 
+  # Removed license file generation
   extraPreBwrapCmds = ''
-    mkdir -p ~/.local/share/DaVinciResolve/license || exit 1
     mkdir -p ~/.local/share/DaVinciResolve/Extras || exit 1
+    mkdir -p ~/.local/share/DaVinciResolve/logs || exit 1
   '';
 
   extraBwrapArgs = [
-    ''--bind "$HOME"/.local/share/DaVinciResolve/license ${davinci}/.license''
     ''--bind "$HOME"/.local/share/DaVinciResolve/Extras ${davinci}/Extras''
+    ''--bind "$HOME"/.local/share/DaVinciResolve/logs ${davinci}/logs''
   ];
 
   runScript = "${bash}/bin/bash ${writeText "davinci-wrapper" ''
+    # Resolve's Qt build does not work reliably on Wayland.
     export QT_QPA_PLATFORM=xcb
+
     export QT_XKB_CONFIG_ROOT="${xkeyboard_config}/share/X11/xkb"
     export QT_PLUGIN_PATH="${davinci}/libs/plugins:$QT_PLUGIN_PATH"
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:/usr/lib32:${davinci}/libs
