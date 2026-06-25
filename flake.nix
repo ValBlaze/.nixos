@@ -35,11 +35,17 @@
 
       perSystem =
         {
-          pkgs,
           lib,
           self',
+          system,
           ...
         }:
+        let
+          pkgs = import inputs.nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        in
         {
           packages = {
             default = inputs.self.nixosConfigurations.live-iso.config.system.build.isoImage;
