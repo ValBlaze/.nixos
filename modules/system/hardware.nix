@@ -21,13 +21,14 @@
   environment.systemPackages = with pkgs; [
     clinfo
     lshw
+    mission-center
     distrobox
+    gnome-boxes
   ];
 
-  programs.virt-manager.enable = false;
-
   virtualisation = {
-    libvirtd.enable = false;
+    libvirtd.enable = true;
+    docker.enable = false;
     podman = {
       enable = true;
       dockerCompat = true;

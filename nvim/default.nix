@@ -23,6 +23,7 @@
           lualine-nvim
           fidget-nvim
           noice-nvim
+          nvim-scrollview
 
           mini-nvim
           snacks-nvim

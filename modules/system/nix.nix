@@ -22,6 +22,8 @@
         "root"
         "valblaze"
       ];
+      use-xdg-base-directories = true;
+      warn-dirty = false;
     };
     # set $NIX_PATH env to flake input
     nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];

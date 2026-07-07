@@ -15,6 +15,7 @@
     fd
     ripgrep
     eza
+    xdg-ninja
   ];
 
   programs.ydotool.enable = true;

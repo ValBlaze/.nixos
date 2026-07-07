@@ -25,6 +25,7 @@
       efi.canTouchEfiVariables = true;
     };
 
+    zswap.enable = true;
     kernelPackages = pkgs.linuxPackages_latest;
   };
 

@@ -51,7 +51,7 @@
 
 # Davinci Resolve Studio Cracked.
 # Based off this thread: https://www.reddit.com/r/LinuxCrackSupport/comments/1nfqhld/davinci_resolve_studio_202_fix_linux_crack_guide/
-# Keep up to date with nixpkgs upstream https://github.com/NixOS/nixpkgs/blob/dfe0a400bbb39c1e378844230d8319601b52115a/pkgs/by-name/da/davinci-resolve/package.nix
+# Keep up to date with nixpkgs upstream https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/da/davinci-resolve/package.nix
 
 let
   davinci = (
@@ -274,11 +274,11 @@ let
           ];
         })
         (makeDesktopItem {
-          name = "davinci-remote-monitor";
-          desktopName = "DaVinci Remote Monitor";
-          exec = "davinci-remote-monitor";
-          icon = "davinci-remote-monitor";
-          comment = "DaVinci Remote Monitor";
+          name = "blackmagic-remote-monitor";
+          desktopName = "Blackmagic Remote Monitor";
+          exec = "blackmagic-remote-monitor";
+          icon = "blackmagic-remote-monitor";
+          comment = "Blackmagic Remote Monitor";
           categories = [
             "AudioVideo"
             "Video"
@@ -389,7 +389,7 @@ buildFHSEnv {
           ''"${davinci}/DaVinci Control Panels Setup/DaVinci Control Panels Setup"'';
         "davinci-fairlight-studio-utility" =
           ''"${davinci}/Fairlight Studio Utility/Fairlight Studio Utility"'';
-        "davinci-remote-monitor" = ''"${davinci}/bin/DaVinci Remote Monitor"'';
+        "blackmagic-remote-monitor" = ''"${davinci}/bin/Blackmagic Remote Monitor"'';
       };
     in
     ''
@@ -401,7 +401,7 @@ buildFHSEnv {
       mkdir -p $out/share/icons/hicolor/{128x128,256x256}/apps
       ln -s ${davinci}/graphics/DV_Resolve.png $out/share/icons/hicolor/128x128/apps/davinci-resolve-studio.png
       ln -s ${davinci}/graphics/DV_Panels.png $out/share/icons/hicolor/128x128/apps/davinci-control-panels-setup.png
-      ln -s ${davinci}/graphics/Remote_Monitoring.png $out/share/icons/hicolor/128x128/apps/davinci-remote-monitor.png
+      ln -s ${davinci}/graphics/Remote_Monitoring.png $out/share/icons/hicolor/128x128/apps/blackmagic-remote-monitor.png
       ln -s ${davinci}/graphics/blackmagicraw-player_256x256_apps.png $out/share/icons/hicolor/256x256/apps/blackmagicraw-player.png
       ln -s ${davinci}/graphics/blackmagicraw-speedtest_256x256_apps.png $out/share/icons/hicolor/256x256/apps/blackmagicraw-speedtest.png
 

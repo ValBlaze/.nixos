@@ -6,24 +6,24 @@
 {
   users.users.valblaze = {
     isNormalUser = true;
-    description = "valblaze";
+    shell = pkgs.fish;
     extraGroups = [
       "networkmanager"
       "wheel"
-      "input"
+      "input" # FIXME: find a more secure solution to input automation
       "ydotool"
     ];
-    shell = pkgs.zsh;
   };
 
   hjem = {
     extraModules = [
       inputs.hjem-rum.hjemModules.default
     ];
+
+    clobberByDefault = true;
+
     users.valblaze = {
-      user = "valblaze";
       directory = "/home/valblaze";
     };
-    clobberByDefault = true;
   };
 }
