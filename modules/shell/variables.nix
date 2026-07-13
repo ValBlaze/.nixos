@@ -25,7 +25,7 @@
     XDG_STATE_HOME = "$HOME/.local/state";
     XDG_CACHE_HOME = "$HOME/.cache";
 
-    # GNUPGHOME = "$XDG_DATA_HOME/gnupg";
+    GNUPGHOME = "$XDG_DATA_HOME/gnupg";
     WINEPREFIX = "$XDG_DATA_HOME/wine";
     CARGO_HOME = "$XDG_DATA_HOME/cargo";
     RENPY_PATH_TO_SAVES = "$XDG_DATA_HOME";
