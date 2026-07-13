@@ -11,6 +11,6 @@
   ];
 
   environment.shellAliases = {
-    zeditor = "zed";
+    zed = "zeditor";
   };
 }
