@@ -3,12 +3,12 @@
 // Check the wiki for a full description of the configuration:
 // https://yalter.github.io/niri/Configuration:-Introduction
 
-spawn-sh-at-startup "gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'"
-spawn-sh-at-startup "gsettings set org.gnome.desktop.interface cursor-size '22'"
+spawn-sh-at-startup "gsettings set org.gnome.desktop.interface cursor-theme 'breeze_cursors'"
+spawn-sh-at-startup "gsettings set org.gnome.desktop.interface cursor-size '24'"
 
 cursor {
-    xcursor-theme "Bibata-Modern-Classic"
-    xcursor-size 22
+    xcursor-theme "breeze_cursors"
+    xcursor-size 24
 }
 
 clipboard {

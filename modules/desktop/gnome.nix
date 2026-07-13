@@ -6,11 +6,10 @@
 {
   environment.systemPackages = with pkgs; [
     nautilus
-    gnome-disk-utility
+    seahorse
     gnome-calculator
     gnome-clocks
-    # gnome-tweaks
-    # gnomeExtensions.paperwm
+    gnome-tweaks
   ];
 
   services.displayManager.gdm.enable = true;
