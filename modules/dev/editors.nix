@@ -9,4 +9,8 @@
     nil
     nixd
   ];
+
+  environment.shellAliases = {
+    zeditor = "zed";
+  };
 }

@@ -3,6 +3,7 @@
   programs.bat = {
     enable = true;
     extraPackages = with pkgs.bat-extras; [
+      # grab all bat-extras
       batdiff
       batgrep
       batman

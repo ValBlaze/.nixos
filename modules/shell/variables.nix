@@ -28,5 +28,6 @@
     GNUPGHOME = "$XDG_DATA_HOME/gnupg";
     WINEPREFIX = "$XDG_DATA_HOME/wine";
     CARGO_HOME = "$XDG_DATA_HOME/cargo";
+    RENPY_PATH_TO_SAVES = "$XDG_DATA_HOME";
   };
 }
