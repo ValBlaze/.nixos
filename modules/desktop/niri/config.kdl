@@ -11,6 +11,12 @@ cursor {
     xcursor-size 24
 }
 
+environment {
+  XCURSOR_THEME "breeze_cursors"
+  XCURSOR_SIZE "24"
+  GTK_CURSOR_THEME "breeze_cursors"
+}
+
 clipboard {
     // disable-primary
 }
