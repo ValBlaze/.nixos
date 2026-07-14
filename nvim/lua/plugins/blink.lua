@@ -1,68 +1,58 @@
----@module 'blink.cmp'
----@type blink.cmp.Config
 require("blink.cmp").setup({
-  keymap = {
-    -- :help ins-completion
-    preset = "default",
-  },
+	signature = { enabled = true },
+	snippets = { preset = "luasnip" },
 
-  appearance = {
-    nerd_font_variant = "mono",
-  },
+	cmdline = {
+		keymap = { preset = "inherit" }, -- Seems like a more reasonable default
+		completion = { menu = { auto_show = true } },
+	},
 
-  completion = {
-    documentation = { auto_show = true, auto_show_delay_ms = 500 },
-    ghost_text = {
-      enabled = true,
-    },
-    menu = {
-      draw = {
-        columns = { { "kind_icon" }, { "label", gap = 1 } },
-        components = {
-          label = {
-            text = function(ctx)
-              return require("colorful-menu").blink_components_text(ctx)
-            end,
-            highlight = function(ctx)
-              return require("colorful-menu").blink_components_highlight(ctx)
-            end,
-          },
-        },
-      },
-    },
-  },
+	keymap = {
+		-- Unbound by default
+		["<C-b>"] = { "scroll_signature_up", "fallback" },
+		["<C-f>"] = { "scroll_signature_down", "fallback" },
+	},
 
-  snippets = { preset = "luasnip" },
+	completion = {
+		documentation = { auto_show = true },
+		ghost_text = { enabled = true },
+		keyword = { range = "full" },
+		menu = {
+			draw = {
+				-- We don't need label_description now because label and label_description are already combined together in label by colorful-menu.nvim.
+				columns = { { "kind_icon" }, { "label", gap = 1 } },
 
-  cmdline = {
-    keymap = {
-      -- recommended, as the default keymap will only show and select the next item
-      ["<Tab>"] = { "show", "accept" },
-    },
-    completion = {
-      menu = {
-        ---@diagnostic disable-next-line: unused-local
-        auto_show = function(ctx)
-          return vim.fn.getcmdtype() == ":"
-            -- enable for inputs as well, with:
-            or vim.fn.getcmdtype() == "@"
-        end,
-      },
-    },
-  },
+				components = {
+					label = {
+						text = function(ctx)
+							return require("colorful-menu").blink_components_text(ctx)
+						end,
+						highlight = function(ctx)
+							return require("colorful-menu").blink_components_highlight(ctx)
+						end,
+					},
+				},
+			},
+		},
+	},
 
-  sources = {
-    default = { "lsp", "path", "snippets", "buffer", "lazydev" },
-    providers = {
-      lazydev = {
-        name = "LazyDev",
-        module = "lazydev.integrations.blink",
-        score_offset = 100,
-      },
-    },
-  },
+	-- Blink's default sources: { 'lsp', 'path', 'snippets', 'buffer' }
+	-- Use :BlinkCmp status to view which source providers are enabled.
+	sources = {
+		per_filetype = {
+			lua = {
+				inherit_defaults = true,
+				"lazydev",
+			},
+		},
 
-  fuzzy = { implementation = "prefer_rust_with_warning" },
-
-  signature = { enabled = true },
+		providers = {
+			lazydev = {
+				name = "LazyDev",
+				module = "lazydev.integrations.blink",
+				-- Prefer lazydev over lua_ls when both provide the same completion
+				score_offset = 100,
+			},
+		},
+	},
 })

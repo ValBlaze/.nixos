@@ -1,5 +1,9 @@
 -- For all options see `:help option-list`
 
+-- Must happen before plugins are loaded (otherwise wrong leader will be used)
+vim.g.mapleader = " "
+vim.g.have_nerd_font = true
+
 -- General ==================
 vim.o.confirm = true
 vim.o.mouse = "a"
@@ -20,7 +24,6 @@ vim.o.showmode = false
 vim.o.signcolumn = "yes" -- less flicker
 vim.o.splitbelow = true
 vim.o.splitright = true
-vim.o.winborder = "rounded"
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Editing ==================

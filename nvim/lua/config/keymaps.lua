@@ -1,6 +1,6 @@
 -- General Keymaps===========================
 local function nmap_leader(lhs, rhs, desc)
-  vim.keymap.set("n", "<leader>" .. lhs, rhs, { desc = desc })
+	vim.keymap.set("n", "<leader>" .. lhs, rhs, { desc = desc })
 end
 
 -- Use <Esc> to exit terminal mode
@@ -23,24 +23,9 @@ vim.keymap.set("i", "<C-y>", "<C-x><C-y>")
 vim.keymap.set("n", "<leader>r", "<Cmd>restart<CR>")
 nmap_leader("r", "<Cmd>restart<CR>", "Restart Neovim")
 
-vim.keymap.set(
-  { "n", "v" },
-  "<leader>y",
-  '"+y',
-  { desc = "Copy to System Clipboard" }
-)
-vim.keymap.set(
-  { "n", "v" },
-  "<leader>p",
-  '"+p',
-  { desc = "Paste from System Clipboard" }
-)
-vim.keymap.set(
-  "n",
-  "<leader>Y",
-  '"+Y',
-  { desc = "Copy Line to System Clipboard" }
-)
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Copy to System Clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste from System Clipboard" })
+vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Copy Line to System Clipboard" })
 
 nmap_leader("ga", "<Cmd>Git diff --cached<CR>", "Added diff")
 nmap_leader("gA", "<Cmd>Git diff --cached -- %<CR>", "Added diff buffer")
@@ -53,12 +38,7 @@ nmap_leader("gL", "<Cmd>Git log<CR>", "Log buffer")
 nmap_leader("go", "<Cmd>lua MiniDiff.toggle_overlay()<CR>", "Toggle overlay")
 nmap_leader("gs", "<Cmd>lua MiniGit.show_at_cursor()<CR>", "Show at cursor")
 
-vim.keymap.set(
-  "x",
-  "gs",
-  "<Cmd>lua MiniGit.show_at_cursor()<CR>",
-  { desc = "Show at selection" }
-)
+vim.keymap.set("x", "gs", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { desc = "Show at selection" })
 
 -- local session_new = 'MiniSessions.write(vim.fn.input("Session name: "))'
 -- nmap_leader("sd", '<Cmd>lua MiniSessions.select("delete")<CR>', "Delete")

@@ -10,6 +10,7 @@
     zed-editor
     nil
     nixd
+    lua-language-server
   ];
 
   environment.shellAliases = {
