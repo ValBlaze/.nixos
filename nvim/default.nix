@@ -10,7 +10,7 @@
     {
       imports = [ wlib.wrapperModules.neovim ];
 
-      config.settings.config_directory = "/home/valblaze/.nixos/nvim";
+      settings.config_directory = "/home/valblaze/.nixos/nvim";
 
       specs.general = {
         data = with pkgs.vimPlugins; [
@@ -131,6 +131,5 @@
       };
 
       runtimePkgs = config.specCollect (acc: v: acc ++ (v.extraPackages or [ ])) [ ];
-
     };
 }
