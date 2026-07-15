@@ -1,3 +1,11 @@
+require("oil").setup({
+	skip_confirm_for_simple_edits = true,
+	view_options = {
+		show_hidden = true,
+		natural_order = true,
+	},
+})
+
 -- Declare a global function to retrieve the current directory
 function _G.get_oil_winbar()
 	local bufnr = vim.api.nvim_win_get_buf(vim.g.statusline_winid)
@@ -11,11 +19,3 @@ function _G.get_oil_winbar()
 end
 
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-
-require("oil").setup({
-	skip_confirm_for_simple_edits = true,
-	view_options = {
-		show_hidden = true,
-		natural_order = true,
-	},
-})

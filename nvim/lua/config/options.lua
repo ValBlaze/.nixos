@@ -4,13 +4,13 @@
 vim.g.mapleader = " "
 vim.g.have_nerd_font = true
 
--- General ==================
+-- General --
 vim.o.confirm = true
 vim.o.mouse = "a"
 vim.o.switchbuf = "usetab"
 vim.o.undofile = true
 
--- UI =======================
+-- UI --
 vim.o.breakindent = true
 vim.o.breakindentopt = "shift:1"
 -- vim.o.colorcolumn = "+1"
@@ -24,9 +24,10 @@ vim.o.showmode = false
 vim.o.signcolumn = "yes" -- less flicker
 vim.o.splitbelow = true
 vim.o.splitright = true
+vim.o.winborder = "solid"
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
--- Editing ==================
+-- Editing --
 vim.o.expandtab = true
 vim.o.formatoptions = "rqnl1j" -- Improve comment editing
 vim.o.ignorecase = true

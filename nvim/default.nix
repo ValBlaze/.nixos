@@ -88,9 +88,7 @@
       };
 
       specs.c = {
-        data = with pkgs.vimPlugins; [
-          cmake-tools-nvim
-        ];
+        data = null;
         extraPackages = with pkgs; [
           clang-tools
           cmake-language-server

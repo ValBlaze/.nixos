@@ -1,16 +1,10 @@
 require("catppuccin").setup({
-	flavour = "mocha",
 	transparent_background = false,
 	float = {
-		solid = false,
 		transparent = false,
+		solid = vim.o.winborder == "solid",
 	},
-	default_integrations = true,
-	integrations = {
-		noice = true,
-		snacks = true,
-		fidget = true,
-	},
+	auto_integrations = true, -- Doesn't work on nix
 })
 
 vim.cmd.colorscheme("catppuccin")

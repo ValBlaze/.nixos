@@ -20,7 +20,7 @@ local function map(mode, lhs, rhs, desc)
 	vim.keymap.set(mode, lhs, rhs, { desc = desc })
 end
 
--- map("n", "<leader>e", Snacks.picker.explorer, "[E]xplorer")
+map("n", "<leader>e", Snacks.picker.explorer, "[E]xplorer")
 map("n", "<leader><space>", Snacks.picker.buffers, "Find Buffers")
 map("n", "<leader>sf", Snacks.picker.files, "[S]earch [F]iles")
 map("n", "<leader>sg", Snacks.picker.grep, "[S]earch by [G]rep")

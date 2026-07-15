@@ -8,9 +8,9 @@ require("blink.cmp").setup({
 	},
 
 	keymap = {
-		-- Unbound by default
-		["<C-b>"] = { "scroll_signature_up", "fallback" },
-		["<C-f>"] = { "scroll_signature_down", "fallback" },
+		-- Scrolling is unbound by default
+		["<C-u>"] = { "scroll_signature_up", "fallback" },
+		["<C-d>"] = { "scroll_signature_down", "fallback" },
 	},
 
 	completion = {
@@ -37,7 +37,7 @@ require("blink.cmp").setup({
 	},
 
 	-- Blink's default sources: { 'lsp', 'path', 'snippets', 'buffer' }
-	-- Use :BlinkCmp status to view which source providers are enabled.
+	-- Use `:BlinkCmp status` to view which source providers are enabled.
 	sources = {
 		per_filetype = {
 			lua = {
