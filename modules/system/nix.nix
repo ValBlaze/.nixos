@@ -31,7 +31,6 @@
         "nix-command"
         "flakes"
       ];
-      download-buffer-size = 524288000;
       substituters = [
         "https://nix-community.cachix.org"
       ];
@@ -45,8 +44,10 @@
       use-xdg-base-directories = true;
       warn-dirty = false;
     };
-    # set $NIX_PATH env to flake input
-    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+    # set $NIX_PATH env to flake input so that
+    nixPath = [
+      "nixpkgs=${inputs.nixpkgs}"
+    ];
   };
 
   programs.nix-ld.enable = true;

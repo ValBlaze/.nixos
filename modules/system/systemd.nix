@@ -1,23 +1,30 @@
 {
+  config,
+  pkgs,
+  lib,
   ...
 }:
 
 {
-  systemd.paths.nixos-rebuild-watcher = {
-    pathConfig = {
-      PathModified = "$NH_FLAKE";
-    };
-    wantedBy = [ "multi-user.target" ];
+  systemd.user.services.nixos-rebuild-watch = {
+    wantedBy = [ "default.target" ];
+    serviceConfig.Type = "exec";
+
+    path = with pkgs; [
+      watchexec
+      coreutils
+    ];
+
+    script = ''
+      watchexec -w /home/valblaze/.nixos -e nix --postpone --notify -- systemctl start nixos-rebuild
+    '';
   };
 
-  systemd.services.nixos-rebuild-watcher = {
-    serviceConfig = {
-      Type = "oneshot";
-      User = "root";
-    };
+  systemd.services.nixos-rebuild = {
+    serviceConfig.Type = "oneshot";
+
     script = ''
-      nh os switch
-      notify-send NixOS Rebuild Complete!
+      ${config.system.build.nixos-rebuild}/bin/nixos-rebuild switch --flake path:/home/valblaze/.nixos
     '';
   };
 }

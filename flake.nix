@@ -1,5 +1,6 @@
 {
   description = "ValBlaze's NixOS environment featuring flake-parts, easy-hosts, and hjem.";
+  #
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
