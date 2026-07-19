@@ -7,13 +7,18 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
     easy-hosts.url = "github:tgirlcloud/easy-hosts";
-    hjem.follows = "hjem-rum/hjem";
-    hjem-rum = {
-      url = "github:snugnug/hjem-rum";
+    hjem = {
+      url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    wrappers.url = "github:BirdeeHub/nix-wrapper-modules";
-    wrappers.inputs.nixpkgs.follows = "nixpkgs";
+    wrappers = {
+      url = "github:BirdeeHub/nix-wrapper-modules";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -25,6 +30,7 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         inputs.easy-hosts.flakeModule
+        inputs.home-manager.flakeModules.home-manager
         wrappers.flakeModules.wrappers
         ./nvim
       ];

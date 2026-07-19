@@ -5,6 +5,6 @@
   ];
 
   hjem.users.valblaze = {
-    files.".config/cava".source = "/home/valblaze/.nixos/modules/shell/cava";
+    xdg.config.files."cava".source = ./.;
   };
 }

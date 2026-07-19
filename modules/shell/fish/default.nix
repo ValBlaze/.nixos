@@ -7,7 +7,7 @@
 
 {
   hjem.users.valblaze = {
-    files.".config/fish".source = ./.;
+    xdg.config.files."fish".source = ./.;
   };
 
   programs.fish = {
