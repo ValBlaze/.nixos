@@ -6,9 +6,13 @@
 {
   flake.nixosConfigurations.lapnix = inputs.nixpkgs.lib.nixosSystem {
     modules = [
-      ./hardware-configuration.nix
-    ];
+      ({ ... }: {
+        imports = [
+          ./hardware-configuration.nix
+        ];
 
-    networking.hostName = "lapnix";
+        networking.hostName = "lapnix";
+      })
+    ];
   };
 }
