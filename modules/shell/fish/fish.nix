@@ -6,12 +6,20 @@
 }:
 
 {
+  hjem.users.valblaze = {
+    files.".config/fish".source = ./.;
+  };
+
   programs.fish = {
     enable = true;
 
     interactiveShellInit = ''
       set fish_greeting
-      set fish_key_bindings fish_vi_key_bindings
+
+      function fish_user_key_bindings
+          fish_vi_key_bindings
+          bind -M insert ctrl-backspace backward-kill-path-component
+      end
     '';
 
     loginShellInit = ''
