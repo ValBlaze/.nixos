@@ -10,116 +10,119 @@
     {
       imports = [ wlib.wrapperModules.neovim ];
 
-      settings.config_directory = "/home/valblaze/.nixos/nvim";
+      settings.config_directory = "~/.nixos/nvim"; # impure
 
-      specs.general = {
-        data = with pkgs.vimPlugins; [
-          nvim-lspconfig
-          blink-cmp
-          conform-nvim
-          nvim-lint
+      specs = {
+        general = {
+          data = with pkgs.vimPlugins; [
+            nvim-lspconfig
+            blink-cmp
+            conform-nvim
+            nvim-lint
 
-          which-key-nvim
-          lualine-nvim
-          fidget-nvim
-          noice-nvim
+            which-key-nvim
+            lualine-nvim
+            fidget-nvim
 
-          mini-nvim
-          snacks-nvim
+            mini-nvim
+            snacks-nvim
 
-          nvim-treesitter.withAllGrammars
-          colorful-menu-nvim
+            nvim-treesitter.withAllGrammars
+            colorful-menu-nvim
 
-          oil-nvim
-          cord-nvim
+            oil-nvim
+            cord-nvim
+
+            grug-far-nvim
+          ];
+
+          extraPackages = with pkgs; [
+            ripgrep
+            fzf
+            fd
+            universal-ctags
+            wl-clipboard
+          ];
+        };
+
+        diagnostics = with pkgs.vimPlugins; [
+          trouble-nvim
+          tiny-inline-diagnostic-nvim
+          todo-comments-nvim
         ];
 
-        extraPackages = with pkgs; [
-          ripgrep
-          fzf
-          fd
-          universal-ctags
-          wl-clipboard
+        snippets = with pkgs.vimPlugins; [
+          luasnip
+          friendly-snippets
         ];
-      };
 
-      specs.diagnostics = with pkgs.vimPlugins; [
-        trouble-nvim
-        tiny-inline-diagnostic-nvim
-        todo-comments-nvim
-      ];
-
-      specs.snippets = with pkgs.vimPlugins; [
-        luasnip
-        friendly-snippets
-      ];
-
-      specs.colorschemes = with pkgs.vimPlugins; [
-        catppuccin-nvim
-        onedarkpro-nvim
-        palenight-vim
-      ];
-
-      specs.lua = {
-        data = with pkgs.vimPlugins; [
-          lazydev-nvim
+        colorschemes = with pkgs.vimPlugins; [
+          catppuccin-nvim
+          onedarkpro-nvim
+          palenight-vim
         ];
-        extraPackages = with pkgs; [
-          lua-language-server # language-server
-          stylua # formatter
-        ];
-      };
 
-      specs.nix = {
-        data = null;
-        extraPackages = with pkgs; [
-          nixd # language-server
-          nixfmt # formatter
-        ];
-      };
+        lua = {
+          data = with pkgs.vimPlugins; [
+            lazydev-nvim
+          ];
+          extraPackages = with pkgs; [
+            lua-language-server # language-server
+            stylua # formatter
+          ];
+        };
 
-      specs.rust = {
-        data = null;
-        extraPackages = with pkgs; [
-          rust-analyzer # language-server
-          rustfmt # formatter
-          clippy # linter
-        ];
-      };
+        nix = {
+          data = null;
+          extraPackages = with pkgs; [
+            nixd # language-server
+            nixfmt # formatter
+          ];
+        };
 
-      specs.c = {
-        data = null;
-        extraPackages = with pkgs; [
-          clang-tools
-          cmake-language-server
-          cmake-format
-          cmake-lint
-          mesonlsp
-        ];
-      };
+        rust = {
+          data = null;
+          extraPackages = with pkgs; [
+            rust-analyzer # language-server
+            rustfmt # formatter
+            clippy # linter
+          ];
+        };
 
-      specs.python = {
-        data = null;
-        extraPackages = with pkgs; [
-          basedpyright # language-server
-          ruff # formatter & linter
-        ];
-      };
+        c = {
+          data = null;
+          extraPackages = with pkgs; [
+            clang-tools
+            cmake-language-server
+            cmake-format
+            cmake-lint
+            mesonlsp
+          ];
+        };
 
-      specs.typescript = {
-        data = null;
-        extraPackages = with pkgs; [
-          eslint_d # linter
-        ];
-      };
+        python = {
+          data = null;
+          extraPackages = with pkgs; [
+            basedpyright # language-server
+            ruff # formatter & linter
+          ];
+        };
 
-      specs.shell = {
-        data = null;
-        extraPackages = with pkgs; [
-          bash-language-server # language-server
-          shfmt # formatter
-          shellcheck # linter
-        ];
+        typescript = {
+          data = null;
+          extraPackages = with pkgs; [
+            eslint_d # linter
+          ];
+        };
+
+        shell = {
+          data = null;
+          extraPackages = with pkgs; [
+            bash-language-server # language-server
+            shfmt # formatter
+            shellcheck # linter
+          ];
+        };
       };
 
       specMods = {
