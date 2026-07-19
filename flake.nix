@@ -6,7 +6,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:denful/import-tree";
-    easy-hosts.url = "github:tgirlcloud/easy-hosts";
     hjem = {
       url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,15 +23,17 @@
   outputs =
     inputs@{
       flake-parts,
-      wrappers,
       ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
-        inputs.easy-hosts.flakeModule
-        inputs.home-manager.flakeModules.home-manager
-        wrappers.flakeModules.wrappers
+        (inputs.import-tree [
+          ./hosts
+          ./modules
+        ])
         ./nvim
+        inputs.hjem.nixosModules.default
+        inputs.wrappers.flakeModules.wrappers
       ];
 
       systems = [
@@ -59,17 +60,5 @@
             davinci-resolve-studio = pkgs.callPackage ./packages/davinci-resolve-studio.nix { };
           };
         };
-
-      easy-hosts = {
-        path = ./hosts;
-        autoConstruct = true;
-
-        perClass = class: {
-          modules = inputs.nixpkgs.lib.optionals (class == "nixos") [
-            inputs.hjem.nixosModules.default
-            (inputs.import-tree ./modules)
-          ];
-        };
-      };
     };
 }
