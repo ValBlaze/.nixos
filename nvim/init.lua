@@ -1,8 +1,4 @@
-require("config.options")
-require("config.keymaps")
-require("config.autocmds")
-require("config.usercmds")
-require("config.lsp")
+require("config")
 require("plugins")
 
 -- Pre-Bundled Packages
