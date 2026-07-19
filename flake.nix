@@ -27,10 +27,8 @@
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
-        (inputs.import-tree [
-          ./hosts
-          ./modules
-        ])
+        (inputs.import-tree ./modules)
+        ./hosts
         ./nvim
         # inputs.hjem.nixosModules.default
         inputs.wrappers.flakeModules.wrappers
