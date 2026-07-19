@@ -11,6 +11,7 @@
       ({ pkgs, ... }: {
         imports = [
           ./hardware-configuration.nix
+          inputs.hjem.nixosModules.default
           (inputs.import-tree ../../modules)
         ];
 

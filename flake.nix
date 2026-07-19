@@ -27,8 +27,8 @@
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
-        (inputs.import-tree.match "default.nix" ./hosts)
-        inputs.hjem.nixosModules.default
+      	./hosts/nixtop
+	./hosts/lapnix
         inputs.wrappers.flakeModules.wrappers
       ];
 
