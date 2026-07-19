@@ -32,7 +32,7 @@
           ./modules
         ])
         ./nvim
-        inputs.hjem.nixosModules.default
+        # inputs.hjem.nixosModules.default
         inputs.wrappers.flakeModules.wrappers
       ];
 

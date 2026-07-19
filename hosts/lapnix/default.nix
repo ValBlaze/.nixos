@@ -4,7 +4,7 @@
 }:
 
 {
-  flake.nixosConfigurations.lapnix = {
+  flake.nixosConfigurations.lapnix = inputs.nixpkgs.lib.nixosSystem {
     modules = [
       ./hardware-configuration.nix
     ];

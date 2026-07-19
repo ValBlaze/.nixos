@@ -6,7 +6,7 @@
 }:
 
 {
-  flake.nixosConfigurations.nixtop = {
+  flake.nixosConfigurations.nixtop = inputs.nixpkgs.lib.nixosSystem {
     modules = [
       ./hardware-configuration.nix
     ];
