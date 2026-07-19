@@ -10,7 +10,7 @@
     {
       imports = [ wlib.wrapperModules.neovim ];
 
-      settings.config_directory = "/home/valblaze/.nixos/modules/dev/nvim"; # impure
+      settings.config_directory = "/home/valblaze/.nixos/nvim"; # impure
 
       specs = {
         general = {
