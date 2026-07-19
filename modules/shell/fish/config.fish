@@ -1,3 +1,8 @@
 if status is-interactive
-# Commands to run in interactive sessions can go here
+  set fish_greeting
+
+  function fish_user_key_bindings
+    fish_vi_key_bindings
+      bind -M insert ctrl-backspace backward-kill-path-component
+  end
 end

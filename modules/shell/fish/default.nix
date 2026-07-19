@@ -13,27 +13,24 @@
   programs.fish = {
     enable = true;
 
-    interactiveShellInit = ''
-      set fish_greeting
-
-      function fish_user_key_bindings
-          fish_vi_key_bindings
-          bind -M insert ctrl-backspace backward-kill-path-component
-      end
-    '';
-
     loginShellInit = ''
       direnv hook fish | source
     '';
   };
 
-  environment.shellAliases = {
-    ns = "${lib.getExe pkgs.nix-search-tv} print | ${lib.getExe pkgs.fzf} --preview '${lib.getExe pkgs.nix-search-tv} preview {}' --scheme history";
-    l = "${lib.getExe pkgs.eza} -al";
-    ls = "${lib.getExe pkgs.eza}";
-    lt = "${lib.getExe pkgs.eza} -laT";
-    tree = "${lib.getExe pkgs.eza} -T";
-  };
+  environment.shellAliases =
+    let
+      nix-search-tv = lib.getExe pkgs.nix-search-tv;
+      fzf = lib.getExe fzf;
+      eza = lib.getExe pkgs.eza;
+    in
+    {
+      ns = "${nix-search-tv} print | ${fzf} --preview '${nix-search-tv} preview {}' --scheme history";
+      l = "${eza} -al";
+      ls = "${eza}";
+      lt = "${eza} -laT";
+      tree = "${eza} -T";
+    };
 
   programs.zoxide = {
     enable = true;
