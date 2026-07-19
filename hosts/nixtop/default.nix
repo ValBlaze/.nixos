@@ -11,6 +11,7 @@
       ({ pkgs, ... }: {
         imports = [
           ./hardware-configuration.nix
+          (inputs.import-tree ../../modules)
         ];
 
         networking.hostName = "nixtop";
