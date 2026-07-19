@@ -21,7 +21,7 @@
   environment.shellAliases =
     let
       nix-search-tv = lib.getExe pkgs.nix-search-tv;
-      fzf = lib.getExe fzf;
+      fzf = lib.getExe pkgs.fzf;
       eza = lib.getExe pkgs.eza;
     in
     {
