@@ -1,4 +1,5 @@
 {
+  pkgs,
   ...
 }:
 
@@ -9,4 +10,8 @@
       pull.rebase = true;
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    gh
+  ];
 }
