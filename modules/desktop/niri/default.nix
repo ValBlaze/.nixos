@@ -31,7 +31,7 @@
   ];
 
   hjem.users.valblaze = {
-    xdg.config.files."niri".source = ./.;
+    xdg.config.files."niri".source = "/home/valblaze/.nixos/modules/desktop/niri";
   };
 
 }
