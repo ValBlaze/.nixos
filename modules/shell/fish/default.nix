@@ -7,7 +7,7 @@
 
 {
   hjem.users.valblaze = {
-    xdg.config.files."fish".source = ./.;
+    xdg.config.files."fish".source = "/home/valblaze/.nixos/modules/shell/fish";
   };
 
   programs.fish = {

@@ -9,6 +9,6 @@
   ];
 
   hjem.users.valblaze = {
-    xdg.config.files."fastfetch".source = ./.;
+    xdg.config.files."fastfetch".source = "/home/valblaze/.nixos/modules/shell/fastfetch";
   };
 }

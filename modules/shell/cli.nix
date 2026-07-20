@@ -7,7 +7,6 @@
   environment.systemPackages = with pkgs; [
     wget
     dig
-    gh
     zip
     unzip
     nix-search-tv

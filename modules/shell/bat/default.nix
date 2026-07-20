@@ -25,6 +25,6 @@
   };
 
   hjem.users.valblaze = {
-    xdg.config.files."bat".source = ./.;
+    xdg.config.files."bat".source = "/home/valblaze/.nixos/modules/shell/bat";
   };
 }
