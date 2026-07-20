@@ -1,12 +1,12 @@
 {
+  inputs,
   pkgs,
-  self',
   ...
 }:
 
 {
   environment.systemPackages = with pkgs; [
-    (self'.packages.neovim)
+    (inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.neovim)
     zed-editor
     nil
     nixd

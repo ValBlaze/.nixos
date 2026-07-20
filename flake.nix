@@ -21,26 +21,23 @@
   };
 
   outputs =
-    inputs@{
-      flake-parts,
-      ...
-    }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [
-      	./hosts/nixtop
-	./hosts/lapnix
-        inputs.wrappers.flakeModules.wrappers
-      ];
-
+    inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
         "x86_64-linux"
         "aarch64-linux"
       ];
 
+      imports = [
+        ./hosts/nixtop
+        ./hosts/lapnix
+        ./nvim
+        inputs.wrappers.flakeModules.wrappers
+      ];
+
       perSystem =
         {
           lib,
-          self',
           system,
           ...
         }:
