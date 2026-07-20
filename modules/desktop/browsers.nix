@@ -5,8 +5,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    google-chrome
     pywalfox-native
+    chromium
   ];
 
   programs.firefox = {
