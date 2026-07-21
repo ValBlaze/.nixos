@@ -3,7 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-parts.url = "github:hercules-ci/flake-parts";
+    blueprint = {
+      url = "github:numtide/blueprint";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     import-tree.url = "github:denful/import-tree";
     hjem = {
       url = "github:feel-co/hjem";
@@ -19,10 +22,40 @@
     };
   };
 
-  outputs = inputs: {
-    nixosModules."nixtop" = inputs.nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = ./hosts/nixtop;
+  outputs =
+    inputs@{ nixpkgs, wrappers, ... }:
+    let
+      inherit (nixpkgs) lib;
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
+      forAllSystems =
+        f:
+        lib.genAttrs systems (
+          system:
+          f {
+            pkgs = import nixpkgs {
+              inherit system;
+              config.allowUnfree = true;
+            };
+          }
+        );
+    in
+    {
+      nixosConfigurations.nixtop = lib.nixosSystem {
+        modules = [ ./hosts/nixtop ];
+        specialArgs = { inherit inputs; };
+      };
+
+      packages = forAllSystems (
+        { pkgs }: {
+          neovim = wrappers.lib.evalPackage [
+            { inherit pkgs; }
+            ./nvim
+          ];
+          davinci-resolve-studio = pkgs.callPackage ./packages/davinci-resolve-studio.nix { };
+        }
+      );
     };
-  };
 }

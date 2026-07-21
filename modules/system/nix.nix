@@ -24,6 +24,9 @@
     })
   ];
 
+  nixpkgs.config.allowUnfree = true;
+  programs.nix-ld.enable = true;
+
   nix = {
     settings = {
       auto-optimise-store = true;
@@ -44,14 +47,7 @@
       use-xdg-base-directories = true;
       warn-dirty = false;
     };
-    # set $NIX_PATH env to flake input so that
-    nixPath = [
-      "nixpkgs=${inputs.nixpkgs}"
-    ];
   };
 
-  programs.nix-ld.enable = true;
-
-  nixpkgs.config.allowUnfree = true;
   system.stateVersion = "25.05"; # Do not change!
 }
