@@ -6,8 +6,9 @@
 {
   imports = [
     ./hardware-configuration.nix
+    (inputs.import-tree ../../modules)
+    inputs.hjem.nixosModules.default
   ];
 
-  _module.args = { inherit inputs; };
   networking.hostName = "lapnix";
 }
