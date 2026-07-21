@@ -39,9 +39,15 @@
         );
     in
     {
-      nixosConfigurations.nixtop = lib.nixosSystem {
-        modules = [ ./hosts/nixtop ];
-        specialArgs = { inherit inputs; };
+      nixosConfigurations = {
+        nixtop = lib.nixosSystem {
+          modules = [ ./hosts/nixtop ];
+          specialArgs = { inherit inputs; };
+        };
+        lapnix = lib.nixosSystem {
+          modules = [ ./hosts/lapnix ];
+          specialArgs = { inherit inputs; };
+        };
       };
 
       packages = forAllSystems (
