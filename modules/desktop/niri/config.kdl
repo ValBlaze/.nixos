@@ -88,7 +88,7 @@ input {
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    focus-follows-mouse max-scroll-amount="0%"
+    // focus-follows-mouse max-scroll-amount="0%"
 
     disable-power-key-handling
 }
@@ -458,6 +458,7 @@ binds {
     Mod+O repeat=false { toggle-overview; }
 
     Mod+Q repeat=true { close-window; }
+    Mod+Shift+Q repeat=false { spawn-sh "kill -9 $(niri msg --json focused-window | jq .pid)"; }
 
     Mod+H     { focus-column-left; }
     Mod+J     { focus-window-down; }

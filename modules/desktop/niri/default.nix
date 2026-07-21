@@ -28,10 +28,10 @@
   environment.systemPackages = with pkgs; [
     xwayland-satellite
     qt6Packages.qt6ct
+    jq
   ];
 
   hjem.users.valblaze = {
     xdg.config.files."niri".source = "/home/valblaze/.nixos/modules/desktop/niri";
   };
-
 }
