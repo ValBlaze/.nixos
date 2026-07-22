@@ -27,8 +27,7 @@
 
   environment.systemPackages = with pkgs; [
     xwayland-satellite
-    qt6Packages.qt6ct
-    jq
+    jq # used in config.kdl
   ];
 
   hjem.users.valblaze = {
