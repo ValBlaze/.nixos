@@ -29,5 +29,4 @@ vim.keymap.set({ "n" }, "<leader>gl", "<Cmd>Git log<CR>", { desc = "Log" })
 vim.keymap.set({ "n" }, "<leader>gL", "<Cmd>Git log<CR>", { desc = "Log buffer" })
 vim.keymap.set({ "n" }, "<leader>go", "<Cmd>lua MiniDiff.toggle_overlay()<CR>", { desc = "Toggle overlay" })
 vim.keymap.set({ "n" }, "<leader>gs", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { desc = "Show at cursor" })
-
 vim.keymap.set("x", "gs", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { desc = "Show at selection" })
