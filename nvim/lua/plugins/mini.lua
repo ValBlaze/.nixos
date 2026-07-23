@@ -1,6 +1,6 @@
 require("mini.ai").setup({ n_lines = 500 })
 require("mini.cursorword").setup()
-require("mini.diff").setup()
+-- require("mini.diff").setup()
 require("mini.git").setup()
 require("mini.icons").setup()
 require("mini.misc").setup()

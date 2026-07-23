@@ -8,10 +8,9 @@ vim.g.have_nerd_font = true
 -- General --
 vim.o.confirm = true
 vim.o.mouse = "a"
-vim.o.switchbuf = "usetab"
 vim.o.timeoutlen = 300
 vim.o.undofile = true
-vim.o.updatetime = 250
+vim.o.updatetime = 250 -- Long CursorHold timeout is annoying
 
 -- UI --
 vim.o.breakindent = true
@@ -20,24 +19,26 @@ vim.o.linebreak = true
 vim.o.list = true
 vim.o.number = true
 vim.o.relativenumber = true
+vim.o.showbreak = " ↳ "
 vim.o.showmode = false
-vim.o.signcolumn = "yes" -- less flicker
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.winborder = "solid"
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Editing --
+vim.o.clipboard = "unnamedplus"
 vim.o.expandtab = true
 vim.o.formatoptions = "rqnl1j" -- Improve comment editing
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.infercase = true
-vim.o.smartindent = false -- Use treesitter instead
+vim.o.smartindent = true
 vim.o.tabstop = 2
 vim.o.shiftwidth = 0
 vim.o.spelloptions = "camel" -- Treat camelCase word parts as separate words
 vim.o.virtualedit = "block"
+
 vim.o.iskeyword = "@,48-57,_,192-255,-" -- Treat dash as `word` textobject part
 
 -- Pattern for a start of numbered list (used in `gw`). This reads as
