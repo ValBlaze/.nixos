@@ -1,6 +1,6 @@
 -- For all options see `:help option-list`
 
--- Must happen before plugins are loaded (otherwise wrong leader will be used)
+-- NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.have_nerd_font = true
@@ -28,15 +28,14 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Editing --
 vim.o.clipboard = "unnamedplus"
-vim.o.expandtab = true
 vim.o.formatoptions = "rqnl1j" -- Improve comment editing
 vim.o.ignorecase = true
-vim.o.smartcase = true
 vim.o.infercase = true
-vim.o.smartindent = true
-vim.o.tabstop = 2
 vim.o.shiftwidth = 0
+vim.o.smartcase = true
+vim.o.smartindent = true
 vim.o.spelloptions = "camel" -- Treat camelCase word parts as separate words
+vim.o.tabstop = 2 -- NOTE: May be overwritten by Neovim's built-in filetype-plugins
 vim.o.virtualedit = "block"
 
 vim.o.iskeyword = "@,48-57,_,192-255,-" -- Treat dash as `word` textobject part

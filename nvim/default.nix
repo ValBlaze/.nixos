@@ -30,8 +30,8 @@
 
         oil-nvim
         cord-nvim
-
         grug-far-nvim
+        guess-indent-nvim
       ];
 
       extraPackages = with pkgs; [

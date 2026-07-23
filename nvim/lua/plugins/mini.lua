@@ -6,7 +6,6 @@ require("mini.icons").setup()
 require("mini.misc").setup()
 require("mini.pairs").setup()
 require("mini.sessions").setup()
-require("mini.starter").setup()
 require("mini.surround").setup()
 
 MiniIcons.mock_nvim_web_devicons()
