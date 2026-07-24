@@ -25,7 +25,7 @@
         mini-nvim
         snacks-nvim
 
-        nvim-treesitter.withAllGrammars
+        # nvim-treesitter.withAllGrammars
         colorful-menu-nvim
 
         oil-nvim
@@ -44,8 +44,6 @@
     };
 
     diagnostics = with pkgs.vimPlugins; [
-      trouble-nvim
-      tiny-inline-diagnostic-nvim
       todo-comments-nvim
     ];
 

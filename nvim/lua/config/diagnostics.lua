@@ -8,7 +8,7 @@ vim.diagnostic.config({
 	virtual_text = true, -- Text shows up at the end of the line
 	virtual_lines = false, -- Text shows up underneath the line, with virtual lines
 
-	-- Auto open the float, so you can easily read the errors when jumping with `[d` and `]d`
+	-- Auto open the float, so you can easily read the errors when jumping with `[d` and `]d`.
 	jump = {
 		on_jump = function(_, bufnr)
 			vim.diagnostic.open_float({

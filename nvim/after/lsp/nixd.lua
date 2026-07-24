@@ -11,7 +11,7 @@ return {
 			},
 			options = {
 				nixos = {
-					expr = '(builtins.getFlake "/home/valblaze/.nixos").nixosConfigurations."nixos-laptop".options',
+					expr = '(builtins.getFlake "/home/valblaze/.nixos").nixosConfigurations.nixtop.options',
 				},
 			},
 			diagnostic = {
