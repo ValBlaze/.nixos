@@ -6,9 +6,8 @@
 
 {
   imports = [
+    ./imports.nix
     ./hardware-configuration.nix
-    (inputs.import-tree ../../modules)
-    inputs.hjem.nixosModules.default
   ];
 
   networking.hostName = "nixtop";
