@@ -17,9 +17,12 @@
 
   hjem = {
     clobberByDefault = true;
+  };
 
-    users.valblaze = {
-      directory = "/home/valblaze";
-    };
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.extraSpecialArgs = { inherit inputs; };
+  home-manager.users.valblaze = {
+    home.stateVersion = "26.05";
   };
 }
