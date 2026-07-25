@@ -3,22 +3,22 @@
   pkgs,
   ...
 }:
-# let
-#   tree-sitter-comment = pkgs.vimUtils.buildVimPlugin {
-#     name = "tree-sitter-comment";
-#     version = "custom";
-#     src = inputs.self.tree-sitter-comment;
-#   };
-#   allGrammars = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars;
-#   filteredGrammars = builtins.filter (p: p.pname != "tree-sitter-comment") allGrammars;
-# in
+let
+  tree-sitter-comment = pkgs.vimUtils.buildVimPlugin {
+    name = "tree-sitter-comment";
+    version = "custom";
+    src = inputs.tree-sitter-comment;
+  };
+  allGrammars = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars;
+  filteredGrammars = builtins.filter (p: p.pname != "tree-sitter-comment") allGrammars;
+in
 {
   home-manager.users.valblaze = {
     programs.neovim = {
       enable = true;
       sideloadInitLua = true;
       plugins = with pkgs.vimPlugins; [
-        # (nvim-treesitter.withPlugins (_: filteredGrammars ++ [ tree-sitter-comment ]))
+        (nvim-treesitter.withPlugins (_: filteredGrammars ++ [ tree-sitter-comment ]))
         nvim-lspconfig
         blink-cmp
         conform-nvim

@@ -3,7 +3,5 @@
   ...
 }:
 {
-  environment.systemPackages = with pkgs; [
-    gemini-cli
-  ];
+  environment.systemPackages = with pkgs; [ ];
 }
