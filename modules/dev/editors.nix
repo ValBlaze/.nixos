@@ -6,7 +6,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-	(inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.neovim)
+    (inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.neovim.devMode)
     zed-editor
     nil
     nixd

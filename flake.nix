@@ -60,7 +60,7 @@
 
       packages = forAllSystems (
         { pkgs }: {
-	  neovim = inputs.mnw.lib.wrap { inherit inputs pkgs; } ./nvim;
+          neovim = inputs.mnw.lib.wrap { inherit inputs pkgs; } ./nvim;
           davinci-resolve-studio = pkgs.callPackage ./packages/davinci-resolve-studio.nix { };
         }
       );
