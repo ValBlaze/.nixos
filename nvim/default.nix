@@ -3,9 +3,10 @@
   pkgs,
   ...
 }:
+# FIXME: make this work
 let
-  tree-sitter-comment = pkgs.vimUtils.buildVimPlugin {
-    name = "tree-sitter-comment";
+  tree-sitter-comment = pkgs.tree-sitter.buildGrammar {
+    language = "tree-sitter-comment";
     version = "custom";
     src = inputs.tree-sitter-comment;
   };

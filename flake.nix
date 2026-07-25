@@ -12,10 +12,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    wrappers = {
-      url = "github:BirdeeHub/nix-wrapper-modules";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    mnw.url = "github:Gerg-L/mnw";
     tree-sitter-comment = {
       url = "github:OXY2DEV/tree-sitter-comment";
       flake = false;
@@ -25,7 +22,6 @@
   outputs =
     inputs@{
       nixpkgs,
-      wrappers,
       ...
     }:
     let
@@ -64,10 +60,7 @@
 
       packages = forAllSystems (
         { pkgs }: {
-          neovim = wrappers.lib.evalPackage [
-            { inherit pkgs; }
-            ./nvim
-          ];
+	  neovim = inputs.mnw.lib.wrap { inherit inputs pkgs; } ./nvim;
           davinci-resolve-studio = pkgs.callPackage ./packages/davinci-resolve-studio.nix { };
         }
       );

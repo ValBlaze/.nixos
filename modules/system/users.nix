@@ -23,6 +23,7 @@
   home-manager.useUserPackages = true;
   home-manager.extraSpecialArgs = { inherit inputs; };
   home-manager.users.valblaze = {
+    programs.home-manager.enable = true;
     home.stateVersion = "26.05";
   };
 }
