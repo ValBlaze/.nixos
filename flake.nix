@@ -25,9 +25,7 @@
   outputs =
     inputs@{
       nixpkgs,
-      import-tree,
       wrappers,
-      home-manager,
       ...
     }:
     let

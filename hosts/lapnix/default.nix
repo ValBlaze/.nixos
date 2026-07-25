@@ -5,7 +5,7 @@
 
 {
   imports = [
-    ./imports.nix
+    ../imports.nix
     ./hardware-configuration.nix
   ];
 
