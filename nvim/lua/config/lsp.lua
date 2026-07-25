@@ -2,6 +2,8 @@ vim.lsp.config("*", {
 	capabilities = require("blink.cmp").get_lsp_capabilities(),
 })
 
+vim.api.nvim_set_hl(0, "@lsp.type.comment.lua", {})
+
 vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("nixd")

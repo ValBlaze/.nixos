@@ -10,6 +10,7 @@
     zip
     unzip
     nix-search-tv
+    nix-melt
     fzf
     fd
     ripgrep

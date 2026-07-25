@@ -1,10 +1,20 @@
 {
+  inputs,
   wlib,
   config,
   pkgs,
   lib,
   ...
 }:
+let
+  tree-sitter-comment = pkgs.vimUtils.buildVimPlugin {
+    name = "tree-sitter-comment";
+    version = "custom";
+    src = inputs.self.tree-sitter-comment;
+  };
+  allGrammars = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars;
+  filteredGrammars = builtins.filter (p: p.pname != "tree-sitter-comment") allGrammars;
+in
 {
   imports = [ wlib.wrapperModules.neovim ];
 
@@ -13,6 +23,7 @@
   specs = {
     general = {
       data = with pkgs.vimPlugins; [
+        (nvim-treesitter.withPlugins (_: filteredGrammars ++ [ tree-sitter-comment ]))
         nvim-lspconfig
         blink-cmp
         conform-nvim
@@ -25,8 +36,8 @@
         mini-nvim
         snacks-nvim
 
-        # nvim-treesitter.withAllGrammars
         colorful-menu-nvim
+        render-markdown-nvim
 
         oil-nvim
         cord-nvim
