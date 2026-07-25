@@ -1,0 +1,5 @@
+-- FIXME: make this work
+--
+-- ```lua
+-- print("hi")
+-- ```
