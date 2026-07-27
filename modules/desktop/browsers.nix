@@ -5,15 +5,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    pywalfox-native
     chromium
+    firefox
+    pywalfox-native
   ];
-
-  programs.firefox = {
-    enable = true;
-    languagePacks = [ "en-US" ];
-    policies = {
-      DisableTelemetry = true;
-    };
-  };
 }
