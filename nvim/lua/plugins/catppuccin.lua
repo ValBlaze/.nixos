@@ -2,7 +2,7 @@ require("catppuccin").setup({
 	transparent_background = false,
 	float = {
 		transparent = false,
-		solid = vim.o.winborder == "solid",
+		solid = false,
 	},
 	auto_integrations = true, -- Doesn't work on nix
 })

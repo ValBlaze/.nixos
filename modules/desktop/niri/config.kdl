@@ -384,6 +384,14 @@ window-rule {
     draw-border-with-background false
 }
 
+window-rule {
+    match app-id="^zen$"
+
+    background-effect {
+        blur true
+    }
+}
+
 layer-rule {
     match namespace="^quickshell$"
     place-within-backdrop true
@@ -413,7 +421,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+T hotkey-overlay-title="Open Kitty" { spawn "kitty"; }
+    Mod+T hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
     Mod+E hotkey-overlay-title="Open Explorer" { spawn "nautilus"; }
     Mod+Space hotkey-overlay-title="Spotlight" { spawn-sh "dms ipc call spotlight-bar toggle"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn-sh "dms ipc call lock lock"; }

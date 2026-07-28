@@ -6,8 +6,8 @@
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
 
-    EDITOR = "nvim";
-    VISUAL = "nvim";
+    EDITOR = "zed";
+    VISUAL = "zed";
 
     FZF_DEFAULT_OPTS = " \\
       --color=bg+:#363A4F,bg:#24273A,spinner:#F4DBD6,hl:#ED8796 \\

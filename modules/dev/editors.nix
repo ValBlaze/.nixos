@@ -10,6 +10,7 @@
     zed-editor
     nil
     nixd
+    ghostty
   ];
 
   environment.shellAliases = {

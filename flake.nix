@@ -17,6 +17,10 @@
       url = "github:OXY2DEV/tree-sitter-comment";
       flake = false;
     };
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

@@ -27,6 +27,7 @@ vim.o.inccommand = "split"
 
 vim.o.conceallevel = 2
 vim.o.cmdheight = 0
+vim.o.foldlevelstart = 99
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.signcolumn = "yes" -- Reduce flicker
@@ -35,4 +36,5 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.virtualedit = "block"
-vim.o.winborder = "solid"
+vim.o.winborder = "single"
+vim.opt.shortmess:append("sI") -- disable nvim intro
