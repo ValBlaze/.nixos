@@ -1,5 +1,5 @@
 -- NOTE: test
-require("mini.ai").setup({ n_lines = 500 })
+require("mini.ai").setup()
 require("mini.cursorword").setup()
 require("mini.diff").setup({
 	view = {

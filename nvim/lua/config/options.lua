@@ -38,7 +38,8 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.virtualedit = "block"
 vim.o.winborder = "none"
-vim.opt.shortmess:append("sI") -- disable nvim intro
+vim.opt.sessionoptions:append("options") -- `MiniSessions restart()` breaks without this
+vim.opt.shortmess:append("sI") -- Disable NVIM intro
 
 if vim.g.neovide then
 	-- Put anything you want to happen only in Neovide here
