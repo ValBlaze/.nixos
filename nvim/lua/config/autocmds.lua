@@ -7,17 +7,17 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- vim.api.nvim_create_autocmd("FileType", {
--- 	desc = "Enable highlighting, folding, and indentation with treesitter",
--- 	callback = function(args)
--- 		pcall(vim.treesitter.start, args.buf)
---
--- 		vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
--- 		vim.wo[0][0].foldmethod = "expr"
---
--- 		vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
--- 	end,
--- })
+vim.api.nvim_create_autocmd("FileType", {
+	desc = "Enable highlighting, folding, and indentation with treesitter",
+	callback = function(args)
+		pcall(vim.treesitter.start, args.buf)
+
+		vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+		vim.wo[0][0].foldmethod = "expr"
+
+		vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+	end,
+})
 
 vim.api.nvim_create_autocmd("VimResized", {
 	desc = "Equalize splits on resize",

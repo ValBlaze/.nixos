@@ -25,16 +25,26 @@ vim.o.infercase = true
 vim.o.smartcase = true
 vim.o.inccommand = "split"
 
-vim.o.conceallevel = 2
 vim.o.cmdheight = 0
 vim.o.foldlevelstart = 99
+vim.o.cursorline = true
+vim.o.cursorlineopt = "number"
 vim.o.number = true
-vim.o.relativenumber = true
-vim.o.signcolumn = "yes" -- Reduce flicker
+vim.o.numberwidth = 3
+vim.o.signcolumn = "yes:1" -- Reduce flicker
 vim.o.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "› ", trail = "·", nbsp = "␣" }
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.virtualedit = "block"
-vim.o.winborder = "single"
+vim.o.winborder = "none"
 vim.opt.shortmess:append("sI") -- disable nvim intro
+
+if vim.g.neovide then
+	-- Put anything you want to happen only in Neovide here
+	vim.o.guifont = "JetBrainsMono Nerd Font Mono:h12"
+	vim.g.neovide_padding_top = 8
+	vim.g.neovide_padding_bottom = 8
+	vim.g.neovide_padding_right = 8
+	vim.g.neovide_padding_left = 8
+end

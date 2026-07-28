@@ -1,7 +1,12 @@
 -- NOTE: test
 require("mini.ai").setup({ n_lines = 500 })
 require("mini.cursorword").setup()
--- require("mini.diff").setup()
+require("mini.diff").setup({
+	view = {
+		style = "sign",
+		signs = { add = "│", change = "│", delete = "-" },
+	},
+})
 require("mini.git").setup()
 require("mini.icons").setup()
 require("mini.misc").setup()
