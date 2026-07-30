@@ -38,7 +38,6 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.virtualedit = "block"
 vim.o.winborder = "none"
-vim.opt.sessionoptions:append("options") -- `MiniSessions restart()` breaks without this
 vim.opt.shortmess:append("sI") -- Disable NVIM intro
 
 if vim.g.neovide then
