@@ -8,7 +8,7 @@ require("snacks").setup({
 	notifier = { enabled = false },
 	quickfile = { enabled = true },
 	scope = { enabled = true },
-	scroll = { enabled = false },
+	scroll = { enabled = not vim.g.neovide },
 	statuscolumn = { enabled = false },
 	words = { enabled = false },
 })

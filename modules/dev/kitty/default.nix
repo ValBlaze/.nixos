@@ -5,7 +5,7 @@
 
 {
   hjem.users.valblaze = {
-    xdg.config.files."kitty".source = "/home/valblaze/.nixos/modules/desktop/kitty";
+    xdg.config.files."kitty".source = "/home/valblaze/.nixos/modules/dev/kitty";
   };
 
   environment.systemPackages = with pkgs; [

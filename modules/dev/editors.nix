@@ -8,7 +8,7 @@
   environment.systemPackages = with pkgs; [
     (inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.neovim.devMode)
     neovide
-    zed-editor
+    zed-editor-fhs
     nil
     nixd
     ghostty
