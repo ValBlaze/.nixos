@@ -7,6 +7,7 @@
   environment.systemPackages = with pkgs; [
     kdePackages.breeze
     adwaita-icon-theme
+    qt6Packages.qt6ct
   ];
 
   # hjem.users.valblaze = {

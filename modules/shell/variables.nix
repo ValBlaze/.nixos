@@ -5,9 +5,10 @@
 {
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
+    QT_QPA_PLATFORMTHEME = "qt6ct";
 
-    EDITOR = "zed";
-    VISUAL = "zed";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
 
     FZF_DEFAULT_OPTS = " \\
       --color=bg+:#363A4F,bg:#24273A,spinner:#F4DBD6,hl:#ED8796 \\
