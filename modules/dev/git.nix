@@ -4,15 +4,15 @@
 }:
 
 {
-  home-manager.users.valblaze = {
-    programs.git = {
-      enable = true;
-      settings = {
-        user.email = "valblazeyt@gmail.com";
-        user.name = "Val Blaze";
-        pull.rebase = true;
-      };
+  programs.git = {
+    enable = true;
+    config = {
+      user.email = "valblazeyt@gmail.com";
+      user.name = "Val Blaze";
+      pull.rebase = true;
     };
-    programs.gh.enable = true;
   };
+  environment.systemPackages = with pkgs; [
+    gh
+  ];
 }
