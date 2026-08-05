@@ -171,9 +171,9 @@ layout {
     // preset-window-heights { }
 
     // You can change the default width of the new windows.
-    // default-column-width { proportion 0.5; }
+    default-column-width { proportion 0.5; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
-    default-column-width {}
+    // default-column-width {}
 
     // By default focus ring and border are rendered as a solid background rectangle
     // behind windows. That is, they will show up through semitransparent windows.
@@ -464,6 +464,7 @@ binds {
     Mod+O repeat=false { toggle-overview; }
 
     Mod+Q repeat=true { close-window; }
+    // FIXME: Kills xwayland-satellite on an XWayland window
     Mod+Shift+Q repeat=false { spawn-sh "kill -9 $(niri msg --json focused-window | jq .pid)"; }
 
     Mod+H     { focus-column-left; }
