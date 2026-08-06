@@ -101,6 +101,8 @@ output "DP-1" {
     // Uncomment this line to disable this output.
     // off
 
+    variable-refresh-rate
+
     // Resolution and, optionally, refresh rate of the output.
     // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
     // If the refresh rate is omitted, niri will pick the highest refresh rate
@@ -129,13 +131,15 @@ output "DP-1" {
 }
 
 output "DP-2" {
-  mode "1920x1080"
+    variable-refresh-rate
 
-  scale 1
+    mode "1920x1080"
 
-  transform "normal"
+    scale 1
 
-  position x=0 y=100
+    transform "normal"
+
+    position x=0 y=100
 }
 
 // Settings that influence how windows are positioned and sized.

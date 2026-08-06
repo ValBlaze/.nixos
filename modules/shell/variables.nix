@@ -26,5 +26,6 @@
     WINEPREFIX = "$XDG_DATA_HOME/wine";
     CARGO_HOME = "$XDG_DATA_HOME/cargo";
     RENPY_PATH_TO_SAVES = "$XDG_DATA_HOME";
+    _JAVA_OPTIONS = "-Djava.util.prefs.userRoot=\"$XDG_CONFIG_HOME\"/java";
   };
 }
