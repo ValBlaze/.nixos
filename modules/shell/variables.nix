@@ -7,8 +7,8 @@
     NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFORMTHEME = "qt6ct";
 
-    EDITOR = "nvim";
-    VISUAL = "nvim";
+    EDITOR = "neovide";
+    VISUAL = "neovide";
 
     FZF_DEFAULT_OPTS = " \\
       --color=bg+:#363A4F,bg:#24273A,spinner:#F4DBD6,hl:#ED8796 \\

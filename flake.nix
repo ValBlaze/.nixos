@@ -39,6 +39,7 @@
         lib.genAttrs systems (
           system:
           f {
+            inherit system;
             pkgs = import nixpkgs {
               inherit system;
               config.allowUnfree = true;
@@ -60,10 +61,18 @@
           ];
           specialArgs = { inherit inputs; };
         };
+        iso = lib.nixosSysetm {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/iso
+          ];
+          specialArgs = { inherit inputs; };
+        };
       };
 
       packages = forAllSystems (
-        { pkgs }: {
+        { system, pkgs }: {
+          default = inputs.self.nixosConfigurations.${system}.config.system.build.images.iso;
           neovim = inputs.mnw.lib.wrap { inherit inputs pkgs; } ./nvim;
           davinci-resolve-studio = pkgs.callPackage ./packages/davinci-resolve-studio.nix { };
         }
