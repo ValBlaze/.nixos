@@ -1,4 +1,4 @@
--- Map up/down to visual line movements which avoids skipping wrapped lines.
+-- Map <Up/Down> to visual line movements which avoids skipping wrapped lines.
 vim.keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 vim.keymap.set({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 vim.keymap.set({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
@@ -17,8 +17,7 @@ vim.keymap.set({ "n" }, "<A-j>", "<C-w>j")
 vim.keymap.set({ "n" }, "<A-k>", "<C-w>k")
 vim.keymap.set({ "n" }, "<A-l>", "<C-w>l")
 
-vim.keymap.set({ "n" }, "<leader>r", "<Cmd>lua MiniSessions.restart()<CR>", { desc = "Restart Neovim" })
-
+-- Recommended git mappings
 vim.keymap.set({ "n" }, "<leader>ga", "<Cmd>Git diff --cached<CR>", { desc = "Added diff" })
 vim.keymap.set({ "n" }, "<leader>gA", "<Cmd>Git diff --cached -- %<CR>", { desc = "Added diff buffer" })
 vim.keymap.set({ "n" }, "<leader>gc", "<Cmd>Git commit<CR>", { desc = "Commit" })
@@ -30,3 +29,5 @@ vim.keymap.set({ "n" }, "<leader>gL", "<Cmd>Git log<CR>", { desc = "Log buffer" 
 vim.keymap.set({ "n" }, "<leader>go", "<Cmd>lua MiniDiff.toggle_overlay()<CR>", { desc = "Toggle overlay" })
 vim.keymap.set({ "n" }, "<leader>gs", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { desc = "Show at cursor" })
 vim.keymap.set("x", "gs", "<Cmd>lua MiniGit.show_at_cursor()<CR>", { desc = "Show at selection" })
+
+vim.keymap.set({ "n" }, "<leader>r", "<Cmd>lua MiniSessions.restart()<CR>", { desc = "Restart Neovim" })

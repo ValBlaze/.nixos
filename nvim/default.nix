@@ -69,7 +69,7 @@ in
       snacks-nvim
 
       colorful-menu-nvim
-      markview-nvim
+      render-markdown
       todo-comments-nvim
 
       oil-nvim
