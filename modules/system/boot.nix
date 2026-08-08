@@ -15,9 +15,10 @@
             protocol: efi
             path: boot():/EFI/Microsoft/Boot/bootmgfw.efi
         '';
-        extraConfig = ''
-          remember_last_entry: yes
-        '';
+        # WARNING: Rebooting doesn't automatically select latest NixOS generation
+        # extraConfig = ''
+        #   remember_last_entry: yes
+        # '';
 
         style.wallpapers = [ ../../assets/wallpapers/limine-splash.png ];
       };
