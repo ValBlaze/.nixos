@@ -8,7 +8,7 @@
     loader = {
       limine = {
         enable = true;
-        secureBoot.enable = true;
+        secureBoot.enable = false;
 
         extraEntries = ''
           /Windows 11
