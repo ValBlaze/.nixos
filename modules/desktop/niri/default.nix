@@ -26,6 +26,7 @@
   environment.systemPackages = with pkgs; [
     xwayland-satellite
     jq # used in config.kdl
+    xdotool # used to kill xwayland-satellite windows
   ];
 
   hjem.users.valblaze = {
