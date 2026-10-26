@@ -35,5 +35,6 @@
 
   environment.systemPackages = with pkgs; [
     sbctl
+    efibootmgr
   ];
 }
