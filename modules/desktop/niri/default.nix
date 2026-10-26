@@ -5,18 +5,7 @@
 
 {
   programs.niri.enable = true;
-
-  programs.dms-shell = {
-    enable = true;
-
-    # Core features
-    enableSystemMonitoring = true; # System monitoring widgets (dgop)
-    enableVPN = false; # VPN management widget
-    enableDynamicTheming = true; # Wallpaper-based theming (matugen)
-    enableAudioWavelength = true; # Audio visualizer (cava)
-    enableCalendarEvents = false; # Calendar integration (khal)
-    enableClipboardPaste = false; # Pasting from the clipboard history (wtype)
-  };
+  programs.dms-shell.enable = true;
 
   services.displayManager.dms-greeter = {
     enable = false;

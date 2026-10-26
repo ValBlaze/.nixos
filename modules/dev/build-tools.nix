@@ -11,5 +11,7 @@
     rustfmt
     clippy
     clang
+    python3
+    uv
   ];
 }

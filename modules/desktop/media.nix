@@ -7,5 +7,6 @@
   environment.systemPackages = with pkgs; [
     pkgsRocm.ffmpeg-full
     yt-dlp
+    spotify
   ];
 }
