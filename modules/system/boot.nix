@@ -9,7 +9,11 @@
       efi.canTouchEfiVariables = true;
 
       systemd-boot.enable = true;
-      timeout = 0;
+
+      # higher number corresponds to higher number of columns and rows
+      systemd-boot.consoleMode = "max";
+
+      timeout = 0; # in systemd-boot, hold space to open boot menu
 
       limine = {
         enable = false;
