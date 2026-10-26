@@ -6,8 +6,13 @@
 {
   boot = {
     loader = {
+      efi.canTouchEfiVariables = true;
+
+      systemd-boot.enable = true;
+      timeout = 0;
+
       limine = {
-        enable = true;
+        enable = false;
         secureBoot.enable = true;
 
         extraEntries = ''
@@ -22,8 +27,6 @@
 
         style.wallpapers = [ ../../assets/wallpapers/limine-splash.png ];
       };
-
-      efi.canTouchEfiVariables = true;
     };
 
     zswap.enable = true;
