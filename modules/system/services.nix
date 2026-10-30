@@ -21,5 +21,5 @@
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
 
-  services.displayManager.defaultSession = lib.mkForce "plasma";
+  services.displayManager.defaultSession = lib.mkForce "gnome";
 }
