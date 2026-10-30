@@ -5,7 +5,7 @@
 
 {
   programs.niri.enable = true;
-  programs.dms-shell.enable = true;
+  programs.dux-shell.enable = false;
 
   services.displayManager.dms-greeter = {
     enable = false;

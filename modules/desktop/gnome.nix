@@ -12,6 +12,6 @@
     gnome-tweaks
   ];
 
-  services.displayManager.gdm.enable = false;
+  services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 }
