@@ -10,6 +10,7 @@
     bottles
     heroic
     prismlauncher
+    mangohud
   ];
 
   programs.gamemode.enable = true;

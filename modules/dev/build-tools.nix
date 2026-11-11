@@ -13,5 +13,6 @@
     clang
     python3
     uv
+    quickshell
   ];
 }
