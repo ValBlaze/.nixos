@@ -6,7 +6,7 @@
 {
   environment.systemPackages = with pkgs; [
     (discord.override {
-      withEquicord = true;
+      withVencord = true;
     })
     element-desktop
   ];
